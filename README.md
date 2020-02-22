@@ -8,6 +8,18 @@
 - Rails 6.0.2.1
 - Bootstrap 4
 
+## Usage
+
+Install missing gems:
+```shell
+bundle install
+```
+
+Start rails server. It will be listening on localhost:3000
+```shell
+rails server
+```
+
 ## Authors
 
 [Sergio González](https://github.com/SergioGonzalezVelazquez)

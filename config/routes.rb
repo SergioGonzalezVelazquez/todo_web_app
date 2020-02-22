@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get 'page/index'
-  get 'user/login'
+  get 'page/login'
 
-  match '/register',        to: 'user#register',          via: 'get'
-  match '/login',           to: 'user#login',             via: 'get'
-  match '/forgot-password', to: 'user#forgot-password',   via: 'get'
+  match '/register',        to: 'page#register',          via: 'get'
+  match '/login',           to: 'page#login',             via: 'get'
+  match '/forgot-password', to: 'page#forgot-password',   via: 'get'
   match '/index',           to: 'page#index',   via: 'get'
  
-  root 'user#login'
+  root 'page#login'
 end

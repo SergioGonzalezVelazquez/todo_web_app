@@ -13,10 +13,15 @@ require('bootstrap')
 
 //jQuery
 require('jquery')
+require('jquery.easing')
 
-//Custom javascript
+//Font Awesome 5
+require('@fortawesome/fontawesome-free/css/all.css')
+
+//Custom scripts for all pages
 require("sb-admin-2/sb-admin-2.min")
 require("sb-admin-2/sb-admin-2")
+
 //require("sb-admin-2/demo/chart-area-demo")
 //require("sb-admin-2/demo/chart-bar-demo")
 //require("sb-admin-2/demo/chart-pie-demo")

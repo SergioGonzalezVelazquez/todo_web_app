@@ -2,6 +2,7 @@
   "name": "todo",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -9,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "chart": "^0.1.2",
     "jquery": "^3.4.1",
+    "jquery.easing": "^1.4.1",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
