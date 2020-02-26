@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   match '/forgot-password', to: 'page#forgot-password',   via: 'get'
   match '/index',           to: 'page#index',   via: 'get'
  
+  resources :tasks
+  
   root 'page#login'
 end
