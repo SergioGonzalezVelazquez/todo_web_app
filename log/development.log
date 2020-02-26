@@ -5767,3 +5767,4020 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.2ms | Allocations: 7215)
 
 
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 11:57:13 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 2314)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 79.8ms | ActiveRecord: 0.0ms | Allocations: 14804)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-26 11:57:18 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"authenticity_token"=>"wqVMIUPku5CrUtC2IACuylmj59oss2slXP/LF3Jh8tDjA6VjA9kE6hTEkv5cp/RZQYtIZjjbVmlTkAxsFsWN9g==", "task"=>{"name"=>"prueba", "description"=>"prueba"}, "commit"=>"Save Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `create'
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "prueba"], ["description", "prueba"], ["created_at", "2020-02-26 10:57:18.957550"], ["updated_at", "2020-02-26 10:57:18.957550"]]
+  ↳ app/controllers/tasks_controller.rb:17:in `create'
+  [1m[35m (88.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `create'
+Redirected to http://localhost:3000/tasks/5
+Completed 302 Found in 135ms (ActiveRecord: 90.9ms | Allocations: 7279)
+
+
+Started GET "/tasks/5" for 127.0.0.1 at 2020-02-26 11:57:19 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 17.7ms | ActiveRecord: 0.3ms | Allocations: 6187)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 11:57:22 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:320:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1237)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 6401)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 11:58:43 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:320:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.2ms | Allocations: 7244)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 11:59:29 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:320:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.2ms | Allocations: 7238)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 11:59:31 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:320:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 636)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.2ms | Allocations: 5656)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 12:03:38 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 672)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.0ms | Allocations: 6701)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:10:51 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 400.6ms | Allocations: 169796)
+Completed 500 Internal Server Error in 405ms (ActiveRecord: 0.3ms | Allocations: 171279)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00007f79044a57e8>:0x000055b2af1a2e50>):
+    383:                 <a class="dropdown-item" href="#">Mark as completed</a>
+    384:                 <a class="dropdown-item" href="#">Edit</a>
+    385:                 <a class="dropdown-item" href="#">Delete</a>
+    386:                 <%= link_to 'Destroy', article_path(article), method: :delete,
+    387:                 data: { confirm: 'Are you sure?' } %>
+    388:               </div>
+    389:             </div>
+  
+app/views/tasks/index.html.erb:386
+app/views/tasks/index.html.erb:357:in `each_with_index'
+app/views/tasks/index.html.erb:357
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:11:17 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1568)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.2ms | Allocations: 7738)
+
+
+Started DELETE "/tasks/1" for 127.0.0.1 at 2020-02-26 12:11:25 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZEBIF14x25JffygukULHN0z6bn9witF57eI3BtCpFVBF5qFVHgxk6ODpambt5Z2kVNLBw2Ti7DXijfB9tA1qdg==", "id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[36mTask Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[35m (94.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 114ms (ActiveRecord: 94.6ms | Allocations: 3975)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:11:26 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 834)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.2ms | Allocations: 5843)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:11:32 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 829)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.1ms | Allocations: 5847)
+
+
+Started DELETE "/tasks/2" for 127.0.0.1 at 2020-02-26 12:11:39 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EeTVaplgpmHnak9tdKwoEBaXTj4iCwjbdnTuzSkhw4swQjwo2V0ZG1j8DSUIC3KDDr/hgjZjNZd5Gym2TYW8rQ==", "id"=>"2"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[36mTask Destroy (2.5ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[35m (97.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 119ms (ActiveRecord: 99.9ms | Allocations: 3819)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:11:39 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 766)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.1ms | Allocations: 5776)
+
+
+Started DELETE "/tasks/3" for 127.0.0.1 at 2020-02-26 12:11:46 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fShLsINL/U1aScfBXs4U2xzf6+PPcjMwwEdIJxIDJudcjqLyw3ZCN+XfhYkiaU5IBPdEX9saDnzPKI9cdqdZwQ==", "id"=>"3"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[35m (107.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 120ms (ActiveRecord: 108.5ms | Allocations: 3972)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:11:46 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.2ms | Allocations: 5714)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:13:19 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.1ms | Allocations: 7379)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:16:07 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1538)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2700)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <ul
+    class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+    id="accordionSidebar"
+  >
+    <!-- Sidebar - Brand -->
+    <a
+      class="sidebar-brand d-flex align-items-center justify-content-center"
+      href="index.html"
+    >
+      <div class="sidebar-brand-icon">
+        <!-- <div class="sidebar-brand-icon rotate-n-15">-->
+        <i class="fas fa-tasks"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">TODO App</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Tasks
+    </div>
+
+    <!-- Nav Item - Inbox -->
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-inbox"></i>
+        <span>Inbox</span></a
+      >
+    </li>
+
+    <!-- Nav Item - Today -->
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-calendar-day"></i>
+        <span>Today</span></a
+      >
+    </li>
+
+    <!-- Nav Item - This week -->
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-calendar-alt"></i>
+        <span>This week</span></a
+      >
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+          aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Dashboard</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div>
+      </li>
+      -->
+
+    <!-- Nav Item - Utilities Collapse Menu 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Utilities</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="utilities-border.html">Borders</a>
+            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>
+      </li>
+      -->
+
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Collections
+    </div>
+
+    <!-- Nav Item - Projects Collapse Menu -->
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        href="#"
+        data-toggle="collapse"
+        data-target="#collapseTwo"
+        aria-expanded="true"
+        aria-controls="collapseTwo"
+      >
+        <i class="fas fa-folder-open"></i>
+        <span>Projects</span>
+      </a>
+      <div
+        id="collapseTwo"
+        class="collapse"
+        aria-labelledby="headingTwo"
+        data-parent="#accordionSidebar"
+      >
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="index.html">Create new project</a>
+          <h6 class="collapse-header">My projects</h6>
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block" />
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+  </ul>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+      <!-- Topbar -->
+      <nav
+        class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+      >
+        <!-- Sidebar Toggle (Topbar) -->
+        <button
+          id="sidebarToggleTop"
+          class="btn btn-link d-md-none rounded-circle mr-3"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Page Heading -->
+        <nav class="navbar navbar">
+          <span class="navbar-brand mb-0 h1">Inbox</span>
+        </nav>
+
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Nav Item - Search Dropdown (Visible Only XS) 
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                      aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+          -->
+
+          <!-- Nav Item - Alerts 
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+            -->
+
+          <!-- Nav Item - Messages 
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
+                      having.</div>
+                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                    <div class="status-indicator"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them
+                      sent to you?</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                    <div class="status-indicator bg-warning"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
+                      far, keep up the good work!</div>
+                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
+                      say this to all dogs, even if they aren't good...</div>
+                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+            -->
+
+          <div class="topbar-divider d-none d-sm-block"></div>
+
+          <!-- Nav Item - User Information -->
+          <li class="nav-item dropdown no-arrow">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="userDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+                >Valerie Luna</span
+              >
+              <img
+                class="img-profile rounded-circle"
+                src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+              />
+            </a>
+            <!-- Dropdown - User Information -->
+            <div
+              class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+              aria-labelledby="userDropdown"
+            >
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                Profile
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                Settings
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                Activity Log
+              </a>
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item"
+                href="#"
+                data-toggle="modal"
+                data-target="#logoutModal"
+              >
+                <i
+                  class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+                ></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <a
+            href="#"
+            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+            ><i class="fas fa-plus fa-sm text-white-50"></i> Add task</a
+          >
+        </div>
+
+        <% @tasks.each_with_index do |task, index| %>
+        <!-- Collapsable Card Example -->
+        <div class="card shadow mb-4">
+          <!-- Card Header - Accordion -->
+          <div
+            class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+          >
+            <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+            <div class="dropdown no-arrow">
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                aria-labelledby="dropdownMenuLink"
+              >
+                <a class="dropdown-item" href="#">View description</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Mark as completed</a>
+                <a class="dropdown-item" href="#">Edit</a>
+                <a class="dropdown-item" href="#">Delete</a>
+                <%= link_to 'Destroy', task_path(task), method: :delete, data: {
+                confirm: 'Are you sure?' :class => "dropdown-item" } %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Content - Collapse -->
+          <div class="collapse show" id="collapseTask<%= index +1 %>">
+            <div class="card-body">
+              <%= task.description %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Web Systems Development 2020</span>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div
+  class="modal fade"
+  id="logoutModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button
+          class="close"
+          type="button"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Select "Logout" below if you are ready to end your current session.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+          Cancel
+        </button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+):
+1:    <!-- Page Wrapper -->
+2:    <div id="wrapper">
+3:      <!-- Sidebar -->
+4:      <ul
+5:        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+6:        id="accordionSidebar"
+7:      >
+8:        <!-- Sidebar - Brand -->
+9:        <a
+10:          class="sidebar-brand d-flex align-items-center justify-content-center"
+11:          href="index.html"
+12:        >
+13:          <div class="sidebar-brand-icon">
+14:            <!-- <div class="sidebar-brand-icon rotate-n-15">-->
+15:            <i class="fas fa-tasks"></i>
+16:          </div>
+17:          <div class="sidebar-brand-text mx-3">TODO App</div>
+18:        </a>
+19:    
+20:        <!-- Divider -->
+21:        <hr class="sidebar-divider" />
+22:    
+23:        <!-- Heading -->
+24:        <div class="sidebar-heading">
+25:          Tasks
+26:        </div>
+27:    
+28:        <!-- Nav Item - Inbox -->
+29:        <li class="nav-item active">
+30:          <a class="nav-link" href="index.html">
+31:            <i class="fas fa-inbox"></i>
+32:            <span>Inbox</span></a
+33:          >
+34:        </li>
+35:    
+36:        <!-- Nav Item - Today -->
+37:        <li class="nav-item">
+38:          <a class="nav-link" href="index.html">
+39:            <i class="fas fa-calendar-day"></i>
+40:            <span>Today</span></a
+41:          >
+42:        </li>
+43:    
+44:        <!-- Nav Item - This week -->
+45:        <li class="nav-item">
+46:          <a class="nav-link" href="index.html">
+47:            <i class="fas fa-calendar-alt"></i>
+48:            <span>This week</span></a
+49:          >
+50:        </li>
+51:    
+52:        <!-- Nav Item - Pages Collapse Menu 
+53:          <li class="nav-item">
+54:            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+55:              aria-controls="collapseTwo">
+56:              <i class="fas fa-fw fa-cog"></i>
+57:              <span>Dashboard</span>
+58:            </a>
+59:            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+60:              <div class="bg-white py-2 collapse-inner rounded">
+61:                <h6 class="collapse-header">Custom Components:</h6>
+62:                <a class="collapse-item" href="buttons.html">Buttons</a>
+63:                <a class="collapse-item" href="cards.html">Cards</a>
+64:              </div>
+65:            </div>
+66:          </li>
+67:          -->
+68:    
+69:        <!-- Nav Item - Utilities Collapse Menu 
+70:          <li class="nav-item">
+71:            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+72:              aria-expanded="true" aria-controls="collapseUtilities">
+73:              <i class="fas fa-fw fa-wrench"></i>
+74:              <span>Utilities</span>
+75:            </a>
+76:            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+77:              <div class="bg-white py-2 collapse-inner rounded">
+78:                <h6 class="collapse-header">Custom Utilities:</h6>
+79:                <a class="collapse-item" href="utilities-color.html">Colors</a>
+80:                <a class="collapse-item" href="utilities-border.html">Borders</a>
+81:                <a class="collapse-item" href="utilities-animation.html">Animations</a>
+82:                <a class="collapse-item" href="utilities-other.html">Other</a>
+83:              </div>
+84:            </div>
+85:          </li>
+86:          -->
+87:    
+88:        <!-- Divider -->
+89:        <hr class="sidebar-divider" />
+90:    
+91:        <!-- Heading -->
+92:        <div class="sidebar-heading">
+93:          Collections
+94:        </div>
+95:    
+96:        <!-- Nav Item - Projects Collapse Menu -->
+97:        <li class="nav-item">
+98:          <a
+99:            class="nav-link collapsed"
+100:            href="#"
+101:            data-toggle="collapse"
+102:            data-target="#collapseTwo"
+103:            aria-expanded="true"
+104:            aria-controls="collapseTwo"
+105:          >
+106:            <i class="fas fa-folder-open"></i>
+107:            <span>Projects</span>
+108:          </a>
+109:          <div
+110:            id="collapseTwo"
+111:            class="collapse"
+112:            aria-labelledby="headingTwo"
+113:            data-parent="#accordionSidebar"
+114:          >
+115:            <div class="bg-white py-2 collapse-inner rounded">
+116:              <a class="collapse-item" href="index.html">Create new project</a>
+117:              <h6 class="collapse-header">My projects</h6>
+118:            </div>
+119:          </div>
+120:        </li>
+121:    
+122:        <!-- Divider -->
+123:        <hr class="sidebar-divider d-none d-md-block" />
+124:    
+125:        <!-- Sidebar Toggler (Sidebar) -->
+126:        <div class="text-center d-none d-md-inline">
+127:          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+128:        </div>
+129:      </ul>
+130:      <!-- End of Sidebar -->
+131:    
+132:      <!-- Content Wrapper -->
+133:      <div id="content-wrapper" class="d-flex flex-column">
+134:        <!-- Main Content -->
+135:        <div id="content">
+136:          <!-- Topbar -->
+137:          <nav
+138:            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+139:          >
+140:            <!-- Sidebar Toggle (Topbar) -->
+141:            <button
+142:              id="sidebarToggleTop"
+143:              class="btn btn-link d-md-none rounded-circle mr-3"
+144:            >
+145:              <i class="fa fa-bars"></i>
+146:            </button>
+147:    
+148:            <!-- Page Heading -->
+149:            <nav class="navbar navbar">
+150:              <span class="navbar-brand mb-0 h1">Inbox</span>
+151:            </nav>
+152:    
+153:            <!-- Topbar Navbar -->
+154:            <ul class="navbar-nav ml-auto">
+155:              <!-- Nav Item - Search Dropdown (Visible Only XS) 
+156:                <li class="nav-item dropdown no-arrow d-sm-none">
+157:                  <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+158:                    aria-haspopup="true" aria-expanded="false">
+159:                    <i class="fas fa-search fa-fw"></i>
+160:                  </a>
+161:                  <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+162:                    aria-labelledby="searchDropdown">
+163:                    <form class="form-inline mr-auto w-100 navbar-search">
+164:                      <div class="input-group">
+165:                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+166:                          aria-label="Search" aria-describedby="basic-addon2">
+167:                        <div class="input-group-append">
+168:                          <button class="btn btn-primary" type="button">
+169:                            <i class="fas fa-search fa-sm"></i>
+170:                          </button>
+171:                        </div>
+172:                      </div>
+173:                    </form>
+174:                  </div>
+175:                </li>
+176:              -->
+177:    
+178:              <!-- Nav Item - Alerts 
+179:                <li class="nav-item dropdown no-arrow mx-1">
+180:                  <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+181:                    aria-haspopup="true" aria-expanded="false">
+182:                    <i class="fas fa-bell fa-fw"></i>
+183:                    <span class="badge badge-danger badge-counter">3+</span>
+184:                  </a>
+185:                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+186:                    aria-labelledby="alertsDropdown">
+187:                    <h6 class="dropdown-header">
+188:                      Alerts Center
+189:                    </h6>
+190:                    <a class="dropdown-item d-flex align-items-center" href="#">
+191:                      <div class="mr-3">
+192:                        <div class="icon-circle bg-primary">
+193:                          <i class="fas fa-file-alt text-white"></i>
+194:                        </div>
+195:                      </div>
+196:                      <div>
+197:                        <div class="small text-gray-500">December 12, 2019</div>
+198:                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+199:                      </div>
+200:                    </a>
+201:                    <a class="dropdown-item d-flex align-items-center" href="#">
+202:                      <div class="mr-3">
+203:                        <div class="icon-circle bg-success">
+204:                          <i class="fas fa-donate text-white"></i>
+205:                        </div>
+206:                      </div>
+207:                      <div>
+208:                        <div class="small text-gray-500">December 7, 2019</div>
+209:                        $290.29 has been deposited into your account!
+210:                      </div>
+211:                    </a>
+212:                    <a class="dropdown-item d-flex align-items-center" href="#">
+213:                      <div class="mr-3">
+214:                        <div class="icon-circle bg-warning">
+215:                          <i class="fas fa-exclamation-triangle text-white"></i>
+216:                        </div>
+217:                      </div>
+218:                      <div>
+219:                        <div class="small text-gray-500">December 2, 2019</div>
+220:                        Spending Alert: We've noticed unusually high spending for your account.
+221:                      </div>
+222:                    </a>
+223:                    <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+224:                  </div>
+225:                </li>
+226:                -->
+227:    
+228:              <!-- Nav Item - Messages 
+229:                <li class="nav-item dropdown no-arrow mx-1">
+230:                  <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+231:                    aria-haspopup="true" aria-expanded="false">
+232:                    <i class="fas fa-envelope fa-fw"></i>
+233:    
+234:                    <span class="badge badge-danger badge-counter">7</span>
+235:                  </a>
+236:                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+237:                    aria-labelledby="messagesDropdown">
+238:                    <h6 class="dropdown-header">
+239:                      Message Center
+240:                    </h6>
+241:                    <a class="dropdown-item d-flex align-items-center" href="#">
+242:                      <div class="dropdown-list-image mr-3">
+243:                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+244:                        <div class="status-indicator bg-success"></div>
+245:                      </div>
+246:                      <div class="font-weight-bold">
+247:                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
+248:                          having.</div>
+249:                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+250:                      </div>
+251:                    </a>
+252:                    <a class="dropdown-item d-flex align-items-center" href="#">
+253:                      <div class="dropdown-list-image mr-3">
+254:                        <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+255:                        <div class="status-indicator"></div>
+256:                      </div>
+257:                      <div>
+258:                        <div class="text-truncate">I have the photos that you ordered last month, how would you like them
+259:                          sent to you?</div>
+260:                        <div class="small text-gray-500">Jae Chun · 1d</div>
+261:                      </div>
+262:                    </a>
+263:                    <a class="dropdown-item d-flex align-items-center" href="#">
+264:                      <div class="dropdown-list-image mr-3">
+265:                        <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+266:                        <div class="status-indicator bg-warning"></div>
+267:                      </div>
+268:                      <div>
+269:                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
+270:                          far, keep up the good work!</div>
+271:                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+272:                      </div>
+273:                    </a>
+274:                    <a class="dropdown-item d-flex align-items-center" href="#">
+275:                      <div class="dropdown-list-image mr-3">
+276:                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+277:                        <div class="status-indicator bg-success"></div>
+278:                      </div>
+279:                      <div>
+280:                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
+281:                          say this to all dogs, even if they aren't good...</div>
+282:                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+283:                      </div>
+284:                    </a>
+285:                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+286:                  </div>
+287:                </li>
+288:                -->
+289:    
+290:              <div class="topbar-divider d-none d-sm-block"></div>
+291:    
+292:              <!-- Nav Item - User Information -->
+293:              <li class="nav-item dropdown no-arrow">
+294:                <a
+295:                  class="nav-link dropdown-toggle"
+296:                  href="#"
+297:                  id="userDropdown"
+298:                  role="button"
+299:                  data-toggle="dropdown"
+300:                  aria-haspopup="true"
+301:                  aria-expanded="false"
+302:                >
+303:                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+304:                    >Valerie Luna</span
+305:                  >
+306:                  <img
+307:                    class="img-profile rounded-circle"
+308:                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+309:                  />
+310:                </a>
+311:                <!-- Dropdown - User Information -->
+312:                <div
+313:                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+314:                  aria-labelledby="userDropdown"
+315:                >
+316:                  <a class="dropdown-item" href="#">
+317:                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+318:                    Profile
+319:                  </a>
+320:                  <a class="dropdown-item" href="#">
+321:                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+322:                    Settings
+323:                  </a>
+324:                  <a class="dropdown-item" href="#">
+325:                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+326:                    Activity Log
+327:                  </a>
+328:                  <div class="dropdown-divider"></div>
+329:                  <a
+330:                    class="dropdown-item"
+331:                    href="#"
+332:                    data-toggle="modal"
+333:                    data-target="#logoutModal"
+334:                  >
+335:                    <i
+336:                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+337:                    ></i>
+338:                    Logout
+339:                  </a>
+340:                </div>
+341:              </li>
+342:            </ul>
+343:          </nav>
+344:          <!-- End of Topbar -->
+345:    
+346:          <!-- Begin Page Content -->
+347:          <div class="container-fluid">
+348:            <!-- Page Heading -->
+349:            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+350:              <a
+351:                href="#"
+352:                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+353:                ><i class="fas fa-plus fa-sm text-white-50"></i> Add task</a
+354:              >
+355:            </div>
+356:    
+357:            <% @tasks.each_with_index do |task, index| %>
+358:            <!-- Collapsable Card Example -->
+359:            <div class="card shadow mb-4">
+360:              <!-- Card Header - Accordion -->
+361:              <div
+362:                class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+363:              >
+364:                <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+365:                <div class="dropdown no-arrow">
+366:                  <a
+367:                    class="dropdown-toggle"
+368:                    href="#"
+369:                    role="button"
+370:                    id="dropdownMenuLink"
+371:                    data-toggle="dropdown"
+372:                    aria-haspopup="true"
+373:                    aria-expanded="false"
+374:                  >
+375:                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+376:                  </a>
+377:                  <div
+378:                    class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+379:                    aria-labelledby="dropdownMenuLink"
+380:                  >
+381:                    <a class="dropdown-item" href="#">View description</a>
+382:                    <div class="dropdown-divider"></div>
+383:                    <a class="dropdown-item" href="#">Mark as completed</a>
+384:                    <a class="dropdown-item" href="#">Edit</a>
+385:                    <a class="dropdown-item" href="#">Delete</a>
+386:                    <%= link_to 'Destroy', task_path(task), method: :delete, data: {
+387:                    confirm: 'Are you sure?' :class => "dropdown-item" } %>
+388:                  </div>
+389:                </div>
+390:              </div>
+391:    
+392:              <!-- Card Content - Collapse -->
+393:              <div class="collapse show" id="collapseTask<%= index +1 %>">
+394:                <div class="card-body">
+395:                  <%= task.description %>
+396:                </div>
+397:              </div>
+398:            </div>
+399:            <% end %>
+400:          </div>
+401:          <!-- /.container-fluid -->
+402:        </div>
+403:        <!-- End of Main Content -->
+404:    
+405:        <!-- Footer -->
+406:        <footer class="sticky-footer bg-white">
+407:          <div class="container my-auto">
+408:            <div class="copyright text-center my-auto">
+409:              <span>Copyright &copy; Web Systems Development 2020</span>
+410:            </div>
+411:          </div>
+412:        </footer>
+413:        <!-- End of Footer -->
+414:      </div>
+415:      <!-- End of Content Wrapper -->
+416:    </div>
+417:    <!-- End of Page Wrapper -->
+418:    
+419:    <!-- Scroll to Top Button-->
+420:    <a class="scroll-to-top rounded" href="#page-top">
+421:      <i class="fas fa-angle-up"></i>
+422:    </a>
+423:    
+424:    <!-- Logout Modal-->
+425:    <div
+426:      class="modal fade"
+427:      id="logoutModal"
+428:      tabindex="-1"
+429:      role="dialog"
+430:      aria-labelledby="exampleModalLabel"
+431:      aria-hidden="true"
+432:    >
+433:      <div class="modal-dialog" role="document">
+434:        <div class="modal-content">
+435:          <div class="modal-header">
+436:            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+437:            <button
+438:              class="close"
+439:              type="button"
+440:              data-dismiss="modal"
+441:              aria-label="Close"
+442:            >
+443:              <span aria-hidden="true">×</span>
+444:            </button>
+445:          </div>
+446:          <div class="modal-body">
+447:            Select "Logout" below if you are ready to end your current session.
+448:          </div>
+449:          <div class="modal-footer">
+450:            <button class="btn btn-secondary" type="button" data-dismiss="modal">
+451:              Cancel
+452:            </button>
+453:            <a class="btn btn-primary" href="login.html">Logout</a>
+454:          </div>
+455:        </div>
+456:      </div>
+457:    </div>
+  
+app/views/tasks/index.html.erb:387: syntax error, unexpected ':', expecting '}'
+app/views/tasks/index.html.erb:387: syntax error, unexpected '}', expecting ')'
+app/views/tasks/index.html.erb:399: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:460: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:387: syntax error, unexpected ':', expecting '}'
+app/views/tasks/index.html.erb:387: syntax error, unexpected '}', expecting ')'
+app/views/tasks/index.html.erb:399: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:460: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:387: syntax error, unexpected ':', expecting '}'
+app/views/tasks/index.html.erb:387: syntax error, unexpected '}', expecting ')'
+app/views/tasks/index.html.erb:399: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:460: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:387: syntax error, unexpected ':', expecting '}'
+app/views/tasks/index.html.erb:387: syntax error, unexpected '}', expecting ')'
+app/views/tasks/index.html.erb:399: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:460: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:387: syntax error, unexpected ':', expecting '}'
+app/views/tasks/index.html.erb:387: syntax error, unexpected '}', expecting ')'
+app/views/tasks/index.html.erb:399: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:460: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:387: syntax error, unexpected ':', expecting '}'
+app/views/tasks/index.html.erb:387: syntax error, unexpected '}', expecting ')'
+app/views/tasks/index.html.erb:399: syntax error, unexpected `end', expecting ')'
+app/views/tasks/index.html.erb:460: syntax error, unexpected `end', expecting ')'
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:16:20 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1342)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.1ms | Allocations: 7445)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:17:33 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1543)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 2603)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <ul
+    class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+    id="accordionSidebar"
+  >
+    <!-- Sidebar - Brand -->
+    <a
+      class="sidebar-brand d-flex align-items-center justify-content-center"
+      href="index.html"
+    >
+      <div class="sidebar-brand-icon">
+        <!-- <div class="sidebar-brand-icon rotate-n-15">-->
+        <i class="fas fa-tasks"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">TODO App</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Tasks
+    </div>
+
+    <!-- Nav Item - Inbox -->
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-inbox"></i>
+        <span>Inbox</span></a
+      >
+    </li>
+
+    <!-- Nav Item - Today -->
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-calendar-day"></i>
+        <span>Today</span></a
+      >
+    </li>
+
+    <!-- Nav Item - This week -->
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-calendar-alt"></i>
+        <span>This week</span></a
+      >
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+          aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Dashboard</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div>
+      </li>
+      -->
+
+    <!-- Nav Item - Utilities Collapse Menu 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Utilities</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="utilities-border.html">Borders</a>
+            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>
+      </li>
+      -->
+
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Collections
+    </div>
+
+    <!-- Nav Item - Projects Collapse Menu -->
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        href="#"
+        data-toggle="collapse"
+        data-target="#collapseTwo"
+        aria-expanded="true"
+        aria-controls="collapseTwo"
+      >
+        <i class="fas fa-folder-open"></i>
+        <span>Projects</span>
+      </a>
+      <div
+        id="collapseTwo"
+        class="collapse"
+        aria-labelledby="headingTwo"
+        data-parent="#accordionSidebar"
+      >
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="index.html">Create new project</a>
+          <h6 class="collapse-header">My projects</h6>
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block" />
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+  </ul>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+      <!-- Topbar -->
+      <nav
+        class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+      >
+        <!-- Sidebar Toggle (Topbar) -->
+        <button
+          id="sidebarToggleTop"
+          class="btn btn-link d-md-none rounded-circle mr-3"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Page Heading -->
+        <nav class="navbar navbar">
+          <span class="navbar-brand mb-0 h1">Inbox</span>
+        </nav>
+
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Nav Item - Search Dropdown (Visible Only XS) 
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                      aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+          -->
+
+          <!-- Nav Item - Alerts 
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+            -->
+
+          <!-- Nav Item - Messages 
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
+                      having.</div>
+                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                    <div class="status-indicator"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them
+                      sent to you?</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                    <div class="status-indicator bg-warning"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
+                      far, keep up the good work!</div>
+                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
+                      say this to all dogs, even if they aren't good...</div>
+                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+            -->
+
+          <div class="topbar-divider d-none d-sm-block"></div>
+
+          <!-- Nav Item - User Information -->
+          <li class="nav-item dropdown no-arrow">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="userDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+                >Valerie Luna</span
+              >
+              <img
+                class="img-profile rounded-circle"
+                src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+              />
+            </a>
+            <!-- Dropdown - User Information -->
+            <div
+              class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+              aria-labelledby="userDropdown"
+            >
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                Profile
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                Settings
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                Activity Log
+              </a>
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item"
+                href="#"
+                data-toggle="modal"
+                data-target="#logoutModal"
+              >
+                <i
+                  class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+                ></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <a
+            href="#"
+            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+            ><i class="fas fa-plus fa-sm text-white-50"></i> Add task</a
+          >
+        </div>
+
+        <% @tasks.each_with_index do |task, index| %>
+        <!-- Collapsable Card Example -->
+        <div class="card shadow mb-4">
+          <!-- Card Header - Accordion -->
+          <div
+            class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+          >
+            <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+            <div class="dropdown no-arrow">
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                aria-labelledby="dropdownMenuLink"
+              >
+                <a class="dropdown-item" href="#">View description</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Mark as completed</a>
+                <a class="dropdown-item" href="#">Edit</a>
+                <a class="dropdown-item" href="#">Delete</a>
+                <%= link_to 'Destroy', task_path(task), method: :delete,
+                {:style=>'color:#FFFFFF;', :class => "css_class"}, data: {
+                confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Content - Collapse -->
+          <div class="collapse show" id="collapseTask<%= index +1 %>">
+            <div class="card-body">
+              <%= task.description %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Web Systems Development 2020</span>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div
+  class="modal fade"
+  id="logoutModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button
+          class="close"
+          type="button"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Select "Logout" below if you are ready to end your current session.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+          Cancel
+        </button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+):
+1:    <!-- Page Wrapper -->
+2:    <div id="wrapper">
+3:      <!-- Sidebar -->
+4:      <ul
+5:        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+6:        id="accordionSidebar"
+7:      >
+8:        <!-- Sidebar - Brand -->
+9:        <a
+10:          class="sidebar-brand d-flex align-items-center justify-content-center"
+11:          href="index.html"
+12:        >
+13:          <div class="sidebar-brand-icon">
+14:            <!-- <div class="sidebar-brand-icon rotate-n-15">-->
+15:            <i class="fas fa-tasks"></i>
+16:          </div>
+17:          <div class="sidebar-brand-text mx-3">TODO App</div>
+18:        </a>
+19:    
+20:        <!-- Divider -->
+21:        <hr class="sidebar-divider" />
+22:    
+23:        <!-- Heading -->
+24:        <div class="sidebar-heading">
+25:          Tasks
+26:        </div>
+27:    
+28:        <!-- Nav Item - Inbox -->
+29:        <li class="nav-item active">
+30:          <a class="nav-link" href="index.html">
+31:            <i class="fas fa-inbox"></i>
+32:            <span>Inbox</span></a
+33:          >
+34:        </li>
+35:    
+36:        <!-- Nav Item - Today -->
+37:        <li class="nav-item">
+38:          <a class="nav-link" href="index.html">
+39:            <i class="fas fa-calendar-day"></i>
+40:            <span>Today</span></a
+41:          >
+42:        </li>
+43:    
+44:        <!-- Nav Item - This week -->
+45:        <li class="nav-item">
+46:          <a class="nav-link" href="index.html">
+47:            <i class="fas fa-calendar-alt"></i>
+48:            <span>This week</span></a
+49:          >
+50:        </li>
+51:    
+52:        <!-- Nav Item - Pages Collapse Menu 
+53:          <li class="nav-item">
+54:            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+55:              aria-controls="collapseTwo">
+56:              <i class="fas fa-fw fa-cog"></i>
+57:              <span>Dashboard</span>
+58:            </a>
+59:            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+60:              <div class="bg-white py-2 collapse-inner rounded">
+61:                <h6 class="collapse-header">Custom Components:</h6>
+62:                <a class="collapse-item" href="buttons.html">Buttons</a>
+63:                <a class="collapse-item" href="cards.html">Cards</a>
+64:              </div>
+65:            </div>
+66:          </li>
+67:          -->
+68:    
+69:        <!-- Nav Item - Utilities Collapse Menu 
+70:          <li class="nav-item">
+71:            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+72:              aria-expanded="true" aria-controls="collapseUtilities">
+73:              <i class="fas fa-fw fa-wrench"></i>
+74:              <span>Utilities</span>
+75:            </a>
+76:            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+77:              <div class="bg-white py-2 collapse-inner rounded">
+78:                <h6 class="collapse-header">Custom Utilities:</h6>
+79:                <a class="collapse-item" href="utilities-color.html">Colors</a>
+80:                <a class="collapse-item" href="utilities-border.html">Borders</a>
+81:                <a class="collapse-item" href="utilities-animation.html">Animations</a>
+82:                <a class="collapse-item" href="utilities-other.html">Other</a>
+83:              </div>
+84:            </div>
+85:          </li>
+86:          -->
+87:    
+88:        <!-- Divider -->
+89:        <hr class="sidebar-divider" />
+90:    
+91:        <!-- Heading -->
+92:        <div class="sidebar-heading">
+93:          Collections
+94:        </div>
+95:    
+96:        <!-- Nav Item - Projects Collapse Menu -->
+97:        <li class="nav-item">
+98:          <a
+99:            class="nav-link collapsed"
+100:            href="#"
+101:            data-toggle="collapse"
+102:            data-target="#collapseTwo"
+103:            aria-expanded="true"
+104:            aria-controls="collapseTwo"
+105:          >
+106:            <i class="fas fa-folder-open"></i>
+107:            <span>Projects</span>
+108:          </a>
+109:          <div
+110:            id="collapseTwo"
+111:            class="collapse"
+112:            aria-labelledby="headingTwo"
+113:            data-parent="#accordionSidebar"
+114:          >
+115:            <div class="bg-white py-2 collapse-inner rounded">
+116:              <a class="collapse-item" href="index.html">Create new project</a>
+117:              <h6 class="collapse-header">My projects</h6>
+118:            </div>
+119:          </div>
+120:        </li>
+121:    
+122:        <!-- Divider -->
+123:        <hr class="sidebar-divider d-none d-md-block" />
+124:    
+125:        <!-- Sidebar Toggler (Sidebar) -->
+126:        <div class="text-center d-none d-md-inline">
+127:          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+128:        </div>
+129:      </ul>
+130:      <!-- End of Sidebar -->
+131:    
+132:      <!-- Content Wrapper -->
+133:      <div id="content-wrapper" class="d-flex flex-column">
+134:        <!-- Main Content -->
+135:        <div id="content">
+136:          <!-- Topbar -->
+137:          <nav
+138:            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+139:          >
+140:            <!-- Sidebar Toggle (Topbar) -->
+141:            <button
+142:              id="sidebarToggleTop"
+143:              class="btn btn-link d-md-none rounded-circle mr-3"
+144:            >
+145:              <i class="fa fa-bars"></i>
+146:            </button>
+147:    
+148:            <!-- Page Heading -->
+149:            <nav class="navbar navbar">
+150:              <span class="navbar-brand mb-0 h1">Inbox</span>
+151:            </nav>
+152:    
+153:            <!-- Topbar Navbar -->
+154:            <ul class="navbar-nav ml-auto">
+155:              <!-- Nav Item - Search Dropdown (Visible Only XS) 
+156:                <li class="nav-item dropdown no-arrow d-sm-none">
+157:                  <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+158:                    aria-haspopup="true" aria-expanded="false">
+159:                    <i class="fas fa-search fa-fw"></i>
+160:                  </a>
+161:                  <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+162:                    aria-labelledby="searchDropdown">
+163:                    <form class="form-inline mr-auto w-100 navbar-search">
+164:                      <div class="input-group">
+165:                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+166:                          aria-label="Search" aria-describedby="basic-addon2">
+167:                        <div class="input-group-append">
+168:                          <button class="btn btn-primary" type="button">
+169:                            <i class="fas fa-search fa-sm"></i>
+170:                          </button>
+171:                        </div>
+172:                      </div>
+173:                    </form>
+174:                  </div>
+175:                </li>
+176:              -->
+177:    
+178:              <!-- Nav Item - Alerts 
+179:                <li class="nav-item dropdown no-arrow mx-1">
+180:                  <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+181:                    aria-haspopup="true" aria-expanded="false">
+182:                    <i class="fas fa-bell fa-fw"></i>
+183:                    <span class="badge badge-danger badge-counter">3+</span>
+184:                  </a>
+185:                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+186:                    aria-labelledby="alertsDropdown">
+187:                    <h6 class="dropdown-header">
+188:                      Alerts Center
+189:                    </h6>
+190:                    <a class="dropdown-item d-flex align-items-center" href="#">
+191:                      <div class="mr-3">
+192:                        <div class="icon-circle bg-primary">
+193:                          <i class="fas fa-file-alt text-white"></i>
+194:                        </div>
+195:                      </div>
+196:                      <div>
+197:                        <div class="small text-gray-500">December 12, 2019</div>
+198:                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+199:                      </div>
+200:                    </a>
+201:                    <a class="dropdown-item d-flex align-items-center" href="#">
+202:                      <div class="mr-3">
+203:                        <div class="icon-circle bg-success">
+204:                          <i class="fas fa-donate text-white"></i>
+205:                        </div>
+206:                      </div>
+207:                      <div>
+208:                        <div class="small text-gray-500">December 7, 2019</div>
+209:                        $290.29 has been deposited into your account!
+210:                      </div>
+211:                    </a>
+212:                    <a class="dropdown-item d-flex align-items-center" href="#">
+213:                      <div class="mr-3">
+214:                        <div class="icon-circle bg-warning">
+215:                          <i class="fas fa-exclamation-triangle text-white"></i>
+216:                        </div>
+217:                      </div>
+218:                      <div>
+219:                        <div class="small text-gray-500">December 2, 2019</div>
+220:                        Spending Alert: We've noticed unusually high spending for your account.
+221:                      </div>
+222:                    </a>
+223:                    <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+224:                  </div>
+225:                </li>
+226:                -->
+227:    
+228:              <!-- Nav Item - Messages 
+229:                <li class="nav-item dropdown no-arrow mx-1">
+230:                  <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+231:                    aria-haspopup="true" aria-expanded="false">
+232:                    <i class="fas fa-envelope fa-fw"></i>
+233:    
+234:                    <span class="badge badge-danger badge-counter">7</span>
+235:                  </a>
+236:                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+237:                    aria-labelledby="messagesDropdown">
+238:                    <h6 class="dropdown-header">
+239:                      Message Center
+240:                    </h6>
+241:                    <a class="dropdown-item d-flex align-items-center" href="#">
+242:                      <div class="dropdown-list-image mr-3">
+243:                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+244:                        <div class="status-indicator bg-success"></div>
+245:                      </div>
+246:                      <div class="font-weight-bold">
+247:                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
+248:                          having.</div>
+249:                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+250:                      </div>
+251:                    </a>
+252:                    <a class="dropdown-item d-flex align-items-center" href="#">
+253:                      <div class="dropdown-list-image mr-3">
+254:                        <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+255:                        <div class="status-indicator"></div>
+256:                      </div>
+257:                      <div>
+258:                        <div class="text-truncate">I have the photos that you ordered last month, how would you like them
+259:                          sent to you?</div>
+260:                        <div class="small text-gray-500">Jae Chun · 1d</div>
+261:                      </div>
+262:                    </a>
+263:                    <a class="dropdown-item d-flex align-items-center" href="#">
+264:                      <div class="dropdown-list-image mr-3">
+265:                        <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+266:                        <div class="status-indicator bg-warning"></div>
+267:                      </div>
+268:                      <div>
+269:                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
+270:                          far, keep up the good work!</div>
+271:                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+272:                      </div>
+273:                    </a>
+274:                    <a class="dropdown-item d-flex align-items-center" href="#">
+275:                      <div class="dropdown-list-image mr-3">
+276:                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+277:                        <div class="status-indicator bg-success"></div>
+278:                      </div>
+279:                      <div>
+280:                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
+281:                          say this to all dogs, even if they aren't good...</div>
+282:                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+283:                      </div>
+284:                    </a>
+285:                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+286:                  </div>
+287:                </li>
+288:                -->
+289:    
+290:              <div class="topbar-divider d-none d-sm-block"></div>
+291:    
+292:              <!-- Nav Item - User Information -->
+293:              <li class="nav-item dropdown no-arrow">
+294:                <a
+295:                  class="nav-link dropdown-toggle"
+296:                  href="#"
+297:                  id="userDropdown"
+298:                  role="button"
+299:                  data-toggle="dropdown"
+300:                  aria-haspopup="true"
+301:                  aria-expanded="false"
+302:                >
+303:                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+304:                    >Valerie Luna</span
+305:                  >
+306:                  <img
+307:                    class="img-profile rounded-circle"
+308:                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+309:                  />
+310:                </a>
+311:                <!-- Dropdown - User Information -->
+312:                <div
+313:                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+314:                  aria-labelledby="userDropdown"
+315:                >
+316:                  <a class="dropdown-item" href="#">
+317:                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+318:                    Profile
+319:                  </a>
+320:                  <a class="dropdown-item" href="#">
+321:                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+322:                    Settings
+323:                  </a>
+324:                  <a class="dropdown-item" href="#">
+325:                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+326:                    Activity Log
+327:                  </a>
+328:                  <div class="dropdown-divider"></div>
+329:                  <a
+330:                    class="dropdown-item"
+331:                    href="#"
+332:                    data-toggle="modal"
+333:                    data-target="#logoutModal"
+334:                  >
+335:                    <i
+336:                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+337:                    ></i>
+338:                    Logout
+339:                  </a>
+340:                </div>
+341:              </li>
+342:            </ul>
+343:          </nav>
+344:          <!-- End of Topbar -->
+345:    
+346:          <!-- Begin Page Content -->
+347:          <div class="container-fluid">
+348:            <!-- Page Heading -->
+349:            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+350:              <a
+351:                href="#"
+352:                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+353:                ><i class="fas fa-plus fa-sm text-white-50"></i> Add task</a
+354:              >
+355:            </div>
+356:    
+357:            <% @tasks.each_with_index do |task, index| %>
+358:            <!-- Collapsable Card Example -->
+359:            <div class="card shadow mb-4">
+360:              <!-- Card Header - Accordion -->
+361:              <div
+362:                class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+363:              >
+364:                <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+365:                <div class="dropdown no-arrow">
+366:                  <a
+367:                    class="dropdown-toggle"
+368:                    href="#"
+369:                    role="button"
+370:                    id="dropdownMenuLink"
+371:                    data-toggle="dropdown"
+372:                    aria-haspopup="true"
+373:                    aria-expanded="false"
+374:                  >
+375:                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+376:                  </a>
+377:                  <div
+378:                    class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+379:                    aria-labelledby="dropdownMenuLink"
+380:                  >
+381:                    <a class="dropdown-item" href="#">View description</a>
+382:                    <div class="dropdown-divider"></div>
+383:                    <a class="dropdown-item" href="#">Mark as completed</a>
+384:                    <a class="dropdown-item" href="#">Edit</a>
+385:                    <a class="dropdown-item" href="#">Delete</a>
+386:                    <%= link_to 'Destroy', task_path(task), method: :delete,
+387:                    {:style=>'color:#FFFFFF;', :class => "css_class"}, data: {
+388:                    confirm: 'Are you sure?' } %>
+389:                  </div>
+390:                </div>
+391:              </div>
+392:    
+393:              <!-- Card Content - Collapse -->
+394:              <div class="collapse show" id="collapseTask<%= index +1 %>">
+395:                <div class="card-body">
+396:                  <%= task.description %>
+397:                </div>
+398:              </div>
+399:            </div>
+400:            <% end %>
+401:          </div>
+402:          <!-- /.container-fluid -->
+403:        </div>
+404:        <!-- End of Main Content -->
+405:    
+406:        <!-- Footer -->
+407:        <footer class="sticky-footer bg-white">
+408:          <div class="container my-auto">
+409:            <div class="copyright text-center my-auto">
+410:              <span>Copyright &copy; Web Systems Development 2020</span>
+411:            </div>
+412:          </div>
+413:        </footer>
+414:        <!-- End of Footer -->
+415:      </div>
+416:      <!-- End of Content Wrapper -->
+417:    </div>
+418:    <!-- End of Page Wrapper -->
+419:    
+420:    <!-- Scroll to Top Button-->
+421:    <a class="scroll-to-top rounded" href="#page-top">
+422:      <i class="fas fa-angle-up"></i>
+423:    </a>
+424:    
+425:    <!-- Logout Modal-->
+426:    <div
+427:      class="modal fade"
+428:      id="logoutModal"
+429:      tabindex="-1"
+430:      role="dialog"
+431:      aria-labelledby="exampleModalLabel"
+432:      aria-hidden="true"
+433:    >
+434:      <div class="modal-dialog" role="document">
+435:        <div class="modal-content">
+436:          <div class="modal-header">
+437:            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+438:            <button
+439:              class="close"
+440:              type="button"
+441:              data-dismiss="modal"
+442:              aria-label="Close"
+443:            >
+444:              <span aria-hidden="true">×</span>
+445:            </button>
+446:          </div>
+447:          <div class="modal-body">
+448:            Select "Logout" below if you are ready to end your current session.
+449:          </div>
+450:          <div class="modal-footer">
+451:            <button class="btn btn-secondary" type="button" data-dismiss="modal">
+452:              Cancel
+453:            </button>
+454:            <a class="btn btn-primary" href="login.html">Logout</a>
+455:          </div>
+456:        </div>
+457:      </div>
+458:    </div>
+  
+app/views/tasks/index.html.erb:387: syntax error, unexpected ',', expecting =>
+app/views/tasks/index.html.erb:387: syntax error, unexpected ',', expecting =>
+app/views/tasks/index.html.erb:387: syntax error, unexpected ',', expecting =>
+app/views/tasks/index.html.erb:387: syntax error, unexpected ',', expecting =>
+app/views/tasks/index.html.erb:387: syntax error, unexpected ',', expecting =>
+app/views/tasks/index.html.erb:387: syntax error, unexpected ',', expecting =>
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:19:26 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1356)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.2ms | Allocations: 7375)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:20:02 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1360)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 7405)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:20:50 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1360)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.2ms | Allocations: 7391)
+
+
+Started DELETE "/tasks/4" for 127.0.0.1 at 2020-02-26 12:20:58 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KMK4FDCbXcgUy5AWTcjCyPs2oCHZm404OVlraFqL7PqDbSo4J7FB1M0u6SrrMZqbcBUNH2mbE+6oDerxAFFInQ==", "id"=>"4"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[35m (132.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 143ms (ActiveRecord: 133.0ms | Allocations: 3956)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:20:58 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.1ms | Allocations: 5653)
+
+
+Started DELETE "/tasks/5" for 127.0.0.1 at 2020-02-26 12:21:14 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zzlZR+cc/JsZwDYaxtSViozCXHsS2B0O7niwBtcD/NNklstr8Dbgh8AlTyZgLc3ZB+HxRaLYg9h/LDGfjdlYtA==", "id"=>"5"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[36mTask Destroy (3.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+  [1m[35m (56.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 72ms (ActiveRecord: 60.3ms | Allocations: 3821)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:21:15 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 552)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.1ms | Allocations: 5579)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 12:21:24 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 969)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.0ms | Allocations: 6127)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-26 12:21:30 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"authenticity_token"=>"hmToJPqKWH4woXF2WMDD7krpM1OSWLwYD1Nv4pSdnZ8ty3oI7aBEYulECEr+OZu9wcqebSJYIs6eB+57zkc5+A==", "task"=>{"name"=>"tarea1", "description"=>"tarea"}, "commit"=>"Save Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "tarea1"], ["description", "tarea"], ["created_at", "2020-02-26 11:21:30.462823"], ["updated_at", "2020-02-26 11:21:30.462823"]]
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[35m (122.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+Redirected to http://localhost:3000/tasks/6
+Completed 302 Found in 150ms (ActiveRecord: 123.3ms | Allocations: 3963)
+
+
+Started GET "/tasks/6" for 127.0.0.1 at 2020-02-26 12:21:30 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.2ms | Allocations: 5768)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:21:33 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms | Allocations: 5729)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:23:32 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 637)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.2ms | Allocations: 5654)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:23:37 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 637)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.1ms | Allocations: 5682)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:23:50 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 637)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.2ms | Allocations: 5689)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:31:16 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 4310)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 172ms (Views: 134.5ms | ActiveRecord: 1.2ms | Allocations: 17237)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 12:31:19 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2624)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 7819)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:31:22 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 647)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.2ms | Allocations: 5677)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 12:31:26 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 666)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 5698)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-26 12:31:35 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"authenticity_token"=>"gIctTR7PfkoUfyaYo/J5MwsD61JjaJdsvrkz7BtnUpwrKL9hCeViVs2aX6QFCyFggCBGbNNoCbov7bJ1Qb32+w==", "task"=>{"name"=>"Tarea 2", "description"=>"Tarea 2121"}, "commit"=>"Save Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tarea 2"], ["description", "Tarea 2121"], ["created_at", "2020-02-26 11:31:35.360748"], ["updated_at", "2020-02-26 11:31:35.360748"]]
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[35m (128.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+Redirected to http://localhost:3000/tasks/7
+Completed 302 Found in 140ms (ActiveRecord: 128.6ms | Allocations: 4199)
+
+
+Started GET "/tasks/7" for 127.0.0.1 at 2020-02-26 12:31:35 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.3ms | Allocations: 6139)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-26 12:31:42 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"authenticity_token"=>"gIctTR7PfkoUfyaYo/J5MwsD61JjaJdsvrkz7BtnUpwrKL9hCeViVs2aX6QFCyFggCBGbNNoCbov7bJ1Qb32+w==", "task"=>{"name"=>"", "description"=>"Tarea 2121"}, "commit"=>"Save Task"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 830)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 6674)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-26 12:33:07 +0100
+Processing by PageController#login as HTML
+  Rendering page/login.html.erb within layouts/application
+  Rendered page/login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 138)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 5656)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:33:10 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:357:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 717)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.1ms | Allocations: 5743)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:35:38 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 6358)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 7534)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:35:51 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered tasks/index.html.erb within layouts/application (Duration: 445.0ms | Allocations: 178237)
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 0.5ms | Allocations: 179398)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x00007f33b421f978>:0x00007f33b421e028>
+Did you mean?  @tasks):
+    352:             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+    353:           >
+    354:             <i class="fas fa-plus fa-sm text-white-50"></i> Add task <%=
+    355:             link_to'Add task', task_path(task), method: :delete %>
+    356:           </a>
+    357:         </div>
+    358: 
+  
+app/views/tasks/index.html.erb:355
+Started GET "/" for 127.0.0.1 at 2020-02-26 12:36:13 +0100
+Processing by PageController#login as HTML
+  Rendering page/login.html.erb within layouts/application
+  Rendered page/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 6150)
+
+
+Started GET "/task" for 127.0.0.1 at 2020-02-26 12:36:16 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/task"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:36:17 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 1375)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.2ms | Allocations: 7051)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:37:44 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered tasks/index.html.erb within layouts/application (Duration: 392.0ms | Allocations: 178241)
+Completed 500 Internal Server Error in 403ms (ActiveRecord: 0.4ms | Allocations: 179399)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x00007f33b81d99b0>:0x00007f33b81d8060>
+Did you mean?  @tasks):
+    353:           >
+    354:             <i class="fas fa-plus fa-sm text-white-50"></i> Add task</a
+    355:           >
+    356:           <%= link_to 'Delete', task_path(task), method: :delete, class:
+    357:           "dropdown-item", data: { confirm: 'Are you sure?' } %>
+    358:         </div>
+    359: 
+  
+app/views/tasks/index.html.erb:356
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:45:13 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3918)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.2ms | Allocations: 10372)
+
+
+Started POST "/tasks/6" for 127.0.0.1 at 2020-02-26 12:45:16 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/tasks/6"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 12:46:39 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1064)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 6291)
+
+
+Started GET "/tasks/edit/3" for 127.0.0.1 at 2020-02-26 12:46:43 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/tasks/edit/3"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/tasks/3/edit/" for 127.0.0.1 at 2020-02-26 12:46:59 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `edit'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1166)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Task with 'id'=3):
+  
+app/controllers/tasks_controller.rb:16:in `edit'
+Started GET "/tasks/6/edit/" for 127.0.0.1 at 2020-02-26 12:47:06 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `edit'
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1089)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.2ms | Allocations: 6796)
+
+
+Started GET "/tasks/" for 127.0.0.1 at 2020-02-26 12:48:25 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 157.8ms | Allocations: 85671)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.2ms | Allocations: 86840)
+
+
+  
+ActionView::Template::Error (undefined method `edit_article_path' for #<#<Class:0x00007f33981caf48>:0x00007f33981c81f8>
+Did you mean?  edit_task_path):
+    382:                 <a class="dropdown-item" href="#">View description</a>
+    383:                 <div class="dropdown-divider"></div>
+    384:                 <a class="dropdown-item" href="#">Mark as completed</a>
+    385:                 <%= link_to 'Edit', edit_article_path(task), class:
+    386:                 "dropdown-item"%> <%= link_to 'Delete', task_path(task), method:
+    387:                 :delete, class: "dropdown-item", data: { confirm: 'Are you
+    388:                 sure?' } %>
+  
+app/views/tasks/index.html.erb:385
+app/views/tasks/index.html.erb:358:in `each_with_index'
+app/views/tasks/index.html.erb:358
+Started GET "/tasks/" for 127.0.0.1 at 2020-02-26 12:48:36 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1441)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.2ms | Allocations: 7558)
+
+
+Started GET "/tasks/6/edit" for 127.0.0.1 at 2020-02-26 12:48:39 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `edit'
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1073)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 22.0ms | ActiveRecord: 0.2ms | Allocations: 6736)
+
+
+Started PATCH "/tasks/6" for 127.0.0.1 at 2020-02-26 12:48:43 +0100
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"BSudtb87TzFOauk0h9frE1GPAjiw9qdybkm/5i/o0y0JEFXEVqM+M4DhrsAeEEPDy0VApc6Gtybcukr4g0920w==", "task"=>{"name"=>"tarea1 editada", "description"=>"tarea"}, "commit"=>"Update Task", "id"=>"6"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:20:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:22:in `update'
+  [1m[36mTask Update (0.6ms)[0m  [1m[33mUPDATE "tasks" SET "name" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["name", "tarea1 editada"], ["updated_at", "2020-02-26 11:48:43.637935"], ["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:22:in `update'
+  [1m[35m (121.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:22:in `update'
+Redirected to http://localhost:3000/tasks/6
+Completed 302 Found in 146ms (ActiveRecord: 122.8ms | Allocations: 4630)
+
+
+Started GET "/tasks/6" for 127.0.0.1 at 2020-02-26 12:48:43 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.2ms | Allocations: 5760)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:48:49 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 782)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 5801)
+
+
+Started DELETE "/tasks/7" for 127.0.0.1 at 2020-02-26 12:49:00 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6MZLpvT/tbYfBffwfOSnuqJQAh4DSHQODvJAMkt3sQa/T0TzYk8t4Vsf9Qc96hEVMzJI5YuOHFggKhDlMAY0TA==", "id"=>"7"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:42:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:43:in `destroy'
+  [1m[36mTask Destroy (7.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/tasks_controller.rb:43:in `destroy'
+  [1m[35m (85.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:43:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 105ms (ActiveRecord: 92.3ms | Allocations: 3169)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:49:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 849)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.2ms | Allocations: 5873)
+
+
+Started GET "/tasks/6/edit" for 127.0.0.1 at 2020-02-26 12:49:03 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `edit'
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 744)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.1ms | Allocations: 6307)
+
+
+Started PATCH "/tasks/6" for 127.0.0.1 at 2020-02-26 12:49:06 +0100
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"GNqF/35HS5t8RE9KYuKvrNOprznOfDHmi4JIJl2ztpIU4U2Ol986mbLPCL77JQd8SWPtpLAMIbI5cb048RQTbA==", "task"=>{"name"=>"tarea1 editada2", "description"=>"tarea"}, "commit"=>"Update Task", "id"=>"6"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:20:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:22:in `update'
+  [1m[36mTask Update (0.4ms)[0m  [1m[33mUPDATE "tasks" SET "name" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["name", "tarea1 editada2"], ["updated_at", "2020-02-26 11:49:06.588088"], ["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:22:in `update'
+  [1m[35m (369.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:22:in `update'
+Redirected to http://localhost:3000/tasks/6
+Completed 302 Found in 380ms (ActiveRecord: 370.1ms | Allocations: 4524)
+
+
+Started GET "/tasks/6" for 127.0.0.1 at 2020-02-26 12:49:06 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 5507)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:49:11 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 669)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.2ms | Allocations: 5681)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:49:15 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 669)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.2ms | Allocations: 5681)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:49:16 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 669)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.1ms | Allocations: 5676)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:49:16 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 675)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.1ms | Allocations: 5700)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:49:17 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 669)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.2ms | Allocations: 5706)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 12:49:17 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 669)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 5679)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-26 13:06:39 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PageController#login as HTML
+  Rendering page/login.html.erb within layouts/application
+  Rendered page/login.html.erb within layouts/application (Duration: 2.5ms | Allocations: 250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 82.0ms | ActiveRecord: 0.0ms | Allocations: 12424)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:06:42 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 4253)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 1.1ms | Allocations: 10252)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:26:14 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:358:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1355)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.3ms | Allocations: 7409)
+
+
+Started GET "/tasks/6/edit" for 127.0.0.1 at 2020-02-26 13:26:18 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `edit'
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 7.3ms | Allocations: 2674)
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3008)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 18.4ms | ActiveRecord: 0.3ms | Allocations: 10945)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:27:32 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered tasks/index.html.erb within layouts/application (Duration: 343.0ms | Allocations: 180037)
+Completed 500 Internal Server Error in 346ms (ActiveRecord: 0.4ms | Allocations: 181201)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x00007fc3401800c8>:0x00005643e07bc9b8>
+Did you mean?  @tasks):
+    347:       <div class="container-fluid">
+    348:         <!-- Page Heading -->
+    349:         <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    350:           <%= link_to 'Add task', edit_task_path(task), class: "d-none
+    351:           d-sm-inline-block btn btn-sm btn-primary shadow-sm"%>
+    352: 
+    353:           <a
+  
+app/views/tasks/index.html.erb:350
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:29:21 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:361:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1402)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.1ms | Allocations: 7559)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 13:29:23 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 3.0ms | Allocations: 1021)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1346)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 6530)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:29:25 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:361:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 701)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.2ms | Allocations: 5718)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 13:29:26 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.5ms | Allocations: 679)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 759)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 5775)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:29:27 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:361:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.2ms | Allocations: 5714)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:30:13 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:361:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1432)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.2ms | Allocations: 7533)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 13:30:18 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 4.6ms | Allocations: 982)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1306)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 6474)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:30:35 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:361:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1386)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.2ms | Allocations: 7434)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 13:30:37 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 4.8ms | Allocations: 972)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 6455)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:31:52 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2790)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3947)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/tasks/new":String):
+    347:       <div class="container-fluid">
+    348:         <!-- Page Heading -->
+    349:         <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    350:           <%= link_to 'Add task', new_task_path, class: "d-none
+    351:           d-sm-inline-block btn btn-sm btn-primary shadow-sm" do %>
+    352:             <i class="fas fa-plus fa-sm text-white-50"></i> Add task</a
+    353:           >
+  
+app/views/tasks/index.html.erb:350
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:32:06 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:356:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.1ms | Allocations: 7480)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 13:32:09 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 3.4ms | Allocations: 982)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1306)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 6460)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:37:37 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:354:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1378)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.2ms | Allocations: 7415)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 13:37:50 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 3.4ms | Allocations: 972)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 6457)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:38:29 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:354:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.1ms | Allocations: 7415)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:39:14 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:355:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.1ms | Allocations: 7420)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:40:31 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:355:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1382)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.2ms | Allocations: 7490)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:41:08 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:355:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.2ms | Allocations: 7422)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 13:41:18 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 7.5ms | Allocations: 982)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1307)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.0ms | Allocations: 6465)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:43:53 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1505)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2670)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <div class="sidebar-brand-icon">
+        <!-- <div class="sidebar-brand-icon rotate-n-15">-->
+        <i class="fas fa-tasks"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">TODO App</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Tasks
+    </div>
+
+    <!-- Nav Item - Inbox -->
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-inbox"></i>
+        <span>Inbox</span></a>
+    </li>
+
+    <!-- Nav Item - Today -->
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-calendar-day"></i>
+        <span>Today</span></a>
+    </li>
+
+    <!-- Nav Item - This week -->
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-calendar-alt"></i>
+        <span>This week</span></a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+          aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Dashboard</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div>
+      </li>
+      -->
+
+    <!-- Nav Item - Utilities Collapse Menu 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Utilities</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="utilities-border.html">Borders</a>
+            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>
+      </li>
+      -->
+
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Collections
+    </div>
+
+    <!-- Nav Item - Projects Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+        aria-controls="collapseTwo">
+        <i class="fas fa-folder-open"></i>
+        <span>Projects</span>
+      </a>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="index.html">Create new project</a>
+          <h6 class="collapse-header">My projects</h6>
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block" />
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+  </ul>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+      <!-- Topbar -->
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Page Heading -->
+        <nav class="navbar navbar">
+          <span class="navbar-brand mb-0 h1">Inbox</span>
+        </nav>
+
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Nav Item - Search Dropdown (Visible Only XS) 
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                      aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+          -->
+
+          <!-- Nav Item - Alerts 
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+            -->
+
+          <!-- Nav Item - Messages 
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
+                      having.</div>
+                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                    <div class="status-indicator"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them
+                      sent to you?</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                    <div class="status-indicator bg-warning"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
+                      far, keep up the good work!</div>
+                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
+                      say this to all dogs, even if they aren't good...</div>
+                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+            -->
+
+          <div class="topbar-divider d-none d-sm-block"></div>
+
+          <!-- Nav Item - User Information -->
+          <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+              <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" />
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                Profile
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                Settings
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                Activity Log
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <%= link_to '<i class="fas fa-plus fa-sm text-white-50"></i> Add
+          task'.html_safe, new_task_path, class: "d-none d-sm-inline-block btn
+          btn-sm btn-primary shadow-sm" data: { toggle: "modal" }%>
+        </div>
+
+        <% @tasks.each_with_index do |task, index| %>
+        <!-- Collapsable Card Example -->
+        <div class="card shadow mb-4">
+          <!-- Card Header - Accordion -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+            <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">View description</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Mark as completed</a>
+                <%= link_to 'Edit', edit_task_path(task), class:
+                "dropdown-item"%> <%= link_to 'Delete', task_path(task), method:
+                :delete, class: "dropdown-item", data: { confirm: 'Are you
+                sure?' } %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Content - Collapse -->
+          <div class="collapse show" id="collapseTask<%= index +1 %>">
+            <div class="card-body">
+              <%= task.description %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Web Systems Development 2020</span>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Select "Logout" below if you are ready to end your current session.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+          Cancel
+        </button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+):
+1:    <!-- Page Wrapper -->
+2:    <div id="wrapper">
+3:      <!-- Sidebar -->
+4:      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+5:        <!-- Sidebar - Brand -->
+6:        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+7:          <div class="sidebar-brand-icon">
+8:            <!-- <div class="sidebar-brand-icon rotate-n-15">-->
+9:            <i class="fas fa-tasks"></i>
+10:          </div>
+11:          <div class="sidebar-brand-text mx-3">TODO App</div>
+12:        </a>
+13:    
+14:        <!-- Divider -->
+15:        <hr class="sidebar-divider" />
+16:    
+17:        <!-- Heading -->
+18:        <div class="sidebar-heading">
+19:          Tasks
+20:        </div>
+21:    
+22:        <!-- Nav Item - Inbox -->
+23:        <li class="nav-item active">
+24:          <a class="nav-link" href="index.html">
+25:            <i class="fas fa-inbox"></i>
+26:            <span>Inbox</span></a>
+27:        </li>
+28:    
+29:        <!-- Nav Item - Today -->
+30:        <li class="nav-item">
+31:          <a class="nav-link" href="index.html">
+32:            <i class="fas fa-calendar-day"></i>
+33:            <span>Today</span></a>
+34:        </li>
+35:    
+36:        <!-- Nav Item - This week -->
+37:        <li class="nav-item">
+38:          <a class="nav-link" href="index.html">
+39:            <i class="fas fa-calendar-alt"></i>
+40:            <span>This week</span></a>
+41:        </li>
+42:    
+43:        <!-- Nav Item - Pages Collapse Menu 
+44:          <li class="nav-item">
+45:            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+46:              aria-controls="collapseTwo">
+47:              <i class="fas fa-fw fa-cog"></i>
+48:              <span>Dashboard</span>
+49:            </a>
+50:            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+51:              <div class="bg-white py-2 collapse-inner rounded">
+52:                <h6 class="collapse-header">Custom Components:</h6>
+53:                <a class="collapse-item" href="buttons.html">Buttons</a>
+54:                <a class="collapse-item" href="cards.html">Cards</a>
+55:              </div>
+56:            </div>
+57:          </li>
+58:          -->
+59:    
+60:        <!-- Nav Item - Utilities Collapse Menu 
+61:          <li class="nav-item">
+62:            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+63:              aria-expanded="true" aria-controls="collapseUtilities">
+64:              <i class="fas fa-fw fa-wrench"></i>
+65:              <span>Utilities</span>
+66:            </a>
+67:            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+68:              <div class="bg-white py-2 collapse-inner rounded">
+69:                <h6 class="collapse-header">Custom Utilities:</h6>
+70:                <a class="collapse-item" href="utilities-color.html">Colors</a>
+71:                <a class="collapse-item" href="utilities-border.html">Borders</a>
+72:                <a class="collapse-item" href="utilities-animation.html">Animations</a>
+73:                <a class="collapse-item" href="utilities-other.html">Other</a>
+74:              </div>
+75:            </div>
+76:          </li>
+77:          -->
+78:    
+79:        <!-- Divider -->
+80:        <hr class="sidebar-divider" />
+81:    
+82:        <!-- Heading -->
+83:        <div class="sidebar-heading">
+84:          Collections
+85:        </div>
+86:    
+87:        <!-- Nav Item - Projects Collapse Menu -->
+88:        <li class="nav-item">
+89:          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+90:            aria-controls="collapseTwo">
+91:            <i class="fas fa-folder-open"></i>
+92:            <span>Projects</span>
+93:          </a>
+94:          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+95:            <div class="bg-white py-2 collapse-inner rounded">
+96:              <a class="collapse-item" href="index.html">Create new project</a>
+97:              <h6 class="collapse-header">My projects</h6>
+98:            </div>
+99:          </div>
+100:        </li>
+101:    
+102:        <!-- Divider -->
+103:        <hr class="sidebar-divider d-none d-md-block" />
+104:    
+105:        <!-- Sidebar Toggler (Sidebar) -->
+106:        <div class="text-center d-none d-md-inline">
+107:          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+108:        </div>
+109:      </ul>
+110:      <!-- End of Sidebar -->
+111:    
+112:      <!-- Content Wrapper -->
+113:      <div id="content-wrapper" class="d-flex flex-column">
+114:        <!-- Main Content -->
+115:        <div id="content">
+116:          <!-- Topbar -->
+117:          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+118:            <!-- Sidebar Toggle (Topbar) -->
+119:            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+120:              <i class="fa fa-bars"></i>
+121:            </button>
+122:    
+123:            <!-- Page Heading -->
+124:            <nav class="navbar navbar">
+125:              <span class="navbar-brand mb-0 h1">Inbox</span>
+126:            </nav>
+127:    
+128:            <!-- Topbar Navbar -->
+129:            <ul class="navbar-nav ml-auto">
+130:              <!-- Nav Item - Search Dropdown (Visible Only XS) 
+131:                <li class="nav-item dropdown no-arrow d-sm-none">
+132:                  <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+133:                    aria-haspopup="true" aria-expanded="false">
+134:                    <i class="fas fa-search fa-fw"></i>
+135:                  </a>
+136:                  <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+137:                    aria-labelledby="searchDropdown">
+138:                    <form class="form-inline mr-auto w-100 navbar-search">
+139:                      <div class="input-group">
+140:                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+141:                          aria-label="Search" aria-describedby="basic-addon2">
+142:                        <div class="input-group-append">
+143:                          <button class="btn btn-primary" type="button">
+144:                            <i class="fas fa-search fa-sm"></i>
+145:                          </button>
+146:                        </div>
+147:                      </div>
+148:                    </form>
+149:                  </div>
+150:                </li>
+151:              -->
+152:    
+153:              <!-- Nav Item - Alerts 
+154:                <li class="nav-item dropdown no-arrow mx-1">
+155:                  <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+156:                    aria-haspopup="true" aria-expanded="false">
+157:                    <i class="fas fa-bell fa-fw"></i>
+158:                    <span class="badge badge-danger badge-counter">3+</span>
+159:                  </a>
+160:                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+161:                    aria-labelledby="alertsDropdown">
+162:                    <h6 class="dropdown-header">
+163:                      Alerts Center
+164:                    </h6>
+165:                    <a class="dropdown-item d-flex align-items-center" href="#">
+166:                      <div class="mr-3">
+167:                        <div class="icon-circle bg-primary">
+168:                          <i class="fas fa-file-alt text-white"></i>
+169:                        </div>
+170:                      </div>
+171:                      <div>
+172:                        <div class="small text-gray-500">December 12, 2019</div>
+173:                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+174:                      </div>
+175:                    </a>
+176:                    <a class="dropdown-item d-flex align-items-center" href="#">
+177:                      <div class="mr-3">
+178:                        <div class="icon-circle bg-success">
+179:                          <i class="fas fa-donate text-white"></i>
+180:                        </div>
+181:                      </div>
+182:                      <div>
+183:                        <div class="small text-gray-500">December 7, 2019</div>
+184:                        $290.29 has been deposited into your account!
+185:                      </div>
+186:                    </a>
+187:                    <a class="dropdown-item d-flex align-items-center" href="#">
+188:                      <div class="mr-3">
+189:                        <div class="icon-circle bg-warning">
+190:                          <i class="fas fa-exclamation-triangle text-white"></i>
+191:                        </div>
+192:                      </div>
+193:                      <div>
+194:                        <div class="small text-gray-500">December 2, 2019</div>
+195:                        Spending Alert: We've noticed unusually high spending for your account.
+196:                      </div>
+197:                    </a>
+198:                    <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+199:                  </div>
+200:                </li>
+201:                -->
+202:    
+203:              <!-- Nav Item - Messages 
+204:                <li class="nav-item dropdown no-arrow mx-1">
+205:                  <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+206:                    aria-haspopup="true" aria-expanded="false">
+207:                    <i class="fas fa-envelope fa-fw"></i>
+208:    
+209:                    <span class="badge badge-danger badge-counter">7</span>
+210:                  </a>
+211:                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+212:                    aria-labelledby="messagesDropdown">
+213:                    <h6 class="dropdown-header">
+214:                      Message Center
+215:                    </h6>
+216:                    <a class="dropdown-item d-flex align-items-center" href="#">
+217:                      <div class="dropdown-list-image mr-3">
+218:                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+219:                        <div class="status-indicator bg-success"></div>
+220:                      </div>
+221:                      <div class="font-weight-bold">
+222:                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
+223:                          having.</div>
+224:                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+225:                      </div>
+226:                    </a>
+227:                    <a class="dropdown-item d-flex align-items-center" href="#">
+228:                      <div class="dropdown-list-image mr-3">
+229:                        <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+230:                        <div class="status-indicator"></div>
+231:                      </div>
+232:                      <div>
+233:                        <div class="text-truncate">I have the photos that you ordered last month, how would you like them
+234:                          sent to you?</div>
+235:                        <div class="small text-gray-500">Jae Chun · 1d</div>
+236:                      </div>
+237:                    </a>
+238:                    <a class="dropdown-item d-flex align-items-center" href="#">
+239:                      <div class="dropdown-list-image mr-3">
+240:                        <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+241:                        <div class="status-indicator bg-warning"></div>
+242:                      </div>
+243:                      <div>
+244:                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
+245:                          far, keep up the good work!</div>
+246:                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+247:                      </div>
+248:                    </a>
+249:                    <a class="dropdown-item d-flex align-items-center" href="#">
+250:                      <div class="dropdown-list-image mr-3">
+251:                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+252:                        <div class="status-indicator bg-success"></div>
+253:                      </div>
+254:                      <div>
+255:                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
+256:                          say this to all dogs, even if they aren't good...</div>
+257:                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+258:                      </div>
+259:                    </a>
+260:                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+261:                  </div>
+262:                </li>
+263:                -->
+264:    
+265:              <div class="topbar-divider d-none d-sm-block"></div>
+266:    
+267:              <!-- Nav Item - User Information -->
+268:              <li class="nav-item dropdown no-arrow">
+269:                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+270:                  aria-haspopup="true" aria-expanded="false">
+271:                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+272:                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" />
+273:                </a>
+274:                <!-- Dropdown - User Information -->
+275:                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+276:                  <a class="dropdown-item" href="#">
+277:                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+278:                    Profile
+279:                  </a>
+280:                  <a class="dropdown-item" href="#">
+281:                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+282:                    Settings
+283:                  </a>
+284:                  <a class="dropdown-item" href="#">
+285:                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+286:                    Activity Log
+287:                  </a>
+288:                  <div class="dropdown-divider"></div>
+289:                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+290:                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+291:                    Logout
+292:                  </a>
+293:                </div>
+294:              </li>
+295:            </ul>
+296:          </nav>
+297:          <!-- End of Topbar -->
+298:    
+299:          <!-- Begin Page Content -->
+300:          <div class="container-fluid">
+301:            <!-- Page Heading -->
+302:            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+303:              <%= link_to '<i class="fas fa-plus fa-sm text-white-50"></i> Add
+304:              task'.html_safe, new_task_path, class: "d-none d-sm-inline-block btn
+305:              btn-sm btn-primary shadow-sm" data: { toggle: "modal" }%>
+306:            </div>
+307:    
+308:            <% @tasks.each_with_index do |task, index| %>
+309:            <!-- Collapsable Card Example -->
+310:            <div class="card shadow mb-4">
+311:              <!-- Card Header - Accordion -->
+312:              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+313:                <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+314:                <div class="dropdown no-arrow">
+315:                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+316:                    aria-haspopup="true" aria-expanded="false">
+317:                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+318:                  </a>
+319:                  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+320:                    aria-labelledby="dropdownMenuLink">
+321:                    <a class="dropdown-item" href="#">View description</a>
+322:                    <div class="dropdown-divider"></div>
+323:                    <a class="dropdown-item" href="#">Mark as completed</a>
+324:                    <%= link_to 'Edit', edit_task_path(task), class:
+325:                    "dropdown-item"%> <%= link_to 'Delete', task_path(task), method:
+326:                    :delete, class: "dropdown-item", data: { confirm: 'Are you
+327:                    sure?' } %>
+328:                  </div>
+329:                </div>
+330:              </div>
+331:    
+332:              <!-- Card Content - Collapse -->
+333:              <div class="collapse show" id="collapseTask<%= index +1 %>">
+334:                <div class="card-body">
+335:                  <%= task.description %>
+336:                </div>
+337:              </div>
+338:            </div>
+339:            <% end %>
+340:          </div>
+341:          <!-- /.container-fluid -->
+342:        </div>
+343:        <!-- End of Main Content -->
+344:    
+345:        <!-- Footer -->
+346:        <footer class="sticky-footer bg-white">
+347:          <div class="container my-auto">
+348:            <div class="copyright text-center my-auto">
+349:              <span>Copyright &copy; Web Systems Development 2020</span>
+350:            </div>
+351:          </div>
+352:        </footer>
+353:        <!-- End of Footer -->
+354:      </div>
+355:      <!-- End of Content Wrapper -->
+356:    </div>
+357:    <!-- End of Page Wrapper -->
+358:    
+359:    <!-- Scroll to Top Button-->
+360:    <a class="scroll-to-top rounded" href="#page-top">
+361:      <i class="fas fa-angle-up"></i>
+362:    </a>
+363:    
+364:    <!-- Logout Modal-->
+365:    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+366:      aria-hidden="true">
+367:      <div class="modal-dialog" role="document">
+368:        <div class="modal-content">
+369:          <div class="modal-header">
+370:            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+371:            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+372:              <span aria-hidden="true">×</span>
+373:            </button>
+374:          </div>
+375:          <div class="modal-body">
+376:            Select "Logout" below if you are ready to end your current session.
+377:          </div>
+378:          <div class="modal-footer">
+379:            <button class="btn btn-secondary" type="button" data-dismiss="modal">
+380:              Cancel
+381:            </button>
+382:            <a class="btn btn-primary" href="login.html">Logout</a>
+383:          </div>
+384:        </div>
+385:      </div>
+386:    </div>
+  
+app/views/tasks/index.html.erb:305: syntax error, unexpected local variable or method, expecting ')'
+app/views/tasks/index.html.erb:305: syntax error, unexpected local variable or method, expecting ')'
+app/views/tasks/index.html.erb:305: syntax error, unexpected local variable or method, expecting ')'
+app/views/tasks/index.html.erb:305: syntax error, unexpected local variable or method, expecting ')'
+app/views/tasks/index.html.erb:305: syntax error, unexpected local variable or method, expecting ')'
+app/views/tasks/index.html.erb:305: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:44:02 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1327)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.1ms | Allocations: 7436)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:45:28 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1320)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 7361)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:47:38 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1313)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.2ms | Allocations: 7350)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:48:12 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1326)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 7363)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:48:20 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 701)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.2ms | Allocations: 5717)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:49:59 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1336)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.1ms | Allocations: 7386)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:50:16 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1333)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.1ms | Allocations: 7366)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:51:38 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1333)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.2ms | Allocations: 7365)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:51:45 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1319)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.2ms | Allocations: 7428)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:53:14 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2590)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 3750)
+
+
+  
+ActionView::Template::Error (Missing partial tasks/_new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/serglez/Escritorio/Universidad/WebDevelopment/todo_web_app/app/views"
+  * "/home/serglez/Escritorio/Universidad/WebDevelopment/todo_web_app/vendor/bundle/ruby/2.7.0/gems/actiontext-6.0.2.1/app/views"
+  * "/home/serglez/Escritorio/Universidad/WebDevelopment/todo_web_app/vendor/bundle/ruby/2.7.0/gems/actionmailbox-6.0.2.1/app/views"
+):
+    363: 
+    364: <div class="modal" tabindex="-1" role="dialog" id="new_task_modal">
+    365:   <div class="modal-dialog" role="document">
+    366:     <%= render 'tasks/new' %>
+    367:   </div>
+    368: </div>
+    369: 
+  
+app/views/tasks/index.html.erb:366
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:53:34 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2586)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms | Allocations: 3751)
+
+
+  
+ActionView::Template::Error (Missing partial tasks/_new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/serglez/Escritorio/Universidad/WebDevelopment/todo_web_app/app/views"
+  * "/home/serglez/Escritorio/Universidad/WebDevelopment/todo_web_app/vendor/bundle/ruby/2.7.0/gems/actiontext-6.0.2.1/app/views"
+  * "/home/serglez/Escritorio/Universidad/WebDevelopment/todo_web_app/vendor/bundle/ruby/2.7.0/gems/actionmailbox-6.0.2.1/app/views"
+):
+    363: 
+    364: <div class="modal" tabindex="-1" role="dialog" id="new_task_modal">
+    365:   <div class="modal-dialog" role="document">
+    366:     <%= render '/tasks/new' %>
+    367:   </div>
+    368: </div>
+    369: 
+  
+app/views/tasks/index.html.erb:366
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:54:52 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/_new.html.erb (Duration: 0.3ms | Allocations: 90)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1615)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.1ms | Allocations: 7720)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:56:05 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/_form.html.erb (Duration: 3.2ms | Allocations: 1986)
+  Rendered tasks/_new.html.erb (Duration: 4.7ms | Allocations: 2288)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3814)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms | Allocations: 4982)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with model: @task, local: true do |form| %> <% if @task.errors.any? %>
+    2: <div id="error_explanation">
+    3:   <h2>
+    4:     <%= pluralize(@task.errors.count, "error") %> prohibited this task from
+  
+app/views/tasks/_form.html.erb:1
+app/views/tasks/_form.html.erb:1
+app/views/tasks/_new.html.erb:9
+app/views/tasks/index.html.erb:366
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:57:09 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1319)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.1ms | Allocations: 7432)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-26 13:57:15 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1309)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.2ms | Allocations: 7344)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-26 13:57:16 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.8ms | Allocations: 972)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1288)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 6448)
+
+
