@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   match '/forgot-password', to: 'page#forgot-password',   via: 'get'
   match '/index',           to: 'tasks#index',   via: 'get'
  
-  resources :tasks
+  resources :tasks do
+    member do
+      post 'mark_as_completed'
+    end
+  end
+  
   
   root 'page#login'
 end

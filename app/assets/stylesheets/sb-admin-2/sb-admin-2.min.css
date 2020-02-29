@@ -12240,3 +12240,9 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%
 }
+
+/*Custom CSS*/
+#error_explanation > ul {
+    list-style-type: none;
+    padding-left: 0px;
+}

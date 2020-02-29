@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
     
   def index
-    @tasks = Task.all 
+    @pending_tasks = Task.where(:completed => false)
+    @completed_tasks_count = Task.where(:completed => true).count
   end 
   
   def show
@@ -32,6 +33,14 @@ class TasksController < ApplicationController
       render 'edit'
     end
   end
+
+  def mark_as_completed
+    @task = Task.find(params[:id])
+
+    @task.update_attributes(:completed => true)
+    @task.save
+    redirect_back(fallback_location: root_path)
+  end
    
 
   def create
@@ -54,7 +63,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-      params.require(:task).permit(:name, :description)
+      params.require(:task).permit(:name, :description, :priority, :deadline)
   end
 
         

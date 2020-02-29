@@ -8,6 +8,7 @@
 import "jquery"
 import "jquery-ujs"
 import "bootstrap"
+import "sb-admin-2/sb-admin-2.min"
 
 // require("@rails/ujs").start()
 require("turbolinks").start()
@@ -26,8 +27,8 @@ require("channels")
 require('@fortawesome/fontawesome-free/css/all.css')
 
 //Custom scripts for all pages
-require("sb-admin-2/sb-admin-2.min")
-require("sb-admin-2/sb-admin-2")
+//require("sb-admin-2/sb-admin-2.min")
+//require("sb-admin-2/sb-admin-2")
 
 //require("sb-admin-2/demo/chart-area-demo")
 //require("sb-admin-2/demo/chart-bar-demo")
