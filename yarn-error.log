@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add jquery-easing-rails
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add popper-js
 
 PATH: 
-  /opt/flutter/bin:/home/sergio/.rvm/gems/ruby-2.7.0/bin:/home/sergio/.rvm/gems/ruby-2.7.0@global/bin:/home/sergio/.rvm/rubies/ruby-2.7.0/bin:/home/sergio/.local/bin:/opt/flutter/bin:/home/sergio/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/sergio/.rvm/bin:/home/sergio/.rvm/bin:/snap/bin:/home/sergio/.rvm/bin
+  /opt/flutter/bin:/home/sergio/.rvm/gems/ruby-2.7.0/bin:/home/sergio/.rvm/gems/ruby-2.7.0@global/bin:/home/sergio/.rvm/rubies/ruby-2.7.0/bin:/home/sergio/.local/bin:/opt/flutter/bin:/home/sergio/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sergio/.rvm/bin:/snap/bin:/home/sergio/.rvm/bin:/home/sergio/.rvm/bin:/snap/bin:/home/sergio/.rvm/bin
 
 Yarn version: 
   1.21.1
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/jquery-easing-rails: Not found
+  Error: https://registry.yarnpkg.com/popper-js: Not found
       at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66947:18)
       at Request.self.callback (/usr/share/yarn/lib/cli.js:140665:22)
       at Request.emit (events.js:311:20)
@@ -31,6 +31,7 @@ npm manifest:
     "name": "todo",
     "private": true,
     "dependencies": {
+      "@fortawesome/fontawesome-free": "^5.12.1",
       "@rails/actioncable": "^6.0.0",
       "@rails/activestorage": "^6.0.0",
       "@rails/ujs": "^6.0.0",
@@ -38,8 +39,10 @@ npm manifest:
       "bootstrap": "^4.4.1",
       "chart": "^0.1.2",
       "jquery": "^3.4.1",
+      "jquery.easing": "^1.4.1",
       "popper.js": "^1.16.1",
-      "turbolinks": "^5.2.0"
+      "turbolinks": "^5.2.0",
+      "webpack-merge": "^4.2.2"
     },
     "version": "0.1.0",
     "devDependencies": {
@@ -802,6 +805,11 @@ Lockfile:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
     integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
+  
+  "@fortawesome/fontawesome-free@^5.12.1":
+    version "5.12.1"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.12.1.tgz#2a98fea9fbb8a606ddc79a4680034e9d5591c550"
+    integrity sha512-ZtjIIFplxncqxvogq148C3hBLQE+W3iJ8E4UvJ09zIJUgzwLcROsWwFDErVSXY2Plzao5J9KUYNHKHMEUYDMKw==
   
   "@rails/actioncable@^6.0.0":
     version "6.0.2"
@@ -3905,6 +3913,11 @@ Lockfile:
     dependencies:
       merge-stream "^2.0.0"
       supports-color "^7.0.0"
+  
+  jquery.easing@^1.4.1:
+    version "1.4.1"
+    resolved "https://registry.yarnpkg.com/jquery.easing/-/jquery.easing-1.4.1.tgz#47982c5836bd758fd48494923c4a101ef6e93e3b"
+    integrity sha1-R5gsWDa9dY/UhJSSPEoQHvbpPjs=
   
   jquery@^3.4.1:
     version "3.4.1"
@@ -7347,6 +7360,13 @@ Lockfile:
     dependencies:
       ansi-colors "^3.0.0"
       uuid "^3.3.2"
+  
+  webpack-merge@^4.2.2:
+    version "4.2.2"
+    resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-4.2.2.tgz#a27c52ea783d1398afd2087f547d7b9d2f43634d"
+    integrity sha512-TUE1UGoTX2Cd42j3krGYqObZbOD+xF7u28WB7tfUordytSjbWTIjK/8V0amkBfTYN4/pB/GIDlJZZ657BGG19g==
+    dependencies:
+      lodash "^4.17.15"
   
   webpack-sources@^1.0.0, webpack-sources@^1.0.1, webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-sources@^1.4.3:
     version "1.4.3"

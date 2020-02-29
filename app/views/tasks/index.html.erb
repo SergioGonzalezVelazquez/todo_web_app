@@ -301,10 +301,9 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <%= link_to '<i class="fas fa-plus fa-sm text-white-50"></i> Add
-          task'.html_safe, new_task_path, class: "d-none d-sm-inline-block btn
-          btn-sm btn-primary shadow-sm" %>
+          task'.html_safe, new_task_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-new-task', class: "d-none d-sm-inline-block btn
+          btn-sm btn-primary shadow-sm"}%>
         </div>
-
         <% @tasks.each_with_index do |task, index| %>
         <!-- Collapsable Card Example -->
         <div class="card shadow mb-4">
@@ -360,6 +359,11 @@
 <a class="scroll-to-top rounded" href="#page-top">
   <i class="fas fa-angle-up"></i>
 </a>
+
+<!-- New Task Modal -->
+<div class="modal" id="modal-new-task" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+</div>
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

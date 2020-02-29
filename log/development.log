@@ -9784,3 +9784,3413 @@ Processing by TasksController#new as HTML
 Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 6448)
 
 
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:30:57 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 10.0ms | Allocations: 4284)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 4726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 151ms (Views: 137.7ms | ActiveRecord: 0.4ms | Allocations: 92764)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:31:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1384)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 6503)
+
+
+Started DELETE "/tasks/6" for 127.0.0.1 at 2020-02-29 11:31:07 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lC0E8hdolJ5XApYSlsNGAwP1ZkqavRpLU0f0hCJjyD1ibeWWInVqexdjMxmIoaIc07KbaHE2xLyMo1JUJBH2eA==", "id"=>"6"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:42:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:43:in `destroy'
+  [1m[36mTask Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:43:in `destroy'
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:43:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 17ms (ActiveRecord: 11.5ms | Allocations: 4260)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:31:07 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 591)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 5554)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:36:57 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 611)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 5556)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:36:58 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 682)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 762)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 5710)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:37:20 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 590)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 5532)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:37:21 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.4ms | Allocations: 679)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 759)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 5721)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:37:35 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.3ms | Allocations: 679)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 759)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 5695)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:37:38 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 599)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 5528)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:37:56 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 590)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.2ms | Allocations: 5522)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:38:03 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 590)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 5526)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:38:27 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 4370)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 6944)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:38:49 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1682)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.4ms | Allocations: 13121)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:38:50 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 0.2ms | Allocations: 87)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1260)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 8873)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:40:05 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1083)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 6520)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:40:07 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.7ms | Allocations: 1008)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 2508)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:40:08 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.6ms | Allocations: 897)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1415)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:40:23 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 37.1ms | ActiveRecord: 0.3ms | Allocations: 14828)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:40:24 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.1ms | Allocations: 87)
+  Rendered tasks/new.html.erb (Duration: 1.3ms | Allocations: 1217)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2750)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:40:39 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 2.9ms | Allocations: 897)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 1412)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:43:08 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1238)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 7208)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:43:10 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 16.8ms | Allocations: 4321)
+  Rendered tasks/new.html.erb (Duration: 18.3ms | Allocations: 4606)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 6100)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with model: @task, local: true do |form| %> <% if @task.errors.any? %>
+    2: <div id="error_explanation">
+    3:   <h2>
+    4:     <%= pluralize(@task.errors.count, "error") %> prohibited this task from
+  
+app/views/tasks/_form.html.erb:1
+app/views/tasks/_form.html.erb:1
+app/views/tasks/new.html.erb:1
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:43:39 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 6627)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:43:41 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 6.0ms | Allocations: 4718)
+  Rendered tasks/new.html.erb (Duration: 6.9ms | Allocations: 5928)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 8932)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:44:03 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1082)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 6544)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:44:07 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 610)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 5540)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:44:08 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 608)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 5552)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:44:09 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 736)
+  Rendered tasks/new.html.erb (Duration: 1.8ms | Allocations: 1946)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 4690)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:47:22 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1241)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 7228)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:47:23 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 5.0ms | Allocations: 1012)
+  Rendered tasks/new.html.erb (Duration: 11.7ms | Allocations: 3167)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 4698)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:47:45 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1083)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 6520)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:47:46 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.8ms | Allocations: 1549)
+  Rendered tasks/new.html.erb (Duration: 0.9ms | Allocations: 1610)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2113)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    3:   <h3 id="myModalLabel">Modal header</h3>
+    4: </div>
+    5: <div class="modal-body">
+    6:   <%= form_with model: @task, local: true do |form| %> <% if @task.errors.any? %>
+    7:   <div id="error_explanation">
+    8:     <h2>
+    9:       <%= pluralize(@task.errors.count, "error") %> prohibited this task from
+  
+app/views/tasks/_form.html.erb:6
+app/views/tasks/_form.html.erb:6
+app/views/tasks/new.html.erb:1
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:48:08 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1232)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 7226)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:48:10 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered tasks/new.html.erb (Duration: 1.1ms | Allocations: 1200)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2715)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:49:08 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1230)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms | Allocations: 7187)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:49:10 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.7ms | Allocations: 85)
+  Rendered tasks/new.html.erb (Duration: 4.5ms | Allocations: 1202)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 2726)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:49:41 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 7189)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:50:11 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1234)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 7193)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:50:14 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.6ms | Allocations: 85)
+  Rendered tasks/new.html.erb (Duration: 4.4ms | Allocations: 1199)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 2704)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:50:38 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1245)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 7212)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:50:39 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered tasks/new.html.erb (Duration: 1.0ms | Allocations: 1199)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2710)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:50:40 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.6ms | Allocations: 896)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1409)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:50:42 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.6ms | Allocations: 896)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1414)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:50:43 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.7ms | Allocations: 896)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1396)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:50:43 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.7ms | Allocations: 896)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1414)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:50:44 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.6ms | Allocations: 896)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1407)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:50:44 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.7ms | Allocations: 896)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1398)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:50:58 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms | Allocations: 7207)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:51:04 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 608)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 5544)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:53:06 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1710)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 8001)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:53:07 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered tasks/new.html.erb (Duration: 1.2ms | Allocations: 1200)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 4965)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 11:53:39 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1233)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 7198)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:53:41 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered tasks/new.html.erb (Duration: 1.6ms | Allocations: 1323)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2852)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:53:43 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.8ms | Allocations: 1016)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 1547)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 11:53:45 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.html.erb
+  Rendered tasks/_form.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tasks/new.html.erb (Duration: 0.7ms | Allocations: 1016)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 1547)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:08:03 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1545)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 7857)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:08:04 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 1.3ms | Allocations: 1072)
+  Rendered tasks/new.js.erb (Duration: 3.0ms | Allocations: 3268)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 6871)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:08:28 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1234)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 7197)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:08:30 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 1.2ms | Allocations: 1006)
+  Rendered tasks/new.js.erb (Duration: 2.7ms | Allocations: 3197)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4721)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:10:51 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1233)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 7180)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:10:52 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 1.6ms | Allocations: 1006)
+  Rendered tasks/new.js.erb (Duration: 3.3ms | Allocations: 3198)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 4718)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:11:12 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1233)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.2ms | Allocations: 7207)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:11:13 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.6ms | Allocations: 1001)
+  Rendered tasks/new.js.erb (Duration: 3.7ms | Allocations: 3157)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4672)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:12:25 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1236)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 7223)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:12:27 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 4.9ms | Allocations: 1005)
+  Rendered tasks/new.js.erb (Duration: 11.5ms | Allocations: 3281)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 4813)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:12:28 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.8ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.0ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 3245)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:12:29 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.9ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.2ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3256)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:12:29 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.2ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3246)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:12:30 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.9ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.1ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 3238)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:12:30 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.1ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 3246)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:12:31 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.2ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3245)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:12:54 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1234)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 7190)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:12:55 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 4.9ms | Allocations: 1004)
+  Rendered tasks/new.js.erb (Duration: 107.3ms | Allocations: 85639)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.0ms | Allocations: 87146)
+
+
+  
+ActionView::Template::Error (undefined method `js' for #<#<Class:0x00007ff52018c5a0>:0x00007ff520035fa8>
+Did you mean?  j):
+    1: $("#modal-new-task").html("<%= js(render 'form') %>");
+  
+app/views/tasks/new.js.erb:1
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:13:11 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1238)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 7247)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:13:12 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 3.1ms | Allocations: 1004)
+  Rendered tasks/new.js.erb (Duration: 6.8ms | Allocations: 3281)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 4825)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:13:14 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.9ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.3ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3239)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:13:15 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.8ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.1ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 3256)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:13:16 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.3ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3244)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:14:10 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1236)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 7187)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:14:11 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.2ms | Allocations: 1004)
+  Rendered tasks/new.js.erb (Duration: 2.8ms | Allocations: 3278)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4790)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:14:12 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.9ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.2ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3249)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:14:13 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.1ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.4ms | Allocations: 2729)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3244)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:15:23 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1237)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 7190)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:15:24 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 4.8ms | Allocations: 1005)
+  Rendered tasks/new.js.erb (Duration: 11.5ms | Allocations: 3282)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 4816)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:15:51 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1231)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 7190)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:16:49 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1237)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 7197)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:16:50 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 4.9ms | Allocations: 1001)
+  Rendered tasks/new.js.erb (Duration: 11.1ms | Allocations: 3155)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 4684)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:21:09 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1706)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 7999)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:21:10 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 1.6ms | Allocations: 1072)
+  Rendered tasks/new.js.erb (Duration: 3.2ms | Allocations: 3259)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 7042)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:21:12 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 0.8ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.5ms | Allocations: 2653)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 3174)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:21:13 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 0.8ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.2ms | Allocations: 2653)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3165)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:21:13 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 0.9ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 4.3ms | Allocations: 2653)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3183)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:21:49 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 0.9ms | Allocations: 679)
+  Rendered tasks/new.js.erb (Duration: 2.2ms | Allocations: 2653)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3187)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:24:13 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1710)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 8051)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:24:14 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 0.2ms | Allocations: 86)
+  Rendered tasks/new.js.erb (Duration: 1.2ms | Allocations: 1219)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 4963)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:25:29 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1886)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: c2ffaac973f9a7955079
+Version: webpack 4.41.6
+Time: 1309ms
+Built at: 2020-02-29 12:25:31
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-e30a18fa70d96ca274a9.js  1.03 MiB  application  [emitted] [immutable]  application
+  js/application-e30a18fa70d96ca274a9.js.map   1.1 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-e30a18fa70d96ca274a9.js js/application-e30a18fa70d96ca274a9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.18 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.24 KiB {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 132 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'twitter/bootstrap' in '/home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 14:0-28
+
+Completed 200 OK in 2018ms (Views: 2012.6ms | ActiveRecord: 0.3ms | Allocations: 16010)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:26:22 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 622)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: bce3aa21858d5abec8e4
+Version: webpack 4.41.6
+Time: 1375ms
+Built at: 2020-02-29 12:26:24
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-0fe708cd85bf9b740557.js  1.24 MiB  application  [emitted] [immutable]  application
+  js/application-0fe708cd85bf9b740557.js.map  1.35 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-0fe708cd85bf9b740557.js js/application-0fe708cd85bf9b740557.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.17 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.24 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 134 hidden modules
+
+Completed 200 OK in 2050ms (Views: 2049.4ms | ActiveRecord: 0.1ms | Allocations: 6858)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:26:26 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 0.3ms | Allocations: 87)
+  Rendered tasks/new.js.erb (Duration: 2.5ms | Allocations: 1234)
+Completed 200 OK in 18ms (Views: 5.2ms | ActiveRecord: 1.0ms | Allocations: 5255)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:26:31 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 622)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: 2b4412a93d56a4c728f4
+Version: webpack 4.41.6
+Time: 1441ms
+Built at: 2020-02-29 12:26:34
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-72512d4a4bc6acd45ce4.js  1.24 MiB  application  [emitted] [immutable]  application
+  js/application-72512d4a4bc6acd45ce4.js.map  1.35 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-72512d4a4bc6acd45ce4.js js/application-72512d4a4bc6acd45ce4.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.14 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.24 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 133 hidden modules
+
+Completed 200 OK in 2159ms (Views: 2158.1ms | ActiveRecord: 0.1ms | Allocations: 6844)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:26:35 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_new.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tasks/new.js.erb (Duration: 2.7ms | Allocations: 916)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1454)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:27:24 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 608)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms | Allocations: 11898)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-modal' with type 'text/css'
+Checked in these paths: 
+  /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/app/assets/config
+  /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/app/assets/images
+  /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/app/assets/stylesheets
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/jquery-easing-rails-0.0.2/vendor/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/actioncable-6.0.2.1/app/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/activestorage-6.0.2.1/app/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/actionview-6.0.2.1/lib/assets/compiled
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/node_modules
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/bootstrap-sass-3.4.1/assets/images):
+     7:   <%= csrf_meta_tags %>
+     8:   <%= csp_meta_tag %>
+     9: 
+    10:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12: 
+    13:   <link
+  
+app/assets/stylesheets/application.css:18
+app/views/layouts/application.html.erb:10
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:28:21 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 629)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 8591)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-modal' with type 'text/css'
+Checked in these paths: 
+  /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/app/assets/config
+  /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/app/assets/images
+  /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/app/assets/stylesheets
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/jquery-easing-rails-0.0.2/vendor/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/actioncable-6.0.2.1/app/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/activestorage-6.0.2.1/app/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/actionview-6.0.2.1/lib/assets/compiled
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/node_modules
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/sergio/.rvm/gems/ruby-2.7.0/gems/bootstrap-sass-3.4.1/assets/images):
+     7:   <%= csrf_meta_tags %>
+     8:   <%= csp_meta_tag %>
+     9: 
+    10:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12: 
+    13:   <link
+  
+app/assets/stylesheets/application.css:18
+app/views/layouts/application.html.erb:10
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:28:28 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 607)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: bce3aa21858d5abec8e4
+Version: webpack 4.41.6
+Time: 1351ms
+Built at: 2020-02-29 12:28:30
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-0fe708cd85bf9b740557.js  1.24 MiB  application  [emitted] [immutable]  application
+  js/application-0fe708cd85bf9b740557.js.map  1.35 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-0fe708cd85bf9b740557.js js/application-0fe708cd85bf9b740557.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.17 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.24 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 134 hidden modules
+
+Completed 200 OK in 2091ms (Views: 2090.6ms | ActiveRecord: 0.1ms | Allocations: 23400)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:31:01 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1236)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 7184)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:31:03 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 6.6ms | Allocations: 5074)
+  Rendered tasks/new.js.erb (Duration: 8.2ms | Allocations: 7280)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 8809)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:31:49 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:308:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1236)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms | Allocations: 7184)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:31:50 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.3ms | Allocations: 1020)
+  Rendered tasks/new.js.erb (Duration: 2.8ms | Allocations: 3220)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4750)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:31:57 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.9ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 2.1ms | Allocations: 2655)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 3176)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:33:30 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:313:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1249)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 7188)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:34:05 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1235)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: f91ddcffddadc140bd4f
+Version: webpack 4.41.6
+Time: 1412ms
+Built at: 2020-02-29 12:34:07
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-42f88eec65e70e1cae32.js  1.24 MiB  application  [emitted] [immutable]  application
+  js/application-42f88eec65e70e1cae32.js.map  1.35 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-42f88eec65e70e1cae32.js js/application-42f88eec65e70e1cae32.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.17 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.3 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 134 hidden modules
+
+Completed 200 OK in 2093ms (Views: 2092.1ms | ActiveRecord: 0.1ms | Allocations: 8463)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:42:17 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1795)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: baadc750722c49956f9b
+Version: webpack 4.41.6
+Time: 1411ms
+Built at: 2020-02-29 12:42:19
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-0a1113d46f48838b0aff.js   986 KiB  application  [emitted] [immutable]  application
+  js/application-0a1113d46f48838b0aff.js.map  1.02 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-0a1113d46f48838b0aff.js js/application-0a1113d46f48838b0aff.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.28 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.3 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 133 hidden modules
+
+Completed 200 OK in 2179ms (Views: 2172.6ms | ActiveRecord: 0.9ms | Allocations: 22518)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:42:21 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 4.2ms | Allocations: 2678)
+  Rendered tasks/new.js.erb (Duration: 6.7ms | Allocations: 4888)
+Completed 200 OK in 16ms (Views: 8.5ms | ActiveRecord: 0.5ms | Allocations: 8912)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 12:42:48 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 446)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 5900)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 12:42:49 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4915)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 12:42:50 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 4926)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 12:43:20 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: 27ff26e5cb22cd2bac66
+Version: webpack 4.41.6
+Time: 1275ms
+Built at: 2020-02-29 12:43:22
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-6378a8665d970365f489.js   985 KiB  application  [emitted] [immutable]  application
+  js/application-6378a8665d970365f489.js.map  1.02 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-6378a8665d970365f489.js js/application-6378a8665d970365f489.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.21 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.3 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 133 hidden modules
+
+Completed 200 OK in 1983ms (Views: 1982.0ms | ActiveRecord: 0.0ms | Allocations: 6187)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:43:25 +0100
+Processing by TasksController#new as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 1403)
+
+
+  
+ActionController::UnknownFormat (TasksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 12:43:36 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 4952)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 12:43:40 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 4919)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 12:43:41 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 4910)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:43:52 +0100
+Processing by TasksController#new as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 707)
+
+
+  
+ActionController::UnknownFormat (TasksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:34 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 6084)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:46:43 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1247)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 6308)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:45 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 5.0ms | Allocations: 1027)
+  Rendered tasks/new.js.erb (Duration: 10.0ms | Allocations: 3222)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 4794)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:47 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.8ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 2.4ms | Allocations: 2655)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 3186)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:48 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 3.2ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 4.6ms | Allocations: 2655)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3177)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:49 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.8ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 2.1ms | Allocations: 2655)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 3185)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:49 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.8ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 4.3ms | Allocations: 2655)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3183)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:50 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.9ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 2.1ms | Allocations: 2655)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 3182)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:51 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 3.4ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 8.6ms | Allocations: 2655)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 3179)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:46:52 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 3.4ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 8.5ms | Allocations: 2655)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 3181)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:47:14 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1091)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 6536)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:47:15 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.3ms | Allocations: 746)
+  Rendered tasks/new.js.erb (Duration: 2.9ms | Allocations: 2716)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 5479)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:47:17 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 2.3ms | Allocations: 2655)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3168)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:47:34 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 616)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: baadc750722c49956f9b
+Version: webpack 4.41.6
+Time: 1262ms
+Built at: 2020-02-29 12:47:36
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-0a1113d46f48838b0aff.js   986 KiB  application  [emitted] [immutable]  application
+  js/application-0a1113d46f48838b0aff.js.map  1.02 MiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-0a1113d46f48838b0aff.js js/application-0a1113d46f48838b0aff.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.28 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.3 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 133 hidden modules
+
+Completed 200 OK in 1949ms (Views: 1947.4ms | ActiveRecord: 0.2ms | Allocations: 6814)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:47:38 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.7ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 4.2ms | Allocations: 2655)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3175)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:48:08 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 608)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: 9ba2783a86bef5c52129
+Version: webpack 4.41.6
+Time: 1263ms
+Built at: 2020-02-29 12:48:10
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-ada0df497c73547491eb.js   957 KiB  application  [emitted] [immutable]  application
+  js/application-ada0df497c73547491eb.js.map  1010 KiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-ada0df497c73547491eb.js js/application-ada0df497c73547491eb.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.28 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.3 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 132 hidden modules
+
+Completed 200 OK in 1960ms (Views: 1959.2ms | ActiveRecord: 0.1ms | Allocations: 6795)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:48:18 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 2.3ms | Allocations: 2655)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 3174)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:48:43 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 608)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: cd5e6630a72d0e27caa3
+Version: webpack 4.41.6
+Time: 1275ms
+Built at: 2020-02-29 12:48:45
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-f37461ef59c4f33d5c10.js   956 KiB  application  [emitted] [immutable]  application
+  js/application-f37461ef59c4f33d5c10.js.map  1010 KiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-f37461ef59c4f33d5c10.js js/application-f37461ef59c4f33d5c10.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.24 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.28 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 132 hidden modules
+
+Completed 200 OK in 1973ms (Views: 1972.3ms | ActiveRecord: 0.1ms | Allocations: 6810)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:48:54 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 616)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: 6756b1642c3f94b55564
+Version: webpack 4.41.6
+Time: 1281ms
+Built at: 2020-02-29 12:48:56
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-2846e619cf4c8e427919.js   956 KiB  application  [emitted] [immutable]  application
+  js/application-2846e619cf4c8e427919.js.map  1010 KiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-2846e619cf4c8e427919.js js/application-2846e619cf4c8e427919.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.24 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.28 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 132 hidden modules
+
+Completed 200 OK in 1976ms (Views: 1975.1ms | ActiveRecord: 0.1ms | Allocations: 6819)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:50:07 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 608)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/sergio/Escritorio/UNIVERSIDAD/WebDevelopment/todo_web_app/public/packs
+[Webpacker] Hash: c1302cb2e52c23c7189e
+Version: webpack 4.41.6
+Time: 1263ms
+Built at: 2020-02-29 12:50:09
+                                       Asset      Size       Chunks                         Chunk Names
+      js/application-8e35fd3a794aea69fc24.js   956 KiB  application  [emitted] [immutable]  application
+  js/application-8e35fd3a794aea69fc24.js.map  1010 KiB  application  [emitted] [dev]        application
+                               manifest.json  1.69 KiB               [emitted]              
+ media/webfonts/fa-brands-400-067595ad.woff2  74.8 KiB               [emitted]              
+   media/webfonts/fa-brands-400-57dcda6f.eot   130 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9d67fa14.svg   699 KiB               [emitted]              
+   media/webfonts/fa-brands-400-9ec698d1.ttf   130 KiB               [emitted]              
+  media/webfonts/fa-brands-400-b564da88.woff  87.7 KiB               [emitted]              
+  media/webfonts/fa-regular-400-3351f435.eot  33.6 KiB               [emitted]              
+media/webfonts/fa-regular-400-4165c268.woff2  13.3 KiB               [emitted]              
+  media/webfonts/fa-regular-400-5d086178.svg   141 KiB               [emitted]              
+ media/webfonts/fa-regular-400-73cf49a2.woff  16.4 KiB               [emitted]              
+  media/webfonts/fa-regular-400-a0e3ac82.ttf  33.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-0724bb8b.svg   829 KiB               [emitted]              
+  media/webfonts/fa-solid-900-55eb2a60.woff2  74.3 KiB               [emitted]              
+    media/webfonts/fa-solid-900-75f38a15.ttf   189 KiB               [emitted]              
+    media/webfonts/fa-solid-900-89e02bae.eot   190 KiB               [emitted]              
+   media/webfonts/fa-solid-900-cdfec5cf.woff  96.7 KiB               [emitted]              
+Entrypoint application = js/application-8e35fd3a794aea69fc24.js js/application-8e35fd3a794aea69fc24.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.24 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.js] 1.47 KiB {application} [built]
+[./app/javascript/sb-admin-2/sb-admin-2.min.js] 1.24 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 132 hidden modules
+
+Completed 200 OK in 1984ms (Views: 1983.0ms | ActiveRecord: 0.1ms | Allocations: 6806)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:50:33 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1239)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.2ms | Allocations: 7184)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:50:34 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.5ms | Allocations: 1007)
+  Rendered tasks/new.js.erb (Duration: 3.4ms | Allocations: 3202)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 4734)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:50:43 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1234)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 7171)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:50:45 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.3ms | Allocations: 1007)
+  Rendered tasks/new.js.erb (Duration: 2.8ms | Allocations: 3201)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 4712)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:53:44 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 7172)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:53:46 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered tasks/new.js.erb (Duration: 1.4ms | Allocations: 1667)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3179)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:54:25 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1228)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 7150)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:56:27 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1231)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 7171)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:56:28 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.5ms | Allocations: 1262)
+  Rendered tasks/new.js.erb (Duration: 1.0ms | Allocations: 1548)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3049)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Create new task</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <%= form_with model: @task, remote: true do |form| %> 
+        <% if @task.errors.any? %>
+        <div id="error_explanation">
+        <h2>
+         <%= pluralize(@task.errors.count, "error") %> prohibited this task from
+        being saved:
+        </h2>
+      <ul>
+        <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </div>
+</div>
+
+):
+1:    <div class="modal-dialog modal-dialog-centered" role="document">
+2:      <div class="modal-content">
+3:        <div class="modal-header">
+4:          <h5 class="modal-title" id="exampleModalLongTitle">Create new task</h5>
+5:          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+6:            <span aria-hidden="true">&times;</span>
+7:          </button>
+8:        </div>
+9:        <div class="modal-body">
+10:          <%= form_with model: @task, remote: true do |form| %> 
+11:            <% if @task.errors.any? %>
+12:            <div id="error_explanation">
+13:            <h2>
+14:             <%= pluralize(@task.errors.count, "error") %> prohibited this task from
+15:            being saved:
+16:            </h2>
+17:          <ul>
+18:            <% @task.errors.full_messages.each do |msg| %>
+19:            <li><%= msg %></li>
+20:            <% end %>
+21:          </ul>
+22:        </div>
+23:        <% end %>
+24:    
+25:        </div>
+26:        <div class="modal-footer">
+27:          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+28:          <button type="button" class="btn btn-primary">Save changes</button>
+29:        </div>
+30:      </div>
+31:    </div>
+  
+app/views/tasks/_form.html.erb:34: syntax error, unexpected end-of-input, expecting `end'
+app/views/tasks/_form.html.erb:34: syntax error, unexpected end-of-input, expecting `end'
+app/views/tasks/_form.html.erb:34: syntax error, unexpected end-of-input, expecting `end'
+app/views/tasks/_form.html.erb:34: syntax error, unexpected end-of-input, expecting `end'
+app/views/tasks/_form.html.erb:34: syntax error, unexpected end-of-input, expecting `end'
+app/views/tasks/_form.html.erb:34: syntax error, unexpected end-of-input, expecting `end'
+app/views/tasks/new.js.erb:1
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:56:33 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 612)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 5524)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:56:47 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1232)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.2ms | Allocations: 7185)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:56:48 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.3ms | Allocations: 1007)
+  Rendered tasks/new.js.erb (Duration: 5.4ms | Allocations: 3202)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4728)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 12:56:54 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"vTIl7zEbaFPRclEtTDbkNclpfOr5iox1HVPV1Yv/Tp9CCfjJKC6lZCONFFR23ZlCJgY9+VS48t/m9+Lpa3eWXQ==", "task"=>{"name"=>"", "description"=>""}, "commit"=>"Create Task"}
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 845)
+  Rendered tasks/new.js.erb (Duration: 3.0ms | Allocations: 3439)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 5077)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:56:58 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 610)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5526)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:57:25 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1233)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 7179)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:57:26 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered tasks/new.js.erb (Duration: 1.6ms | Allocations: 1949)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 3471)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:57:34 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 613)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 5532)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:57:43 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1228)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.2ms | Allocations: 7166)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:57:44 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered tasks/new.js.erb (Duration: 1.5ms | Allocations: 1646)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3164)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:58:01 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 613)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 5522)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 12:58:37 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 7175)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 12:58:39 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.3ms | Allocations: 95)
+  Rendered tasks/new.js.erb (Duration: 1.6ms | Allocations: 1729)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3245)
+
+
+Started GET "/login.html" for 127.0.0.1 at 2020-02-29 12:59:07 +0100
+Processing by PageController#login as HTML
+  Rendering page/login.html.erb within layouts/application
+  Rendered page/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 138)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5541)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:01:21 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1232)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.2ms | Allocations: 7179)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:01:22 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered tasks/new.js.erb (Duration: 2.7ms | Allocations: 1729)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3245)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:01:24 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tasks/new.js.erb (Duration: 4.3ms | Allocations: 1416)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 1928)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:01:50 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1231)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.2ms | Allocations: 7168)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:01:51 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered tasks/new.js.erb (Duration: 1.3ms | Allocations: 1647)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 3177)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:03:07 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 7155)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:03:07 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.3ms | Allocations: 92)
+  Rendered tasks/new.js.erb (Duration: 2.4ms | Allocations: 1646)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3162)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:03:21 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 7169)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:03:21 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.1ms | Allocations: 92)
+  Rendered tasks/new.js.erb (Duration: 1.2ms | Allocations: 1646)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 3178)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:04:27 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1230)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms | Allocations: 7164)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:04:29 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.7ms | Allocations: 421)
+  Rendered tasks/new.js.erb (Duration: 2.0ms | Allocations: 2255)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3777)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:05:05 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 7175)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:05:06 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.6ms | Allocations: 437)
+  Rendered tasks/new.js.erb (Duration: 2.0ms | Allocations: 2335)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3876)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:05:24 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 7171)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:05:25 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.2ms | Allocations: 856)
+  Rendered tasks/new.js.erb (Duration: 3.1ms | Allocations: 3312)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4834)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:05:49 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 7176)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:05:50 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.6ms | Allocations: 1024)
+  Rendered tasks/new.js.erb (Duration: 3.9ms | Allocations: 3619)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 5149)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:05:52 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"0BbC+SAD3aoFLodOHoDEnrdXCPk0qNCAbQ1SxGoDkqovLR/fOTYQnffRwjcka7npWDhJ6pmariqWqWX4iotKaA==", "task"=>{"name"=>"", "description"=>""}, "commit"=>"Create Task"}
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.9ms | Allocations: 829)
+  Rendered tasks/new.js.erb (Duration: 2.7ms | Allocations: 3803)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 5275)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:06:05 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.1ms | Allocations: 685)
+  Rendered tasks/new.js.erb (Duration: 5.1ms | Allocations: 3055)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3568)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:06:12 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"lHcQ1YkwMJ1OiEwze4VzX2JCDXybfgfBg+yjy93FNt1rTM3zkAX9qrx3CUpBbg4ojS1MbzZMeWt4SJT3PU3uHw==", "task"=>{"name"=>"task", "description"=>"tsak"}, "commit"=>"Create Task"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "task"], ["description", "tsak"], ["created_at", "2020-02-29 12:06:12.534653"], ["updated_at", "2020-02-29 12:06:12.534653"]]
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+Redirected to http://localhost:3000/tasks/8
+Completed 200 OK in 8ms (ActiveRecord: 4.8ms | Allocations: 3713)
+
+
+Started GET "/tasks/8" for 127.0.0.1 at 2020-02-29 13:06:12 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 7933)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:06:18 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 725)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 5632)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:08:07 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1339)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.3ms | Allocations: 7286)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:08:08 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 180.4ms | Allocations: 166309)
+  Rendered tasks/new.js.erb (Duration: 181.2ms | Allocations: 166599)
+Completed 500 Internal Server Error in 188ms (ActiveRecord: 0.0ms | Allocations: 168100)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00005599803aa6a0>:0x000055997e5d9dd8>):
+    36:     <div class="modal-footer">
+    37:       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    38:       <p>
+    39:         <%= f.submit 'Save changes', :class => 'btn btn-primary' %>
+    40:       </p>
+    41: 
+    42:     </div>
+  
+app/views/tasks/_form.html.erb:39
+app/views/tasks/_form.html.erb:3
+app/views/tasks/new.js.erb:1
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:08:26 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 719)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.2ms | Allocations: 5641)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:08:27 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 182.0ms | Allocations: 165947)
+  Rendered tasks/new.js.erb (Duration: 182.2ms | Allocations: 166008)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 0.0ms | Allocations: 166507)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00005599803aa6a0>:0x00007f4c6c14e410>):
+    36:     <div class="modal-footer">
+    37:       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    38:       <p>
+    39:         <%= f.submit 'Save changes', :class => 'btn btn-primary' %>
+    40:       </p>
+    41: 
+    42:     </div>
+  
+app/views/tasks/_form.html.erb:39
+app/views/tasks/_form.html.erb:3
+app/views/tasks/new.js.erb:1
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:08:41 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1343)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 7282)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:08:42 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.3ms | Allocations: 1027)
+  Rendered tasks/new.js.erb (Duration: 5.7ms | Allocations: 3622)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 5164)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:09:08 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 7274)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:09:09 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 144.3ms | Allocations: 166299)
+  Rendered tasks/new.js.erb (Duration: 144.8ms | Allocations: 166584)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 0.0ms | Allocations: 168078)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f4c6c2e67f0>:0x00007f4c6c1339d0>):
+    36:     <div class="modal-footer">
+    37:       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    38: 
+    39:       <%= f.submit class: 'btn btn-default' %>
+    40: 
+    41: 
+    42:     </div>
+  
+app/views/tasks/_form.html.erb:39
+app/views/tasks/_form.html.erb:3
+app/views/tasks/new.js.erb:1
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:09:30 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1343)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms | Allocations: 7284)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:09:32 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.5ms | Allocations: 1033)
+  Rendered tasks/new.js.erb (Duration: 3.7ms | Allocations: 3648)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 5178)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:09:41 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 0.9ms | Allocations: 694)
+  Rendered tasks/new.js.erb (Duration: 2.5ms | Allocations: 3084)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 3604)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:10:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.1ms | Allocations: 7280)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:10:02 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.9ms | Allocations: 1033)
+  Rendered tasks/new.js.erb (Duration: 4.2ms | Allocations: 3647)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 5173)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:10:54 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.1ms | Allocations: 7270)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:10:55 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.1ms | Allocations: 1033)
+  Rendered tasks/new.js.erb (Duration: 4.9ms | Allocations: 3587)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 5099)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:12:22 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 7272)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:12:23 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 722)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 5634)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:12:25 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.9ms | Allocations: 825)
+  Rendered tasks/new.js.erb (Duration: 5.4ms | Allocations: 3639)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 5150)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:13:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 7282)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:13:01 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.9ms | Allocations: 983)
+  Rendered tasks/new.js.erb (Duration: 4.7ms | Allocations: 3799)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 5328)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:13:19 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 7277)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:13:20 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.4ms | Allocations: 974)
+  Rendered tasks/new.js.erb (Duration: 5.6ms | Allocations: 3649)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 5173)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:15:19 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 7272)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:15:20 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 1351)
+  Rendered tasks/new.js.erb (Duration: 1.8ms | Allocations: 1636)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3123)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- Modal -->
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <%= form_with model: @task, remote: true do |form| %>
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Add new task</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <% if @task.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@task.errors.count, "error") %> prohibited this task from
+          being saved:
+        </h2>
+        <ul>
+          <% @task.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <div class="form-group">
+        <%= form.label :name %><br />
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter task name">
+      </div>
+
+      <div class="form-group">
+        <%= form.label :description %><br />
+        <%= form.text_area :description  class: 'form-control' %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+):
+1:    <!-- Modal -->
+2:    <div class="modal-dialog modal-dialog-centered" role="document">
+3:      <div class="modal-content">
+4:        <%= form_with model: @task, remote: true do |form| %>
+5:        <div class="modal-header">
+6:          <h5 class="modal-title" id="exampleModalLongTitle">Add new task</h5>
+7:          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+8:            <span aria-hidden="true">&times;</span>
+9:          </button>
+10:        </div>
+11:        <div class="modal-body">
+12:    
+13:          <% if @task.errors.any? %>
+14:          <div id="error_explanation">
+15:            <h2>
+16:              <%= pluralize(@task.errors.count, "error") %> prohibited this task from
+17:              being saved:
+18:            </h2>
+19:            <ul>
+20:              <% @task.errors.full_messages.each do |msg| %>
+21:              <li><%= msg %></li>
+22:              <% end %>
+23:            </ul>
+24:          </div>
+25:          <% end %>
+26:          <div class="form-group">
+27:            <%= form.label :name %><br />
+28:            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter task name">
+29:          </div>
+30:    
+31:          <div class="form-group">
+32:            <%= form.label :description %><br />
+33:            <%= form.text_area :description  class: 'form-control' %>
+34:          </div>
+35:        </div>
+36:        <div class="modal-footer">
+37:          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+38:          <%= form.submit class: 'btn btn-primary' %>
+39:        </div>
+40:        <% end %>
+41:      </div>
+42:    </div>
+  
+app/views/tasks/_form.html.erb:33: syntax error, unexpected `class', expecting ')'
+app/views/tasks/_form.html.erb:33: syntax error, unexpected `class', expecting ')'
+app/views/tasks/_form.html.erb:33: syntax error, unexpected `class', expecting ')'
+app/views/tasks/_form.html.erb:33: syntax error, unexpected `class', expecting ')'
+app/views/tasks/_form.html.erb:33: syntax error, unexpected `class', expecting ')'
+app/views/tasks/_form.html.erb:33: syntax error, unexpected `class', expecting ')'
+app/views/tasks/new.js.erb:1
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:15:57 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1341)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 7274)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:15:58 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.4ms | Allocations: 978)
+  Rendered tasks/new.js.erb (Duration: 5.7ms | Allocations: 3653)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 5189)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:16:09 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"/6MemeY7Os9yNP/nNIPnu7PcOG8MlS24UYORj/60EeUAmMO//w73+IDLup4OaJrMXLN5fKGnUxKqJ6azHjzJJw==", "task"=>{"description"=>"fdADS"}, "commit"=>"Create Task"}
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.2ms | Allocations: 787)
+  Rendered tasks/new.js.erb (Duration: 3.8ms | Allocations: 3741)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5194)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:16:40 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.7ms | Allocations: 651)
+  Rendered tasks/new.js.erb (Duration: 7.2ms | Allocations: 3101)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 3623)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:18:20 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 651)
+  Rendered tasks/new.js.erb (Duration: 2.5ms | Allocations: 3101)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3614)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:18:59 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 651)
+  Rendered tasks/new.js.erb (Duration: 2.9ms | Allocations: 3101)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3619)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:20:31 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1341)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms | Allocations: 7284)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:20:33 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.5ms | Allocations: 974)
+  Rendered tasks/new.js.erb (Duration: 6.3ms | Allocations: 3649)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 5167)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:20:57 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 7266)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:20:59 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.8ms | Allocations: 974)
+  Rendered tasks/new.js.erb (Duration: 3.7ms | Allocations: 3649)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 5167)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:22:09 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.2ms | Allocations: 7262)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:22:10 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.5ms | Allocations: 975)
+  Rendered tasks/new.js.erb (Duration: 3.5ms | Allocations: 3689)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5203)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:22:27 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1339)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms | Allocations: 7272)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:22:28 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.2ms | Allocations: 983)
+  Rendered tasks/new.js.erb (Duration: 5.4ms | Allocations: 3737)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 5249)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:22:43 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 7289)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:22:44 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.4ms | Allocations: 987)
+  Rendered tasks/new.js.erb (Duration: 3.6ms | Allocations: 3746)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 5270)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:25:03 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.3ms | Allocations: 7290)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:25:04 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.2ms | Allocations: 993)
+  Rendered tasks/new.js.erb (Duration: 5.1ms | Allocations: 3788)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 5299)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:25:52 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 7279)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:25:53 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.3ms | Allocations: 1067)
+  Rendered tasks/new.js.erb (Duration: 5.3ms | Allocations: 3862)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 5386)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:27:26 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 7264)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:27:27 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.3ms | Allocations: 1069)
+  Rendered tasks/new.js.erb (Duration: 5.9ms | Allocations: 3863)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5381)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:29:14 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1339)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 7278)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:29:15 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.0ms | Allocations: 1079)
+  Rendered tasks/new.js.erb (Duration: 5.6ms | Allocations: 4313)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 5829)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:30:29 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"aplNqjZJw3vAhQCbvulr8EsZ9OMJymDOf7bKLtWRMIeVopCML3wOTDJ6ReKEAhaHpHa18KT4HmSEEv0SNRnoRQ==", "task"=>{"name"=>"task", "description"=>""}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[36mTask Create (0.1ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "task"], ["description", ""], ["created_at", "2020-02-29 12:30:29.928598"], ["updated_at", "2020-02-29 12:30:29.928598"]]
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+Redirected to http://localhost:3000/tasks/9
+Completed 200 OK in 15ms (ActiveRecord: 7.7ms | Allocations: 3570)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2020-02-29 13:30:29 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 5657)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:30:44 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 829)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5742)
+
+
+Started DELETE "/tasks/8" for 127.0.0.1 at 2020-02-29 13:30:57 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HkvCOaY0dH+Uwa8Miu3DdrcDt4rM8RyQ0CRym2wASgLoCyNdkymKmtSgCgeUjydpZ0RKqCd6wmcPwNRLanJ0Rw==", "id"=>"8"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:46:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 15ms (ActiveRecord: 11.1ms | Allocations: 3528)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:30:57 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 715)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5653)
+
+
+Started DELETE "/tasks/9" for 127.0.0.1 at 2020-02-29 13:31:02 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6zj9EwgII3KkKe5roolPle/ybQobRspAQTbOK0irRgwdeBx3PRXdl+RIS2C866uKP7WQKPDNFLee0mj7Ttl4SQ==", "id"=>"9"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:46:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 15ms (ActiveRecord: 11.1ms | Allocations: 3542)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:31:02 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 608)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5529)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:31:03 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 727)
+  Rendered tasks/new.js.erb (Duration: 2.8ms | Allocations: 3737)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 4254)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:31:12 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"YSdrodAiMzHPk4cU8F7EiAdtVai160EjqAs6XCTcSz+eHLaHyRf+Bj1swm3Ktbn/6AIUuxjZP4lTrw1gxFST/Q==", "task"=>{"name"=>"task2121212", "description"=>""}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "task2121212"], ["description", ""], ["created_at", "2020-02-29 12:31:12.693895"], ["updated_at", "2020-02-29 12:31:12.693895"]]
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+Redirected to http://localhost:3000/tasks/10
+Completed 200 OK in 11ms (ActiveRecord: 4.9ms | Allocations: 3568)
+
+
+Started GET "/tasks/10" for 127.0.0.1 at 2020-02-29 13:31:12 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 5406)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:31:19 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 715)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 5620)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:34:40 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 3452)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.5ms | Allocations: 8864)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:34:41 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.7ms | Allocations: 777)
+  Rendered tasks/new.js.erb (Duration: 4.7ms | Allocations: 3787)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4304)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:34:47 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"fB1ZeJmTpHvcyOZBvQrD1pr3iOiPSme+WHDd+XgPK+uDJoRegKZpTC43oziH4b6hdZjJ+yJ4GRSj1OrFmIfzKQ==", "task"=>{"name"=>"prueba reedirección", "description"=>""}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "prueba reedirección"], ["description", ""], ["created_at", "2020-02-29 12:34:47.980031"], ["updated_at", "2020-02-29 12:34:47.980031"]]
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 12ms (ActiveRecord: 4.8ms | Allocations: 5074)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:34:58 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"fB1ZeJmTpHvcyOZBvQrD1pr3iOiPSme+WHDd+XgPK+uDJoRegKZpTC43oziH4b6hdZjJ+yJ4GRSj1OrFmIfzKQ==", "task"=>{"name"=>"prueba reedirección", "description"=>""}, "commit"=>"Create Task"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[36mTask Create (0.1ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "prueba reedirección"], ["description", ""], ["created_at", "2020-02-29 12:34:58.005220"], ["updated_at", "2020-02-29 12:34:58.005220"]]
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 12ms (ActiveRecord: 8.9ms | Allocations: 3515)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:35:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 929)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5849)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:36:03 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 3633)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 9048)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:36:04 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.6ms | Allocations: 777)
+  Rendered tasks/new.js.erb (Duration: 4.1ms | Allocations: 3787)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4308)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:36:06 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"whq3klSCr4Dpo0AGiGHom5PDmxGvDXqxV2cQN6olvO09IWq0TbditxtcBX+yipXsfKzaAgI/BBuswycLSq1kLw==", "task"=>{"name"=>"fdsafdsa", "description"=>""}, "commit"=>"Create Task"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "fdsafdsa"], ["description", ""], ["created_at", "2020-02-29 12:36:06.285427"], ["updated_at", "2020-02-29 12:36:06.285427"]]
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 4.7ms | Allocations: 3793)
+
+
+  
+ArgumentError (missing keyword: :fallback_location):
+  
+app/controllers/tasks_controller.rb:38:in `create'
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:36:09 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1036)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.3ms | Allocations: 5951)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:36:56 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 3757)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 9155)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:36:57 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.9ms | Allocations: 777)
+  Rendered tasks/new.js.erb (Duration: 5.2ms | Allocations: 3787)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4320)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:36:59 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"fPEeEKKPRH2Evgio07WybjRCU1BZyQDjVpKCl/XjxLKDysM2u7qJSnZBTdHpXs8Z2y0SQ/T7fkmtNrWrFWsccA==", "task"=>{"name"=>"rewrewrwe", "description"=>""}, "commit"=>"Create Task"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "rewrewrwe"], ["description", ""], ["created_at", "2020-02-29 12:36:59.664736"], ["updated_at", "2020-02-29 12:36:59.664736"]]
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+Redirected to http://localhost:3000/tasks
+Completed 200 OK in 13ms (ActiveRecord: 9.7ms | Allocations: 3581)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:36:59 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 6063)
+
+
+Started DELETE "/tasks/10" for 127.0.0.1 at 2020-02-29 13:37:07 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"e6bm97Ivpo3/2VHFS1iDLM3gfWW4NaBmsBCPiazGxAKN5geThzJYaL+49M5VOmczHaeAR1O+fpFv9ClZqrT6Rw==", "id"=>"10"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:46:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 15ms (ActiveRecord: 11.1ms | Allocations: 3613)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:37:07 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1037)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 5959)
+
+
+Started DELETE "/tasks/11" for 127.0.0.1 at 2020-02-29 13:37:09 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zbeKENIfcZLMQlBKlMwUOyNNWtmqRe4asXL0A0wkMGE792t05wKPd4wj9UGKrvAk8wqn+0HOMO1ullLTSlYOJA==", "id"=>"11"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:46:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 17ms (ActiveRecord: 11.9ms | Allocations: 3506)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:37:09 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 929)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 5842)
+
+
+Started DELETE "/tasks/12" for 127.0.0.1 at 2020-02-29 13:37:12 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LikGA2BFkzX5valLESOvz8bS/quls2DjXZlZtLKkye/YaednVVht0LncDEAPQUvQFpUDiU44vhSCff9ktNb3qg==", "id"=>"12"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:46:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 14ms (ActiveRecord: 11.1ms | Allocations: 3508)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:37:12 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 822)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 5737)
+
+
+Started DELETE "/tasks/13" for 127.0.0.1 at 2020-02-29 13:37:16 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tgc8lFmQpeRtFxdMDlz3rmh5zePCXC5R3VHikwoSAaBAR93wbI1bAS12skcQPhOxuD4wwSnX8KYCtURDDGA/5Q==", "id"=>"13"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:46:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 13]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 18ms (ActiveRecord: 11.9ms | Allocations: 3508)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:37:16 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 715)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 5648)
+
+
+Started DELETE "/tasks/14" for 127.0.0.1 at 2020-02-29 13:37:19 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kTBLqmDC0b4pB71B+Jj6DPAx0yqQ7y/XFHX2EOwwIcpncKrOVd8vW2lmGErm+h4TIHYuCHtk8SDLkVDA6kIfjw==", "id"=>"14"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:46:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 15ms (ActiveRecord: 11.2ms | Allocations: 3502)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:37:19 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 608)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5511)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:37:20 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 2.0ms | Allocations: 724)
+  Rendered tasks/new.js.erb (Duration: 5.5ms | Allocations: 3734)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4259)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2020-02-29 13:37:22 +0100
+Processing by TasksController#create as JS
+  Parameters: {"authenticity_token"=>"adRQErk/rWckYZ7Y1iYVKCy01H9VoeYegcJT5itfYKWW7400oApgUNae26HszWhfw9uVbPiTmLR6ZmTay9e4Zw==", "task"=>{"name"=>"teste", "description"=>""}, "commit"=>"Create Task"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "teste"], ["description", ""], ["created_at", "2020-02-29 12:37:22.613594"], ["updated_at", "2020-02-29 12:37:22.613594"]]
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:37:in `create'
+Redirected to http://localhost:3000/tasks
+Completed 200 OK in 8ms (ActiveRecord: 4.7ms | Allocations: 3546)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:37:22 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 715)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 5620)
+
+
+Started GET "/tasks/15/edit" for 127.0.0.1 at 2020-02-29 13:37:52 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:20:in `edit'
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.2ms | Allocations: 795)
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1098)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 6628)
+
+

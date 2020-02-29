@@ -10,9 +10,11 @@
     "bootstrap": "^4.4.1",
     "chart": "^0.1.2",
     "jquery": "^3.4.1",
+    "jquery-ujs": "^1.2.2",
     "jquery.easing": "^1.4.1",
     "popper.js": "^1.16.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpack-merge": "^4.2.2"
   },
   "version": "0.1.0",
   "devDependencies": {

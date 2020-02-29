@@ -10,6 +10,10 @@ class TasksController < ApplicationController
   
   def new
     @task = Task.new 
+
+    respond_to do |format|
+      format.js
+    end 
   end
 
   def edit
@@ -31,7 +35,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
          
     if @task.save
-      redirect_to @task
+      redirect_back(fallback_location: root_path)
     else 
       render 'new'
     end

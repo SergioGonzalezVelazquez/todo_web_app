@@ -3,17 +3,24 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start()
+
+// JS libraries
+import "jquery"
+import "jquery-ujs"
+import "bootstrap"
+
+// require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-//Bootstrap
-require('bootstrap')
-
 //jQuery
-require('jquery')
-require('jquery.easing')
+//require('jquery')
+//require('jquery-ujs')
+
+//Bootstrap
+//require('bootstrap')
+
 
 //Font Awesome 5
 require('@fortawesome/fontawesome-free/css/all.css')
