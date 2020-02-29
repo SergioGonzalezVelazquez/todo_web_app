@@ -301,7 +301,7 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <%= link_to '<i class="fas fa-plus fa-sm text-white-50"></i> Add
-          task'.html_safe, new_task_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-new-task', class: "d-none d-sm-inline-block btn
+          task'.html_safe, new_task_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "d-none d-sm-inline-block btn
           btn-sm btn-primary shadow-sm"}%>
         </div>
         <% @tasks.each_with_index do |task, index| %>
@@ -320,14 +320,14 @@
                 <a class="dropdown-item" href="#">View description</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Mark as completed</a>
-                <%= link_to 'Edit', edit_task_path(task), class:
-                "dropdown-item"%> <%= link_to 'Delete', task_path(task), method:
+                <%= link_to 'Edit', edit_task_path(task), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "dropdown-item"}%> 
+                
+                <%= link_to 'Delete', task_path(task), method:
                 :delete, class: "dropdown-item", data: { confirm: 'Are you
                 sure?' } %>
               </div>
             </div>
           </div>
-
           <!-- Card Content - Collapse -->
           <div class="collapse show" id="collapseTask<%= index +1 %>">
             <div class="card-body">
@@ -361,7 +361,7 @@
 </a>
 
 <!-- New Task Modal -->
-<div class="modal" id="modal-new-task" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal" id="modal-form-task" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
 </div>
 

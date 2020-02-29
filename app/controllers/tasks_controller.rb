@@ -18,13 +18,16 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    respond_to do |format|
+      format.js
+    end 
   end
 
   def update
     @task = Task.find(params[:id])
    
     if @task.update(task_params)
-      redirect_to @task
+      redirect_back(fallback_location: root_path)
     else
       render 'edit'
     end

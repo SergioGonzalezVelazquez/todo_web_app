@@ -13194,3 +13194,189 @@ Processing by TasksController#edit as HTML
 Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 6628)
 
 
+Started GET "/tasks" for 127.0.0.1 at 2020-02-29 13:43:20 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 4409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 51.5ms | ActiveRecord: 0.5ms | Allocations: 16936)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:43:22 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 5.3ms | Allocations: 2747)
+  Rendered tasks/new.js.erb (Duration: 9.2ms | Allocations: 5997)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 7554)
+
+
+Started GET "/tasks/15/edit" for 127.0.0.1 at 2020-02-29 13:43:27 +0100
+Processing by TasksController#edit as JS
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:20:in `edit'
+  Rendering tasks/edit.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.1ms | Allocations: 795)
+  Rendered tasks/edit.js.erb (Duration: 3.1ms | Allocations: 4053)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 5647)
+
+
+Started PATCH "/tasks/15" for 127.0.0.1 at 2020-02-29 13:44:00 +0100
+Processing by TasksController#update as JS
+  Parameters: {"authenticity_token"=>"TG/UYeeEwX9f+BWm3duC6PtLYQFPACyeEWx9g84sPxK/JvWC3HaiDuVB+aMMNiC19WHs39Kl69z+lAm4tUwOtw==", "task"=>{"name"=>"teste21", "description"=>""}, "commit"=>"Update Task", "id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:27:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.2ms)[0m  [1m[33mUPDATE "tasks" SET "name" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["name", "teste21"], ["updated_at", "2020-02-29 12:44:00.191039"], ["id", 15]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/tasks/15
+Completed 200 OK in 10ms (ActiveRecord: 5.0ms | Allocations: 4419)
+
+
+Started GET "/tasks/15" for 127.0.0.1 at 2020-02-29 13:44:00 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 124)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 5668)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2020-02-29 13:44:28 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:8:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms | Allocations: 2108)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Task with 'id'=9):
+  
+app/controllers/tasks_controller.rb:8:in `show'
+Started GET "/" for 127.0.0.1 at 2020-02-29 13:44:31 +0100
+Processing by PageController#login as HTML
+  Rendering page/login.html.erb within layouts/application
+  Rendered page/login.html.erb within layouts/application (Duration: 0.2ms | Allocations: 138)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 5588)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 13:44:32 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 449)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 5487)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:44:35 +0100
+Processing by TasksController#new as HTML
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms | Allocations: 2728)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/tasks_controller.rb:14:in `new'
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 13:44:39 +0100
+Processing by PageController#index as HTML
+  Rendering page/index.html.erb within layouts/application
+  Rendered page/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4922)
+
+
+Started GET "/tasks.html" for 127.0.0.1 at 2020-02-29 13:44:44 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 785)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 5876)
+
+
+Started GET "/tasks/15/edit" for 127.0.0.1 at 2020-02-29 13:44:51 +0100
+Processing by TasksController#edit as JS
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:20:in `edit'
+  Rendering tasks/edit.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.3ms | Allocations: 841)
+  Rendered tasks/edit.js.erb (Duration: 3.1ms | Allocations: 4011)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 5021)
+
+
+Started PATCH "/tasks/15" for 127.0.0.1 at 2020-02-29 13:44:59 +0100
+Processing by TasksController#update as JS
+  Parameters: {"authenticity_token"=>"U9YOfq6TMeRg8YTSiXk68XkLg7Bzqd9tyBgd/O/h9Jmgny+dlWFSldpIaNdYlJisdyEObu4MGC8n4GnHlIHFPA==", "task"=>{"name"=>"teste21", "description"=>"Añado una nueva descripción"}, "commit"=>"Update Task", "id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:27:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.1ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Añado una nueva descripción"], ["updated_at", "2020-02-29 12:44:59.673143"], ["id", 15]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/tasks.html
+Completed 200 OK in 15ms (ActiveRecord: 7.6ms | Allocations: 4191)
+
+
+Started GET "/tasks.html" for 127.0.0.1 at 2020-02-29 13:44:59 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 734)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5648)
+
+
+Started GET "/tasks.html" for 127.0.0.1 at 2020-02-29 13:46:53 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 4098)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 10403)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-29 13:46:58 +0100
+Processing by PageController#login as HTML
+  Rendering page/login.html.erb within layouts/application
+  Rendered page/login.html.erb within layouts/application (Duration: 0.2ms | Allocations: 136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 5590)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2020-02-29 13:47:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:307:in `each_with_index'
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 741)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 5672)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2020-02-29 13:47:07 +0100
+Processing by TasksController#new as JS
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (Duration: 1.4ms | Allocations: 1128)
+  Rendered tasks/new.js.erb (Duration: 3.8ms | Allocations: 4363)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 5896)
+
+
