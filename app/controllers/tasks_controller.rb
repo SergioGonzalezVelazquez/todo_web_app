@@ -6,6 +6,19 @@ class TasksController < ApplicationController
     @today_tasks_percent = Task.where(:deadline => Date.today).where(:completed => false).count
     @week_tasks_count = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
   end 
+  def today
+    
+    @today_tasks = Task.where(:deadline => Date.today).where(:completed => false)
+    @today_tasks_completed = Task.where(:deadline => Date.today).where(:completed => true).count
+
+    
+  end 
+  def week
+    
+    @week_tasks = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false)
+    @week_tasks_completed = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => true).count
+    
+  end 
   
   def show
     @task = Task.find(params[:id])
