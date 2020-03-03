@@ -3,6 +3,8 @@ class TasksController < ApplicationController
   def index
     @pending_tasks = Task.where(:completed => false)
     @completed_tasks_count = Task.where(:completed => true).count
+    @today_tasks_percent = Task.where(:deadline => Date.today).where(:completed => false).count
+    @week_tasks_count = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
   end 
   
   def show
