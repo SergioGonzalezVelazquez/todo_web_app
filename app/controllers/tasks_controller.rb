@@ -6,19 +6,28 @@ class TasksController < ApplicationController
     @today_tasks_percent = Task.where(:deadline => Date.today).where(:completed => false).count
     @week_tasks_count = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
     @projects = Project.all
-  end 
-  def today
-    
+  end
+
+  def today  
     @today_tasks = Task.where(:deadline => Date.today).where(:completed => false)
     @today_tasks_completed = Task.where(:deadline => Date.today).where(:completed => true).count
-
-    
+    @projects = Project.all
   end 
-  def week
-    
-    @week_tasks = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false)
+
+  def week    
+    @week_tasks_pending = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
     @week_tasks_completed = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => true).count
+    @week_tasks = []
+
+    @week_tasks << Task.where(:deadline => Date.today).where(:completed => false)
+    @week_tasks << Task.where(:deadline => Date.today + 1).where(:completed => false)
+    @week_tasks << Task.where(:deadline => Date.today + 2).where(:completed => false)
+    @week_tasks << Task.where(:deadline => Date.today + 3).where(:completed => false)
+    @week_tasks << Task.where(:deadline => Date.today + 4).where(:completed => false)
+    @week_tasks << Task.where(:deadline => Date.today + 5).where(:completed => false)
+    @week_tasks << Task.where(:deadline => Date.today + 6).where(:completed => false)
     
+    @projects = Project.all
   end 
   
   def show
@@ -74,7 +83,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
            
-    redirect_to tasks_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

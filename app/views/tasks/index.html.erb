@@ -86,17 +86,18 @@
 
     <!-- Nav Item - Projects Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+      <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
         aria-controls="collapseTwo">
         <i class="fas fa-folder-open"></i>
         <span>Projects</span>
       </a>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <%= link_to 'Create new project', new_project_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "collapse-item"}%>
           <h6 class="collapse-header">My projects</h6>
           <% @projects.each_with_index do |project, index| %>
-          <a class="collapse-item" href="#"><%= project.name %></a>
+          <%= link_to project.name, project_path(project), 
+            class: "collapse-item"%>
           <% end %>
 
         </div>
@@ -105,10 +106,11 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block" />
-    <!-- Sidebar Toggler (Sidebar) -->
+    <!--
     <div class="text-center d-none d-md-inline">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
+  -->
   </ul>
   <!-- End of Sidebar -->
 
@@ -302,7 +304,7 @@
       <!-- Begin Page Content -->
       <div class="container-fluid">
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <div class="align-items-center justify-content-between mb-4">
           <%= link_to '<i class="fas fa-plus fa-sm text-white-50"></i> Add
           task'.html_safe, new_task_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "d-none d-sm-inline-block btn
           btn-sm btn-primary shadow-sm"}%>
