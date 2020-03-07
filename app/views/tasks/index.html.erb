@@ -93,15 +93,18 @@
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="index.html">Create new project</a>
+          <%= link_to 'Create new project', new_project_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "collapse-item"}%>
           <h6 class="collapse-header">My projects</h6>
+          <% @projects.each_with_index do |project, index| %>
+          <a class="collapse-item" href="#"><%= project.name %></a>
+          <% end %>
+
         </div>
       </div>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block" />
-
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -480,7 +483,12 @@
 </a>
 
 <!-- New Task Modal -->
-<div class="modal" id="modal-form-task" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal" id="modal-form-task" tabindex="-1" role="dialog" aria-labelledby="modalNewTaskTitle"
+  aria-hidden="true">
+</div>
+
+<!-- New PRoject Modal -->
+<div class="modal" id="modal-form-project" tabindex="-1" role="dialog" aria-labelledby="modalNewProjectTitle"
   aria-hidden="true">
 </div>
 

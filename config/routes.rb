@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       post 'mark_as_completed'
     end
   end
+
+  resources :projects
   
   
   root 'page#login'
