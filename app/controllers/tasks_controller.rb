@@ -35,7 +35,11 @@ class TasksController < ApplicationController
   end
   
   def new
-    @task = Task.new 
+    @task = Task.new
+
+    if params[:project_id].present?
+      @task.project_id = params[:project_id]
+    end
 
     respond_to do |format|
       format.js
@@ -58,19 +62,13 @@ class TasksController < ApplicationController
       render 'edit'
     end
   end
-
-  def mark_as_completed
-    @task = Task.find(params[:id])
-
-    @task.update_attributes(:completed => true)
-    @task.save
-    redirect_back(fallback_location: root_path)
-  end
-   
-
+  
   def create
     @task = Task.new(task_params)
-         
+
+    puts "probando si está id:"
+    puts @task.project_id
+
     if @task.save
       redirect_back(fallback_location: root_path)
     else 
@@ -83,6 +81,28 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
            
+    redirect_back(fallback_location: root_path)
+  end
+
+  def mark_as_completed
+    @task = Task.find(params[:id])
+
+    @task.update_attributes(:completed => true)
+    @task.save
+    redirect_back(fallback_location: root_path)
+  end
+
+  def add_to_project
+    @project = Project.find(params[:project_id])
+    @task = @project.tasks.create(task_params)
+    redirect_back(fallback_location: root_path)
+  end
+
+  def remove_from_project
+    @task = Task.find(params[:id])
+
+    @task.update_attributes(:project_id => nil)
+    @task.save
     redirect_back(fallback_location: root_path)
   end
 

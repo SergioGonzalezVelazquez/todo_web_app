@@ -174,75 +174,91 @@
         </div>
 
         <% @week_tasks.each_with_index do |day_tasks, day_index| %>
-          <div class="row pl-3">
-            <span class="navbar-brand mb-0"><%= (Date.today + day_index).strftime("%A, %B %d") %></span>
-          </div>
-            <% day_tasks.each_with_index do |task, task_index| %>
-            <div class="card shadow mb-4 <%= 'border-left-primary' if task.priority == 'low' %>  
+        <div class="row pl-3">
+          <span class="navbar-brand mb-0"><%= (Date.today + day_index).strftime("%A, %B %d") %></span>
+        </div>
+        <% day_tasks.each_with_index do |task, task_index| %>
+        <div class="card shadow mb-4 <%= 'border-left-primary' if task.priority == 'low' %>  
               <%= 'border-left-warning' if task.priority == 'medium' %>
                 <%= 'border-left-danger' if task.priority == 'high' %>">
-              <!-- Card Header - Accordion -->
-              <div class="card-header py-3 d-flex flex-row justify-content-between">
-                <div class="col-4">
-                  <div class="row py-0">
-                    <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
-                  </div>
-                </div>
-                <div class="dropdown no-arrow">
-                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                    aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#collapseTask<%= task_index +1 %>" data-toggle="collapse">View details</a>
-                    <div class="dropdown-divider"></div>
-                    <%= link_to 'Mark as completed', mark_as_completed_task_path(task), method:
-                    :post, class: "dropdown-item" %>
-    
-                    <%= link_to 'Edit', edit_task_path(task), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "dropdown-item"}%>
-    
-                    <%= link_to 'Delete', task_path(task), method:
-                    :delete, class: "dropdown-item", data: { confirm: 'Are you
-                    sure?' } %>
-                  </div>
-                </div>
-              </div>
-              <!-- Card Content - Collapse -->
-              <div class="collapse" id="collapseTask<%= task_index +1 %>">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-1">
-                      <span class="small font-weight-bold">Description:</span>
-                    </div>
-                    <div class="col">
-                      <span class="small"><%= task.description %></span>
-                    </div>
-                  </div>
-    
-                  <div class="row">
-                    <div class="col-1">
-                      <span class="small font-weight-bold">Priority:</span>
-                    </div>
-                    <div class="col">
-                      <span class="small"><%= task.priority %></span>
-                    </div>
-                  </div>
-    
-                  <div class="row">
-                    <div class="col-1">
-                      <span class="small font-weight-bold">Deadline:</span>
-                    </div>
-                    <div class="col">
-                      <span class="small"><%= task.deadline %></span>
-                    </div>
-                  </div>
-    
-    
-                </div>
+          <!-- Card Header - Accordion -->
+          <div class="card-header py-3 d-flex flex-row justify-content-between">
+            <div class="col-4">
+              <div class="row py-0">
+                <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
               </div>
             </div>
-          <% end %>
+            <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#collapseTask_<%= day_index +1 %>_<%= task_index +1 %>" data-toggle="collapse">View
+                  details</a>
+                <div class="dropdown-divider"></div>
+                <%= link_to 'Mark as completed', mark_as_completed_task_path(task), method:
+                    :post, class: "dropdown-item" %>
+
+
+                <% if task.project.present? %>
+                <%= link_to 'Remove from the project', remove_from_project_task_path(task), method:
+               :post, class: "dropdown-item" %>
+                <% end %>
+
+                <%= link_to 'Edit', edit_task_path(task), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "dropdown-item"}%>
+
+                <%= link_to 'Delete', task_path(task), method:
+                    :delete, class: "dropdown-item", data: { confirm: 'Are you
+                    sure?' } %>
+              </div>
+            </div>
+          </div>
+          <!-- Card Content - Collapse -->
+          <div class="collapse" id="collapseTask_<%= day_index +1 %>_<%= task_index +1 %>">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-1">
+                  <span class="small font-weight-bold">Description:</span>
+                </div>
+                <div class="col">
+                  <span class="small"><%= task.description %></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-1">
+                  <span class="small font-weight-bold">Priority:</span>
+                </div>
+                <div class="col">
+                  <span class="small"><%= task.priority %></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-1">
+                  <span class="small font-weight-bold">Deadline:</span>
+                </div>
+                <div class="col">
+                  <span class="small"><%= task.deadline %></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <span class="small font-weight-bold">Belongs to:</span>
+                </div>
+                <% if task.project.present? %>
+                <div class="col">
+                  <span class="small"><%= task.project.name %></span>
+                </div>
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <% end %>
         <% end %>
 
 

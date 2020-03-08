@@ -4,6 +4,14 @@ class ProjectsController < ApplicationController
   def show
     @projects = Project.all
     @project = Project.find(params[:id])
+
+    @pending_tasks = []
+    @completed_tasks = []
+    @project.tasks.each do |task|
+      @pending_tasks << task if task.completed == false
+      @completed_tasks << task if task.completed == true
+    end 
+
   end
   
   def new

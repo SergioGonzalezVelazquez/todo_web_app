@@ -3,7 +3,7 @@
   <div class="modal-content">
     <%= form_with model: @task, remote: true do |form| %>
     <div class="modal-header card-header py-3">
-      <h6 class="font-weight-bold text-primary" id="exampleModalLongTitle">Add new task</h5>
+      <h6 class="font-weight-bold text-primary" id="exampleModalLongTitle">Add new task for project  <%= @task.project_id%></h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -28,7 +28,7 @@
       </div>
       <% end %>
       <div class="form-group">
-        <%= form.label :name %><br />
+        <%= form.label :name %>*<br />
         <%= form.text_field :name, class: 'form-control', placeholder: 'Enter task name' %>
       </div>
 
@@ -38,7 +38,7 @@
       </div>
 
       <div class="form-group">
-        <%= form.label :priority %><br />
+        <%= form.label :priority %>*<br />
         <%= form.select :priority, [["High", "high"], ["Medium", "medium"], ["Low", "low"]], {}, {class: "form-control"} %>
       </div>
 

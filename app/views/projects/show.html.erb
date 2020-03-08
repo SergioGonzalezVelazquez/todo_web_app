@@ -134,19 +134,25 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3">
                         <%= link_to '<i class="fas fa-plus fa-sm text-white-50"></i> Add
-                  task to project'.html_safe, new_task_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "d-none d-sm-inline-block btn
-                  btn-sm btn-primary shadow-sm"}%>
+                      task to project'.html_safe, "#", {:local => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-task-project',
+                       class: "d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"}%>
                     </div>
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3">
                         <%= link_to '<i class="fas fa-pencil-alt fa-sm text-white-50"></i> Edit project'.html_safe, edit_project_path(@project), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "d-none d-sm-inline-block btn
-                    btn-sm btn-secondary shadow-sm"}%>
+                        btn-sm btn-secondary shadow-sm"}%>
                     </div>
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <%= link_to '<i class="fas fa-trash fa-sm text-white-50"></i> Delete project'.html_safe, project_path(@project), method:
-                        :delete, class: "d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm", data: { confirm: 'Are you sure?' }%>
+                            :delete, class: "d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm", data: { confirm: 'Are you sure?' }%>
                     </div>
+                </div>
+
+                <div class="row justify-content-start pl-3">
+                    <p class="mb-4">
+                        <%= @project.description%>
+                    </p>
                 </div>
 
 
@@ -162,6 +168,7 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending
                                             tasks</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <%= @pending_tasks.count %>
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -181,6 +188,7 @@
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Completed
                                             Tasks</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <%= @completed_tasks.count %>
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -191,6 +199,76 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Collapsable Card Example -->
+                <% @pending_tasks.each_with_index do |task, index| %>
+                <div class="card shadow mb-4 <%= 'border-left-primary' if task.priority == 'low' %>  
+          <%= 'border-left-warning' if task.priority == 'medium' %>
+            <%= 'border-left-danger' if task.priority == 'high' %>">
+                    <!-- Card Header - Accordion -->
+                    <div class="card-header py-3 d-flex flex-row justify-content-between">
+                        <div class="col-4">
+                            <div class="row py-0">
+                                <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+                            </div>
+                        </div>
+                        <div class="dropdown no-arrow">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#collapseTask<%= index +1 %>" data-toggle="collapse">View
+                                    details</a>
+                                <div class="dropdown-divider"></div>
+                                <%= link_to 'Mark as completed', mark_as_completed_task_path(task), method:
+                                :post, class: "dropdown-item" %>
+
+                                <%= link_to 'Remove from project', remove_from_project_task_path(task), method:
+                                :post, class: "dropdown-item", data: { confirm: 'Are you sure?' } %>
+
+                                <%= link_to 'Edit task', project_tasks_path(@project, task), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "dropdown-item"}%>
+
+                                <%= link_to 'Delete task', task_path(task), method:
+                                :delete, class: "dropdown-item", data: { confirm: 'Are you sure?' } %>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse" id="collapseTask<%= index +1 %>">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-1">
+                                    <span class="small font-weight-bold">Description:</span>
+                                </div>
+                                <div class="col">
+                                    <span class="small"><%= task.description %></span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1">
+                                    <span class="small font-weight-bold">Priority:</span>
+                                </div>
+                                <div class="col">
+                                    <span class="small"><%= task.priority %></span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1">
+                                    <span class="small font-weight-bold">Deadline:</span>
+                                </div>
+                                <div class="col">
+                                    <span class="small"><%= task.deadline %></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <% end %>
             </div>
             <!-- /.container-fluid -->
         </div>
@@ -215,36 +293,74 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- New Task Modal -->
-<div class="modal" id="modal-form-task" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-</div>
-
 <!-- New Project Modal -->
 <div class="modal" id="modal-form-project" tabindex="-1" role="dialog" aria-labelledby="modalNewProjectTitle"
     aria-hidden="true">
 </div>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<!-- Add task to project Modal -->
+<div class="modal" id="modal-task-project" tabindex="-1" role="dialog" aria-labelledby="modalTaskProjectTitle"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
+            <%= form_with(model: [ @project, @project.tasks.build ], local: true) do |form| %>
+            <div class="modal-header card-header py-3">
+                <h6 class="font-weight-bold text-primary" id="exampleModalLongTitle">Add task to project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
             </div>
             <div class="modal-body">
-                Select "Logout" below if you are ready to end your current session.
+                <div class="form-group">
+                    <%= form.label :name %>*<br />
+                    <%= form.text_field :name, class: 'form-control', placeholder: 'Enter task name' %>
+                </div>
+
+                <div class="form-group">
+                    <%= form.label :description %><br />
+                    <%= form.text_area :description, class: 'form-control', placeholder: 'Optionally you can write a description of the task' %>
+                </div>
+
+                <div class="form-group">
+                    <%= form.label :priority %>*<br />
+                    <%= form.select :priority, [["High", "high"], ["Medium", "medium"], ["Low", "low"]], {}, {class: "form-control"} %>
+                </div>
+
+                <div class="form-group">
+                    <%= form.label :deadline %><br />
+                    <%= form.date_field :deadline, as: :date, value: form.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
+                </div>
+
+
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">
-                    Cancel
-                </button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= form.submit class: 'btn btn-primary' %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Select "Logout" below if you are ready to end your current session.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
             </div>
         </div>
     </div>
-</div>

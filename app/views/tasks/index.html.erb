@@ -390,9 +390,6 @@
         </div>
 
 
-
-
-
         <!-- Collapsable Card Example -->
         <% @pending_tasks.each_with_index do |task, index| %>
         <div class="card shadow mb-4 <%= 'border-left-primary' if task.priority == 'low' %>  
@@ -417,14 +414,20 @@
                 <%= link_to 'Mark as completed', mark_as_completed_task_path(task), method:
                 :post, class: "dropdown-item" %>
 
-                <%= link_to 'Edit', edit_task_path(task), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "dropdown-item"}%>
+                <% if task.project.present? %>
+                <%= link_to 'Remove from the project', remove_from_project_task_path(task), method:
+                  :post, class: "dropdown-item" %>
+                <% end %>
 
-                <%= link_to 'Delete', task_path(task), method:
-                :delete, class: "dropdown-item", data: { confirm: 'Are you
-                sure?' } %>
+
+                <%= link_to 'Edit task', edit_task_path(task), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "dropdown-item"}%>
+
+                <%= link_to 'Delete task', task_path(task), method:
+                :delete, class: "dropdown-item", data: { confirm: 'Are you sure?' } %>
               </div>
             </div>
           </div>
+
           <!-- Card Content - Collapse -->
           <div class="collapse" id="collapseTask<%= index +1 %>">
             <div class="card-body">
@@ -455,7 +458,16 @@
                 </div>
               </div>
 
-
+              <div class="row">
+                <div class="col-1">
+                  <span class="small font-weight-bold">Belongs to:</span>
+                </div>
+                <% if task.project.present? %>
+                <div class="col">
+                  <span class="small"><%= task.project.name %></span>
+                </div>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -493,6 +505,7 @@
 <div class="modal" id="modal-form-project" tabindex="-1" role="dialog" aria-labelledby="modalNewProjectTitle"
   aria-hidden="true">
 </div>
+
 
 
 
