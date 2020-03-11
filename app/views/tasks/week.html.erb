@@ -222,7 +222,7 @@
                 <div class="col-1">
                   <span class="small font-weight-bold">Description:</span>
                 </div>
-                <div class="col">
+                <div id="lblDescription" class="col">
                   <span class="small"><%= task.description %></span>
                 </div>
               </div>
@@ -231,7 +231,7 @@
                 <div class="col-1">
                   <span class="small font-weight-bold">Priority:</span>
                 </div>
-                <div class="col">
+                <div id="lblPriority" class="col">
                   <span class="small"><%= task.priority %></span>
                 </div>
               </div>
@@ -240,7 +240,7 @@
                 <div class="col-1">
                   <span class="small font-weight-bold">Deadline:</span>
                 </div>
-                <div class="col">
+                <div id="lblDeadline" class="col">
                   <span class="small"><%= task.deadline %></span>
                 </div>
               </div>
@@ -249,7 +249,7 @@
                   <span class="small font-weight-bold">Belongs to:</span>
                 </div>
                 <% if task.project.present? %>
-                <div class="col">
+                <div id="lblProjectName" class="col">
                   <span class="small"><%= task.project.name %></span>
                 </div>
                 <% end %>
