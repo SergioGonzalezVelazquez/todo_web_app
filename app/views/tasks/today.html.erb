@@ -312,7 +312,7 @@
                   <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending
                       tasks</div>
-                    <div id="lblPendingtasks" class="h5 mb-0 font-weight-bold text-gray-800"><%= @today_tasks.count %>
+                    <div id="lbl_today_pending_task" class="h5 mb-0 font-weight-bold text-gray-800"><%= @today_tasks.count %>
                     </div>
                   </div>
                   <div class="col-auto">
@@ -331,7 +331,7 @@
                   <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Completed
                       Tasks</div>
-                    <div id="lblCompletedtasks" class="h5 mb-0 font-weight-bold text-gray-800"><%= @today_tasks_completed%>
+                    <div id="lbl_today_completed_task"class="h5 mb-0 font-weight-bold text-gray-800"><%= @today_tasks_completed%>
                     </div>
                   </div>
                   <div class="col-auto">
@@ -396,16 +396,16 @@
                 <div class="col-1">
                   <span class="small font-weight-bold">Description:</span>
                 </div>
-                <div class="col">
+                <div id="lbl_task_description" class="col">
                   <span class="small"><%= task.description %></span>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-1">
+                <div  class="col-1">
                   <span class="small font-weight-bold">Priority:</span>
                 </div>
-                <div class="col">
+                <div id="lbl_task_priority" class="col">
                   <span class="small"><%= task.priority %></span>
                 </div>
               </div>
@@ -414,7 +414,7 @@
                 <div class="col-1">
                   <span class="small font-weight-bold">Deadline:</span>
                 </div>
-                <div class="col">
+                <div id="lbl_task_deadline" class="col">
                   <span class="small"><%= task.deadline %></span>
                 </div>
               </div>
@@ -424,7 +424,7 @@
                   <span class="small font-weight-bold">Belongs to:</span>
                 </div>
                 <% if task.project.present? %>
-                <div class="col">
+                <div id="lbl_task_project_name" class="col">
                   <span class="small"><%= task.project.name %></span>
                 </div>
                 <% end %>
