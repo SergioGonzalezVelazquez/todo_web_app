@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class TaskTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not save article without title" do
+    article = Task.new
+    assert article.save
+  end
 end

@@ -87,7 +87,7 @@
 
                 <!-- Page Heading -->
                 <nav class="navbar navbar">
-                    <span class="navbar-brand mb-0 h1">Task Collection: <%= @project.name %></span>
+                    <span class="navbar-brand mb-0 h1" id="lbl_project_name">Task Collection: <%= @project.name %></span>
                 </nav>
 
                 <!-- Topbar Navbar -->
@@ -135,22 +135,22 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3">
                         <%= link_to '<i class="fas fa-plus fa-sm text-white-50"></i> Add
                       task to project'.html_safe, "#", {:local => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-task-project',
-                       class: "d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"}%>
+                       class: "d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm", id: "btn_add_task_project"}%>
                     </div>
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3">
                         <%= link_to '<i class="fas fa-pencil-alt fa-sm text-white-50"></i> Edit project'.html_safe, edit_project_path(@project), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "d-none d-sm-inline-block btn
-                        btn-sm btn-secondary shadow-sm"}%>
+                        btn-sm btn-secondary shadow-sm", id: "btn_edit_project"}%>
                     </div>
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <%= link_to '<i class="fas fa-trash fa-sm text-white-50"></i> Delete project'.html_safe, project_path(@project), method:
-                            :delete, class: "d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm", data: { confirm: 'Are you sure?' }%>
+                            :delete, class: "d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm", id: "btn_delete_project", data: { confirm: 'Are you sure?' }%>
                     </div>
                 </div>
 
                 <div class="row justify-content-start pl-3">
-                    <p class="mb-4">
+                    <p class="mb-4" id="lbl_project_description">
                         <%= @project.description%>
                     </p>
                 </div>
