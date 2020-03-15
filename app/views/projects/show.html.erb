@@ -167,7 +167,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending
                                             tasks</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <div id="lbl_pending_task" class="h5 mb-0 font-weight-bold text-gray-800">
                                             <%= @pending_tasks.count %>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Completed
                                             Tasks</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <div id="lbl_completed_task" class="h5 mb-0 font-weight-bold text-gray-800">
                                             <%= @completed_tasks.count %>
                                         </div>
                                     </div>
@@ -209,13 +209,13 @@
                     <div class="card-header py-3 d-flex flex-row justify-content-between">
                         <div class="col-4">
                             <div class="row py-0">
-                                <h6 class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+                                <h6 id="lbl_task_name_<%=index + 1%>" class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
                             </div>
                         </div>
                         <div class="dropdown no-arrow">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                <i id="task_header_option_<%=index + 1%>"  class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                 aria-labelledby="dropdownMenuLink">
@@ -223,15 +223,17 @@
                                     details</a>
                                 <div class="dropdown-divider"></div>
                                 <%= link_to 'Mark as completed', mark_as_completed_task_path(task), method:
-                                :post, class: "dropdown-item" %>
+                                :post, class: "dropdown-item", id: "task_complete_".concat((index + 1).to_s) %>
 
                                 <%= link_to 'Remove from project', remove_from_project_task_path(task), method:
-                                :post, class: "dropdown-item", data: { confirm: 'Are you sure?' } %>
+                                :post, class: "dropdown-item", id: "task_remove_project_".concat((index + 1).to_s), data: { confirm: 'Are you sure?' } %>
 
-                                <%= link_to 'Edit task', project_tasks_path(@project, task), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "dropdown-item"}%>
+                                <%= link_to 'Edit task', project_tasks_path(@project, task), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-task', class: "dropdown-item",
+                                 id: "task_edit_".concat((index + 1).to_s)}%>
 
                                 <%= link_to 'Delete task', task_path(task), method:
-                                :delete, class: "dropdown-item", data: { confirm: 'Are you sure?' } %>
+                                :delete, class: "dropdown-item", id: "task_delete_".concat((index + 1).to_s), 
+                                data: { confirm: 'Are you sure?' } %>
                             </div>
                         </div>
                     </div>
@@ -335,7 +337,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <%= form.submit class: 'btn btn-primary' %>
+                <%= form.submit class: 'btn btn-primary', id: "btn_task_submit"%>
             </div>
             <% end %>
         </div>

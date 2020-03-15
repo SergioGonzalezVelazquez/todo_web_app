@@ -10,7 +10,7 @@ describe 'ProjectCRUD' do
   after(:each) do
     #@driver.quit
   end
-  
+
   it 'createProject' do
     name = 'Test create project name'
     description = 'Test create project description'
@@ -32,6 +32,31 @@ describe 'ProjectCRUD' do
     name_edited = 'Test edit project name edited'
     description_edited = 'Test edit project description edited'
     edit_project(@driver, project_index, name_edited, description_edited)
+  end
+
+  it 'addTaskToProject' do
+    name = 'Test add task to project name'
+    description = 'Test add task to project description'
+    create_project(@driver, name, description)
+
+    task_name = 'Project task'
+    task_description = 'Task for project'
+    task_deadline = '2021-1-1'
+    task_priority = 'Low'
+    add_task_to_project(@driver, task_name, task_description,task_priority, task_deadline)
+  end
+
+  it 'deleteTaskFromProject' do
+    name = 'Test add task to project name'
+    description = 'Test add task to project description'
+    create_project(@driver, name, description)
+
+    task_name = 'Project task'
+    task_description = 'Task for project'
+    task_deadline = '2021-1-1'
+    task_priority = 'Low'
+    task_index = add_task_to_project(@driver, task_name, task_description,task_priority, task_deadline)
+    delete_task_from_project(@driver, task_index)
   end
 
 end
@@ -115,5 +140,58 @@ def edit_project (driver, project_index, name, description)
   # ASSERT: Check project description in project view
   value_description = driver.find_element(:id, 'lbl_project_description').text
   expect(value_description).to eq(description)
-    
+end
+
+def add_task_to_project (driver, name, description, priority, deadline)
+  # Get pending tasks
+  pending = driver.find_element(:id, 'lbl_pending_task').text
+  expected = (pending.to_i + 1)
+  expected_str = expected.to_s
+
+
+  # Click on add task to project
+  driver.find_element(:id, 'btn_add_task_project').click
+
+  # Fill in edit task form and submit it
+  task_name = driver.find_element(:id, 'task_name').click
+  driver.find_element(:id, 'task_name').clear
+  driver.find_element(:id, 'task_name').send_keys(name)
+  driver.find_element(:id, 'task_description').click
+  driver.find_element(:id, 'task_description').clear
+  driver.find_element(:id, 'task_description').send_keys(description)
+  driver.find_element(:id, 'task_priority').click
+  dropdown = driver.find_element(:id, 'task_priority')
+  dropdown.find_element(:xpath, "//option[. = '" + priority + "']").click
+  driver.find_element(:id, 'task_deadline').send_keys(deadline)
+  driver.find_element(:id, 'btn_task_submit').click
+
+  sleep(2)
+
+  # ASSERT: check if "pending tasks" card has been updated 
+  sleep(2)
+  expect(driver.find_element(:id, 'lbl_pending_task').text).to eq (expected_str)
+  
+  # ASSERT: check if a new task item has been added to tasks list
+  card_item = driver.find_elements(:id, ('lbl_task_name_').concat(expected_str))
+  expect(card_item.length).to be > 0
+
+  return expected_str
+end
+
+def delete_task_from_project (driver, task_index)
+  pending = driver.find_element(:id, 'lbl_pending_task').text.to_i
+
+  # Open task details and click on delete task
+  driver.find_element(:id, ('task_header_option_').concat(task_index)).click
+  driver.find_element(:id, ('task_delete_').concat(task_index)).click
+  sleep(1)
+  driver.switch_to().alert().accept();
+  sleep(1)
+
+  # ASSERT: there is one less pending task
+  expect(driver.find_element(:id, 'lbl_pending_task').text).to eq ((pending - 1).to_s)
+
+  # ASSERT: task item is not present
+  task_item = @driver.find_elements(:id, ('task_header_').concat(task_index))
+  expect(task_item.length).to eq(0)
 end

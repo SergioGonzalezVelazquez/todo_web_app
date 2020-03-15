@@ -22,9 +22,12 @@ Start rails server. It will be listening on localhost:3000
 rails server
 ```
 
-## Testing
+## Testing with rspec
 
-### Installing geckodriver
+
+### Views
+
+#### Installing geckodriver
 
 1. Download the latest version of the driver
 
