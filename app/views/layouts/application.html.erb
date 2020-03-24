@@ -15,14 +15,13 @@
     rel="stylesheet">
 
 </head>
-
-<% if controller.action_name == 'login' %>
+<% if current_page?(login_path)%>
 
 <body class="bg-gradient-primary">
   <%= yield %>
 </body>
 
-<% elsif controller.action_name == 'register' %>
+<% elsif current_page?(new_user_path) %>
 
 <body class="bg-gradient-primary">
   <%= yield %>
