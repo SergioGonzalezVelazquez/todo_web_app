@@ -15,21 +15,15 @@
     rel="stylesheet">
 
 </head>
-<% if current_page?(login_path)%>
+<% if logged_in?  %>
 
-<body class="bg-gradient-primary">
-  <%= yield %>
-</body>
-
-<% elsif current_page?(new_user_path) %>
-
-<body class="bg-gradient-primary">
+<body>
   <%= yield %>
 </body>
 
 <% else %>
 
-<body>
+<body class="bg-gradient-primary">
   <%= yield %>
 </body>
 

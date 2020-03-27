@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :destroy, :edit, :update]
   
+  # Session management
   get 'login', to: 'sessions#new'   
-  post 'login', to: 'sessions#create'   
-  get 'welcome', to: 'sessions#welcome'
-  get 'authorized', to: 'sessions#page_requires_login'
+  post 'login', to: 'sessions#create'
+  post 'logout', to: 'sessions#destroy' 
 
-
-  #Addtional tasks routes
+  # Addtional tasks routes
   match '/index',           to: 'tasks#index',            via: 'get'
   match '/today',           to: 'tasks#today',            via: 'get'
   match '/week',            to: 'tasks#week',             via: 'get'
@@ -27,6 +26,6 @@ Rails.application.routes.draw do
   # Relationship between tasks and projects
   match '/projects/:project_id/tasks(.:format)', as: 'project_tasks',   to: 'tasks#add_to_project',            via: 'post'
 
-  root 'sessions#new'
+  root 'tasks#index'
   
 end

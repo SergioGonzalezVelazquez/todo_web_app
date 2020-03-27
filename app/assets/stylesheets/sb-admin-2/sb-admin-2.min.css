@@ -46,6 +46,14 @@
     box-sizing: border-box
 }
 
+.login_alert {
+    font-size: 0.85em;
+    padding-left: .75em;
+    font-weight: bold;
+    padding-left: .75em;
+    color: #cc0000;
+}
+
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -11747,7 +11755,7 @@ a:focus {
     color: #cc0000;
     font-size: .9em;
     padding-left: .75em;
-  }
+}
 
 .bg-login-image {
     background: url(/images/43029.png);
@@ -12252,7 +12260,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 /*Custom CSS*/
-#error_explanation > ul {
+#error_explanation>ul {
     list-style-type: none;
     padding-left: 0px;
 }

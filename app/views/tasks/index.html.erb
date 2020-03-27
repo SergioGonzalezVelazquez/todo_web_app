@@ -110,12 +110,7 @@
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profile
-              </a>
-              <%= link_to '<i class="fas fa-user-slash fa-sm fa-fw mr-2 text-gray-400"></i> Delete account'.html_safe, user_path(current_user), method:
-              :delete, class: "dropdown-item",  id: "user_account_delete",  data: { confirm: 'Are you sure?' } %>
+              <%= link_to '<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile'.html_safe, edit_user_path(current_user), class: "dropdown-item",  id: "user_account_edit" %>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -358,7 +353,8 @@
         <button class="btn btn-secondary" type="button" data-dismiss="modal">
           Cancel
         </button>
-        <a class="btn btn-primary" href="login.html">Logout</a>
+        <%= link_to 'Logout', logout_path(current_user), method: :post,
+        class: "btn btn-primary",  id: "user_logout_modal" %>
       </div>
     </div>
   </div>

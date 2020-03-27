@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     # unless a user is logged in, the user will always 
     # be redirected to the login page
     def authorized
-        redirect_to '/welcome' unless logged_in?
+        redirect_to '/login' unless logged_in?
     end 
 
 end

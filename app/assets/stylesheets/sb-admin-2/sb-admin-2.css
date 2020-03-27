@@ -1620,6 +1620,16 @@ pre code {
   }
 }
 
+
+.login_alert {
+  font-size: 0.85em;
+  padding-left: .75em;
+  font-weight: bold;
+  padding-left: .75em;
+  color: #cc0000;
+  
+}
+
 .table {
   width: 100%;
   margin-bottom: 1rem;

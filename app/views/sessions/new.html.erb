@@ -16,6 +16,7 @@
                   <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                 </div>
                 <%= form_tag '/login', class: "user" do %>
+                <p id=”login_alert” class= "login_alert"><%= alert %></p>
                 <div class="form-group">
                   <%= email_field_tag :email, "", class: 'form-control form-control-user', placeholder: "Enter Email Address..."%>
                 </div>

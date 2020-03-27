@@ -4,31 +4,29 @@ class SessionsController < ApplicationController
   skip_before_action :authorized, only: [:new, :create, :welcome]
 
   def new
+     # User already logged in
+     if session[:user_id].present?
+      redirect_to '/tasks'
+    end 
   end
 
   # find a user instance based on the username 
   # params provided by the form.
   def create
-    @user = User.find_by(username: params[:username])   
+    @user = User.find_by(email: params[:email])
     
     if @user && @user.authenticate(params[:password])
-      sessions[:user_id] = @user.id      
+      session[:user_id] = @user.id      
       redirect_to '/tasks'   
     else      
-      redirect_to '/login'   
-    end
+      flash.now[:alert] = "Invalid email or password"
+      render "new"
+    end 
   end
 
-  def login
+  def destroy
+    session[:user_id] = nil
+    redirect_to '/login'
   end
-
-  def welcome
-  end
-
-  def page_requires_login
-  end
-
-
-  
 
 end

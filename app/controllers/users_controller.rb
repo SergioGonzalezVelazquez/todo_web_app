@@ -20,11 +20,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+   
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+   
+
   def destroy
+    session[:user_id] = nil
     @user = User.find(params[:id])
     @user.destroy
            
-    redirect_to '/'
+    redirect_to '/login'
   end
 
   def user_params
