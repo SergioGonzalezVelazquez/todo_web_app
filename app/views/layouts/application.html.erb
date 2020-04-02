@@ -16,21 +16,15 @@
 
 </head>
 
-<% if controller.action_name == 'login' %>
+<% if user_signed_in? %>
 
-<body class="bg-gradient-primary">
-  <%= yield %>
-</body>
-
-<% elsif controller.action_name == 'register' %>
-
-<body class="bg-gradient-primary">
+<body>
   <%= yield %>
 </body>
 
 <% else %>
 
-<body>
+<body class="bg-gradient-primary">
   <%= yield %>
 </body>
 

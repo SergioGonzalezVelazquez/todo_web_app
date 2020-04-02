@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  #get 'page/login'
-
-  #User routes
-  #match '/register',        to: 'page#register',          via: 'get'
-  #match '/login',           to: 'page#login',             via: 'get'
-  #match '/forgot-password', to: 'page#forgot-password',   via: 'get'
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   #Addtional tasks routes
   match '/index',           to: 'tasks#index',            via: 'get'

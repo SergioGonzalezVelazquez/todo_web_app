@@ -46,6 +46,14 @@
     box-sizing: border-box
 }
 
+.login_alert {
+    font-size: 0.85em;
+    padding-left: .75em;
+    font-weight: bold;
+    padding-left: .75em;
+    color: #cc0000;
+}
+
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -2076,6 +2084,10 @@ select.form-control:focus::-ms-value {
     background-color: transparent;
     border: solid transparent;
     border-width: 1px 0
+}
+
+.field_with_errors .form-control-user {
+    border-color: #cc0000;
 }
 
 .form-control-plaintext.form-control-lg,
@@ -11739,20 +11751,26 @@ a:focus {
     }
 }
 
+.help-block {
+    color: #cc0000;
+    font-size: .9em;
+    padding-left: .75em;
+}
+
 .bg-login-image {
-    background: url(https://source.unsplash.com/K4mSJ7kc0As/600x800);
+    background: url(/images/43029.png);
     background-position: center;
     background-size: cover
 }
 
 .bg-register-image {
-    background: url(https://source.unsplash.com/Mv9hjnEUHR4/600x800);
+    background: url(/images/43029_larger.png);
     background-position: center;
     background-size: cover
 }
 
 .bg-password-image {
-    background: url(https://source.unsplash.com/oWTW-jNGl9I/600x800);
+    background: url(/images/43029.png);
     background-position: center;
     background-size: cover
 }
@@ -12242,7 +12260,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 /*Custom CSS*/
-#error_explanation > ul {
+#error_explanation>ul {
     list-style-type: none;
     padding-left: 0px;
 }

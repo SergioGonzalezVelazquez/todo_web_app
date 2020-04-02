@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-    
+  
   def index
     @pending_tasks = Task.where(:completed => false)
     @completed_tasks_count = Task.where(:completed => true).count
