@@ -1,69 +1,75 @@
 class TasksController < ApplicationController
     
   def index
-    @pending_tasks = Task.where(:completed => false)
-    @completed_tasks_count = Task.where(:completed => true).count
-    @today_tasks_percent = Task.where(:deadline => Date.today).where(:completed => false).count
-    @week_tasks_count = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
-    @projects = Project.all
+    @pending_tasks = Task.where(:user_id => session[:user_id]).where(:completed => false)
+    @completed_tasks_count = Task.where(:user_id => session[:user_id]).where(:completed => true).count
+    @today_tasks_percent = Task.where(:user_id => session[:user_id]).where(:deadline => Date.today).where(:completed => false).count
+    @week_tasks_count = Task.where(:user_id => session[:user_id]).where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
+    @projects = Project.where(:user_id => session[:user_id])
   end
 
   def today  
-    @today_tasks = Task.where(:deadline => Date.today).where(:completed => false)
-    @today_tasks_completed = Task.where(:deadline => Date.today).where(:completed => true).count
-    @projects = Project.all
+    @today_tasks = Task.where(:user_id => session[:user_id]).where(:deadline => Date.today).where(:completed => false)
+    @today_tasks_completed = Task.where(:user_id => session[:user_id]).where(:deadline => Date.today).where(:completed => true).count
+    @projects = Project.where(:user_id => session[:user_id])
   end 
 
   def week    
-    @week_tasks_pending = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
-    @week_tasks_completed = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => true).count
+    @week_tasks_pending = Task.where(:user_id => session[:user_id]).where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
+    @week_tasks_completed = Task.where(:user_id => session[:user_id]).where(:deadline => Date.today..Date.today + 6).where(:completed => true).count
     @week_tasks = []
 
-    @week_tasks << Task.where(:deadline => Date.today).where(:completed => false)
-    @week_tasks << Task.where(:deadline => Date.today + 1).where(:completed => false)
-    @week_tasks << Task.where(:deadline => Date.today + 2).where(:completed => false)
-    @week_tasks << Task.where(:deadline => Date.today + 3).where(:completed => false)
-    @week_tasks << Task.where(:deadline => Date.today + 4).where(:completed => false)
-    @week_tasks << Task.where(:deadline => Date.today + 5).where(:completed => false)
-    @week_tasks << Task.where(:deadline => Date.today + 6).where(:completed => false)
+    @week_tasks << Task.where(:user_id => session[:user_id]).where(:deadline => Date.today).where(:completed => false)
+    @week_tasks << Task.where(:user_id => session[:user_id]).where(:deadline => Date.today + 1).where(:completed => false)
+    @week_tasks << Task.where(:user_id => session[:user_id]).where(:deadline => Date.today + 2).where(:completed => false)
+    @week_tasks << Task.where(:user_id => session[:user_id]).where(:deadline => Date.today + 3).where(:completed => false)
+    @week_tasks << Task.where(:user_id => session[:user_id]).where(:deadline => Date.today + 4).where(:completed => false)
+    @week_tasks << Task.where(:user_id => session[:user_id]).where(:deadline => Date.today + 5).where(:completed => false)
+    @week_tasks << Task.where(:user_id => session[:user_id]).where(:deadline => Date.today + 6).where(:completed => false)
     
-    @projects = Project.all
+    @projects = Project.where(:user_id => session[:user_id])
   end 
   
   def new
-    @task = Task.new
+    if !session[:user_id]
+      redirect_to login_path, :alert => "You have to log in to create a new task"
+    else
+      @task = Task.new
 
-    if params[:project_id].present?
-      @task.project_id = params[:project_id]
-    end
-
-    respond_to do |format|
-      format.js
+      if params[:project_id].present?
+        @task.project_id = params[:project_id]
+      end
+  
+      respond_to do |format|
+        format.js
+      end  
     end 
   end
 
   def edit
     @task = Task.find(params[:id])
-    respond_to do |format|
-      format.js
-    end 
+    flash.now[:alert] = 'Error while sending message!'
+      respond_to do |format|
+        format.js
+      end   
   end
 
   def update
     @task = Task.find(params[:id])
-   
-    if @task.update(task_params)
-      redirect_back(fallback_location: root_path)
+    if @task.user_id != session[:user_id]
+      render 'edit', :alert => "You cannot edit another user’s task!" 
     else
-      render 'edit'
+      if @task.update(task_params)
+        redirect_back(fallback_location: root_path)
+      else
+        render 'edit'
+      end
     end
   end
   
   def create
     @task = Task.new(task_params)
-
-    puts "probando si está id:"
-    puts @task.project_id
+    @task.user_id = session[:user_id]
 
     if @task.save
       redirect_back(fallback_location: root_path)

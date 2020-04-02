@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create, :destroy, :edit, :update]
+  resources :users, only: [:new, :create, :destroy, :update] do
+    collection do
+      patch 'update_password' => 'users#update_password'
+      get 'update_password' => 'users#edit'
+    end
+  end
+
+  # Edit user profile
+  get   'users/edit',   to: 'users#edit',     as: 'edit_user'
+
   
   # Session management
   get 'login', to: 'sessions#new'   

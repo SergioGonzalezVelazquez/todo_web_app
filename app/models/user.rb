@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+    # A task is created by a user
+    has_many :tasks
+
+    # A project is created by a user
+    has_many :projects
+
     # macro to utilize Bcrypt methods
     has_secure_password
 

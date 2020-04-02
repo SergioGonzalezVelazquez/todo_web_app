@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # create a user instance
     @user = User.create(user_params) 
     
     session[:user_id] = @user.id
@@ -21,16 +20,35 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @projects = Project.where(:user_id => session[:user_id])
   end
 
   def update
-    @user = User.find(params[:id])
-   
-    if @user.update(user_params)
-      redirect_to @user
+    @user = User.find(current_user.id)
+    if @user.update(update_profile_params)
+      puts "updated"
+      render '/users/edit'
     else
-      render 'edit'
+      Rails.logger.info(current_user.errors.inspect) 
+      puts "not updated"
+      render '/users/edit'
+    end
+  end
+
+  def edit_password
+    @projects = Project.where(:user_id => session[:user_id])
+  end
+
+  def update_password
+    @projects = Project.where(:user_id => session[:user_id])
+
+    if current_user.update(update_password_params)
+      puts "updated"
+      session[:user_id] = nil
+      redirect_to '/login'
+    else
+      puts "not updated"
+      redirect_to edit_user_path
     end
   end
    
@@ -46,6 +64,14 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :surname, :email, :username,         
     :password, :password_confirmation)
+  end
+
+  def update_password_params
+    params.require(:user).permit(:password, :password_confirmation)
+  end
+
+  def update_profile_params
+    params.require(:user).permit(:first_name, :surname, :username)
   end
 
   

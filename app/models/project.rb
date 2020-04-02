@@ -1,5 +1,8 @@
 class Project < ApplicationRecord
 
+    # A project is created by a user
+    belongs_to :user
+
     # Ensure that all projects have a name
     validates :name, presence: true
 

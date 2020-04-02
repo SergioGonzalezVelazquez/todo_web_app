@@ -92,29 +92,20 @@
 
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
+
           <div class="topbar-divider d-none d-sm-block"></div>
 
           <!-- Nav Item - User Information -->
           <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-              <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" />
+              <span
+                class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.first_name.concat(" " + current_user.surname) %></span>
+              <img class="img-profile rounded-circle" src="/images/user-default.png" />
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profile
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                Settings
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                Activity Log
-              </a>
+              <%= link_to '<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile'.html_safe, edit_user_path, class: "dropdown-item",  id: "user_account_edit" %>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -125,6 +116,7 @@
         </ul>
       </nav>
       <!-- End of Topbar -->
+
 
       <!-- Begin Page Content -->
       <div class="container-fluid">
@@ -142,7 +134,8 @@
                   <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending
                       tasks</div>
-                    <div id="lbl_week_pending_task" class="h5 mb-0 font-weight-bold text-gray-800"><%= @week_tasks_pending%>
+                    <div id="lbl_week_pending_task" class="h5 mb-0 font-weight-bold text-gray-800">
+                      <%= @week_tasks_pending%>
                     </div>
                   </div>
                   <div class="col-auto">
@@ -161,7 +154,8 @@
                   <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Completed
                       Tasks</div>
-                    <div id="lbl_week_completed_task" class="h5 mb-0 font-weight-bold text-gray-800"><%= @week_tasks_completed %>
+                    <div id="lbl_week_completed_task" class="h5 mb-0 font-weight-bold text-gray-800">
+                      <%= @week_tasks_completed %>
                     </div>
                   </div>
                   <div class="col-auto">
@@ -195,7 +189,8 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                 aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#collapseTask_<%= day_index +1 %>_<%= task_index +1 %>" data-toggle="collapse">View
+                <a class="dropdown-item" href="#collapseTask_<%= day_index +1 %>_<%= task_index +1 %>"
+                  data-toggle="collapse">View
                   details</a>
                 <div class="dropdown-divider"></div>
                 <%= link_to 'Mark as completed', mark_as_completed_task_path(task), method:

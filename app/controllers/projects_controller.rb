@@ -15,10 +15,14 @@ class ProjectsController < ApplicationController
   end
   
   def new
-    @project = Project.new 
+    if !session[:user_id]
+      redirect_to login_path, :alert => "You have to log in to create a new project"
+    else
+      @project = Project.new 
 
-    respond_to do |format|
-      format.js
+      respond_to do |format|
+        format.js
+      end  
     end 
   end
 
@@ -31,6 +35,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.user_id = session[:user_id]
          
     if @project.save
       redirect_back(fallback_location: root_path)
