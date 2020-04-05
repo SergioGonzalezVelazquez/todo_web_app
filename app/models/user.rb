@@ -5,14 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Ensure that user has entered First Name
-  validates_presence_of :first_name, message: 'Enter your first name' 
+  validates_presence_of :first_name
 
   # Ensure that user has entered last Name
-  validates_presence_of :surname, message: 'Enter your last name' 
+  validates_presence_of :surname
 
-  # Ensure that user has entered username
-  validates_presence_of :username, message: 'Enter your username' 
-
+  # Ensure that user has entered an unique username
+  validates_presence_of :username
+  validates :username, 
+    uniqueness: true
 
   # Ensure that user has enter a strong pwd
   PASSWORD_STRENGTH = /\A
@@ -22,8 +23,12 @@ class User < ApplicationRecord
     (?=.*[[:^alnum:]]) # At least 1 special char
   /x
 
-  validates_presence_of :password, message: 'Enter your password' 
   validates :password, 
-      format: { with: PASSWORD_STRENGTH,  message: "Enter a strong password"}
+      format: { with: PASSWORD_STRENGTH }
+
+  # Note. We do not need this field in database
+  attr_accessor :password_confirmation
+  validates_presence_of :password_confirmation
+    
 
 end
