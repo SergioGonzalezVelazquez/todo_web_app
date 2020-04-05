@@ -27,7 +27,12 @@
              <!-- Dropdown - User Information -->
              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                  <%= link_to '<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile'.html_safe, edit_user_registration_path, class: "dropdown-item",  id: "user_account_edit" %>
+
+                 <% admins_only do %>
+                 <%= link_to '<i class="fas fa-tools fa-sm fa-fw mr-2 text-gray-400"></i> Administration'.html_safe, admin_root_path, class: "dropdown-item",  id: "user_administration" %>
+                 <% end %>
                  <div class="dropdown-divider"></div>
+
                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                      Logout
