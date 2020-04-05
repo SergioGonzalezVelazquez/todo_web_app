@@ -1,43 +1,105 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- Sidebar -->
+    <%= render "shared/sidebar", active: 0 %>
+    <!-- End of Sidebar -->
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+            <!-- Topbar -->
+            <%= render "shared/navbar", title: 'Edit profile' %>
+            <!-- End of Topbar -->
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">Personal Info</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                                        <div class="row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <%= form_group_for f, :first_name, label: false  do %>
+                                                <%= f.label :first_name %><br />
+                                                <%= f.text_field :first_name, class: 'form-control form-control-user', placeholder: "First Name"%>
+                                                <%end%>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <%= form_group_for f, :surname, label: false  do %>
+                                                <%= f.label :surname %><br />
+                                                <%= f.text_field :surname, class: 'form-control form-control-user', placeholder: "Last Name"%>
+                                                <%end%>
+                                            </div>
+                                        </div>
+                                        <%= form_group_for f, :username, label: false  do %>
+                                        <%= f.label :username %><br />
+                                        <%= f.text_field :username, class: 'form-control form-control-user', placeholder: "Username"%>
+                                        <%end%>
+                                        <%= form_group_for f, :email, label: false  do %>
+                                        <%= f.label :email %><br />
+                                        <%= f.text_field :email, class: 'form-control form-control-user', placeholder: "Email Address", :disabled => true %>
+                                        <%end%>
+                                        <br>
+                                        <%= f.submit 'Edit account', :class => 'mt-2 d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm' %>
+                                        <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">Security</h6>
+                                    </div>
+                                    <div class="card-body">
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-danger">Danger zone</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        Deleting your account will permanently remove all your information from our
+                                        database.
+                                        This cannot be undone.
+                                        <br>
+                                        <%= link_to 'Delete account',  registration_path(resource_name), data: { confirm: "Are you sure?" }, 
+                                         method: :delete, class: "mt-2 d-sm-inline-block btn btn-sm btn-danger shadow-sm",  id: "user_account_delete",  data: { confirm: 'Are you sure?' } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+            <!-- End of Main Content -->
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+            <!-- Footer -->
+            <%= render "shared/footer"%>
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
