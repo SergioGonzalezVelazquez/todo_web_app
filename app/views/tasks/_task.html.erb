@@ -67,7 +67,17 @@
 
             <div class="row">
                 <div class="col-1">
-                    <span class="small font-weight-bold">Belongs to:</span>
+                    <span class="small font-weight-bold">Created:</span>
+                </div>
+                <div class="col">
+                    <span id="lbl_task_deadline_<%=index + 1%>" class="small"><%= time_ago_in_words(task.created_at) %> ago</span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Project:</span>
                 </div>
                 <% if task.project.present? %>
                 <div class="col">

@@ -12,4 +12,7 @@ class Task < ApplicationRecord
     # Sets up an Active Record association: a task can belong to a project
     belongs_to :project, optional: true
 
+    # Linking tasks to users
+    belongs_to :author, class_name: "User"
+
 end

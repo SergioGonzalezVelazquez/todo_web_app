@@ -5,13 +5,11 @@ class TasksController < ApplicationController
     @completed_tasks_count = Task.where(:completed => true).count
     @today_tasks_percent = Task.where(:deadline => Date.today).where(:completed => false).count
     @week_tasks_count = Task.where(:deadline => Date.today..Date.today + 6).where(:completed => false).count
-    #@projects = Project.all
   end
 
   def today  
     @today_tasks = Task.where(:deadline => Date.today).where(:completed => false)
     @today_tasks_completed = Task.where(:deadline => Date.today).where(:completed => true).count
-    #@projects = Project.all
   end 
 
   def week    
@@ -26,8 +24,7 @@ class TasksController < ApplicationController
     @week_tasks << Task.where(:deadline => Date.today + 4).where(:completed => false)
     @week_tasks << Task.where(:deadline => Date.today + 5).where(:completed => false)
     @week_tasks << Task.where(:deadline => Date.today + 6).where(:completed => false)
-    
-    #@projects = Project.all
+
   end 
   
   def show
@@ -65,9 +62,9 @@ class TasksController < ApplicationController
   
   def create
     @task = Task.new(task_params)
-
-    puts "probando si está id:"
-    puts @task.project_id
+    
+    # set the task’s author
+    @task.author = current_user
 
     if @task.save
       redirect_back(fallback_location: root_path)

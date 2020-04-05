@@ -30,6 +30,9 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+
+    # set the task’s author
+    @project.author = current_user
          
     if @project.save
       redirect_back(fallback_location: root_path)
