@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   
   namespace :admin do
     root "application#index"
+
+    resources :tasks
+    resources :projects
+    resources :users
   end
 
   devise_for :users, :controllers => { registrations: 'registrations' }

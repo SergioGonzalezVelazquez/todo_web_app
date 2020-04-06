@@ -16,18 +16,9 @@
 
 </head>
 
-<% if user_signed_in? %>
 
-<body>
+<body class="<%= 'bg-gradient-primary' if user_signed_in? %>">
   <%= yield %>
 </body>
-
-<% else %>
-
-<body class="bg-gradient-primary">
-  <%= yield %>
-</body>
-
-<% end %>
 
 </html>

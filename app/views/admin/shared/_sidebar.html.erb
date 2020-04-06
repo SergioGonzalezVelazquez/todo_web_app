@@ -1,0 +1,50 @@
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+      <%= link_to '<div class="sidebar-brand-icon"><i class="fas fa-tasks">
+      </i></div><div class="sidebar-brand-text mx-3">TODO App</div>'.html_safe,
+      index_path, class: "sidebar-brand d-flex align-items-center justify-content-center",  id: "app_title_link" %>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
+
+      <!-- Nav Item - Inbox -->
+      <li class="<%= active == 1 ? 'nav-item active' : 'nav-item' %>">
+          <%= link_to '<i class="fas fa-tachometer-alt"></i><span>Dashboard</span>'.html_safe,  admin_root_path, class: "nav-link",  id: "link_to_inbox" %>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          Management
+      </div>
+
+
+      <!-- Nav Item - Tasks management  -->
+      <li class="<%= active == 2 ? 'nav-item active' : 'nav-item' %>">
+          <%= link_to '<i class="fas fa-tasks"></i> <span>Tasks</span>'.html_safe, admin_tasks_path, class: "nav-link",  id: "link_to_today" %>
+      </li>
+
+      <!-- Nav Item - Projects management  -->
+      <li class="<%= active == 3 ? 'nav-item active' : 'nav-item' %>">
+          <%= link_to '<i class="fas fa-project-diagram"></i> <span>Projects</span>'.html_safe, admin_projects_path, class: "nav-link",  id: "link_to_week" %>
+      </li>
+
+      <!-- Nav Item - User management -->
+      <li class="<%= active == 4 ? 'nav-item active' : 'nav-item' %>">
+          <%= link_to '<i class="fas fa-users"></i> <span>Users</span>'.html_safe,  admin_users_path, class: "nav-link",  id: "link_to_today" %>
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block" />
+  </ul>
+  <!-- End of Sidebar -->
+
+
+  <!-- New Project Modal -->
+  <div class="modal" id="modal-form-project" tabindex="-1" role="dialog" aria-labelledby="modalNewProjectTitle"
+      aria-hidden="true">
+  </div>
