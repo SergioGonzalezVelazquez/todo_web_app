@@ -32,6 +32,7 @@ gem "jquery-rails"
 gem 'jquery-easing-rails'
 
 gem 'devise', '~> 4.2'
+gem 'strong_password', '~> 0.0.8'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
