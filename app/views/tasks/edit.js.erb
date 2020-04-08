@@ -1,1 +1,7 @@
+<% if defined?(error) && error %>
+$("#modal-form-task").html("<%= escape_javascript(render 'shared/error', msg: msg ) %>");
+
+<% else %>
 $("#modal-form-task").html("<%= escape_javascript(render 'form') %>");
+
+<% end %>

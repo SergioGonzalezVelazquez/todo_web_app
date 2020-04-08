@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
   # https://github.com/heartcombo/devise/wiki/How-To:-Allow-users-to-edit-their-account-without-providing-a-password
   protected
   def update_resource(resource, params)
-    resource.update_without_password(params)
+    resource.update_without_password(account_update_params)
   end
 
   private

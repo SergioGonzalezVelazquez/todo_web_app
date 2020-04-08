@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   #Addtional tasks routes
-  match '/index',           to: 'tasks#index',            via: 'get'
-  match '/today',           to: 'tasks#today',            via: 'get'
-  match '/week',            to: 'tasks#week',             via: 'get'
-  match '/projects',        to: 'tasks#index',            via: 'get'
+  match '/index',                         to: 'tasks#index',            via: 'get'
+  match '/tasks/:id(.:format)',           to: 'tasks#index',            via: 'get'
+  match '/today',                         to: 'tasks#today',            via: 'get'
+  match '/week',                          to: 'tasks#week',             via: 'get'
+  match '/projects',                      to: 'tasks#index',            via: 'get'
  
   resources :tasks do
     member do
