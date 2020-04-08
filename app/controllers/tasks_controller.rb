@@ -119,14 +119,32 @@ class TasksController < ApplicationController
     end
   end
 
-  def add_to_project
+  def add_task_to_project
+    @project = Project.find(params[:project_id])
+    respond_to do |format|
+      format.js {
+        render "add_task_to_project"
+      }
+    end
+  end
+
+  def create_to_project
     puts "add to project"
     @project = Project.find(params[:project_id])
-    @task = @project.tasks.create(task_params)
+    @task = Task.new(task_params)
+
+    # set the task’s project
+    @task.project_id = params[:project_id]
 
     # set the task’s author
     @task.author = current_user
+
     redirect_back(fallback_location: root_path)
+
+
+    # set the task’s author
+    # @task.author = current_user
+    #redirect_back(fallback_location: root_path)
   end
 
   def remove_from_project
