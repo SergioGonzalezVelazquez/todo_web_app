@@ -16,3 +16,4 @@
  *= require sb-admin-2/sb-admin-2.css
  *= require sb-admin-2/sb-admin-2.min.css
  */
+ @import "bootstrap/dist/css/bootstrap"

@@ -31,7 +31,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem "jquery-rails"
 gem 'jquery-easing-rails'
-
+gem "chartkick"
+gem 'groupdate'
 gem 'devise', '~> 4.2'
 gem 'strong_password', '~> 0.0.8'
 

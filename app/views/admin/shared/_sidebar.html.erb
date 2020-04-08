@@ -24,22 +24,31 @@
 
       <!-- Nav Item - Tasks management  -->
       <li class="<%= active == 2 ? 'nav-item active' : 'nav-item' %>">
-          <%= link_to '<i class="fas fa-tasks"></i> <span>Tasks</span>'.html_safe, admin_tasks_path, class: "nav-link",  id: "link_to_today" %>
+          <%= link_to '<i class="fas fa-tasks"></i> <span>Tasks</span>'.html_safe, admin_tasks_path, class: "nav-link",  id: "link_to_tasks_managment" %>
       </li>
 
       <!-- Nav Item - Projects management  -->
       <li class="<%= active == 3 ? 'nav-item active' : 'nav-item' %>">
-          <%= link_to '<i class="fas fa-project-diagram"></i> <span>Projects</span>'.html_safe, admin_projects_path, class: "nav-link",  id: "link_to_week" %>
+          <%= link_to '<i class="fas fa-project-diagram"></i> <span>Projects</span>'.html_safe, admin_projects_path, class: "nav-link",  id: "link_to_projects_managment" %>
       </li>
 
       <!-- Nav Item - User management -->
       <li class="<%= active == 4 ? 'nav-item active' : 'nav-item' %>">
-          <%= link_to '<i class="fas fa-users"></i> <span>Users</span>'.html_safe,  admin_users_path, class: "nav-link",  id: "link_to_today" %>
+          <%= link_to '<i class="fas fa-users"></i> <span>Users</span>'.html_safe,  admin_users_path, class: "nav-link",  id: "link_to_users_management" %>
       </li>
 
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block" />
+
+      <!-- Nav Item - Back to User mode -->
+      <li class="<%= 'nav-item' %>">
+          <%= link_to '<i class="fas fa-door-open"></i> <span>User mode</span>'.html_safe,  index_path, class: "nav-link",  id: "link_to_index" %>
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
   </ul>
   <!-- End of Sidebar -->
 

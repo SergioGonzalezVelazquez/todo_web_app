@@ -120,8 +120,12 @@ class TasksController < ApplicationController
   end
 
   def add_to_project
+    puts "add to project"
     @project = Project.find(params[:project_id])
     @task = @project.tasks.create(task_params)
+
+    # set the task’s author
+    @task.author = current_user
     redirect_back(fallback_location: root_path)
   end
 
@@ -129,8 +133,9 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     @task.update_attributes(:project_id => nil)
-    @task.save
-    redirect_back(fallback_location: root_path)
+    if @task.save
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private

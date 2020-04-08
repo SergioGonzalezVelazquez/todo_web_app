@@ -3,17 +3,18 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-
-// JS libraries
-import "jquery"
-import "jquery-ujs"
-import "bootstrap"
-import "sb-admin-2/sb-admin-2.min"
-
-// require("@rails/ujs").start()
+require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require('datatables.net-bs4')
+
+// JS libraries
+import $ from 'jquery';
+global.$ = jQuery
+import "bootstrap"
+import "sb-admin-2/sb-admin-2.min"
+
 
 //jQuery
 //require('jquery')
@@ -22,6 +23,8 @@ require("channels")
 //Bootstrap
 //require('bootstrap')
 
+require("chartkick")
+require("chart.js")
 
 //Font Awesome 5
 require('@fortawesome/fontawesome-free/css/all.css')
