@@ -21,7 +21,7 @@
                             <div class="col-md-12">
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">Personal Info</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Edit Profile</h6>
                                     </div>
                                     <div class="card-body">
                                         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -48,20 +48,24 @@
                                         <%= f.text_field :email, class: 'form-control form-control-user', placeholder: "Email Address", :disabled => true %>
                                         <%end%>
                                         <br>
+                                        <p class="py-0" style="font-size: 0.85em;">Submit a blank password if you don´t want to change your current password</p>
+                                        <div class="col-sm-6 pl-0">
+                                            <%= form_group_for f, :password, label: false  do %>
+                                            <%= f.label :password %><br />
+                                            <%= f.password_field :password, class: 'form-control form-control-user', placeholder: "New password"%>
+                                            <%end%>
+                                        </div>
+                                        <p class="py-0" style="font-size: 0.85em;">Password should be strong: at least 8
+                                            chars, with at least 1 uppercase, 1 lowercase and 1 special char</p>
+                                        <div class="col-sm-6 pl-0">
+                                            <%= form_group_for f, :password_confirmation, label: false  do %>
+                                            <%= f.label :password_confirmation %><br />
+                                            <%= f.text_field :password_confirmation, class: 'form-control form-control-user', placeholder: "Confirm new password"%>
+                                            <%end%>
+                                        </div>
+                                        <br>
                                         <%= f.submit 'Edit account', :class => 'mt-2 d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm' %>
                                         <% end %>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">Security</h6>
-                                    </div>
-                                    <div class="card-body">
-
                                     </div>
                                 </div>
                             </div>
