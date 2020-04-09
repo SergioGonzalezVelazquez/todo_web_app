@@ -7,7 +7,7 @@
 
      <!-- Page Heading -->
      <nav class="navbar navbar">
-         <span class="navbar-brand mb-0 h1"> <%= title %></span>
+         <span class="navbar-brand mb-0 h1" id="page_title"> <%= title %></span>
      </nav>
 
      <!-- Topbar Navbar -->
@@ -20,9 +20,9 @@
          <li class="nav-item dropdown no-arrow">
              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                  aria-haspopup="true" aria-expanded="false">
-                 <span
-                     class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.first_name.concat(" " + current_user.surname) %></span>
-                 <img class="img-profile rounded-circle" src="/images/user-default.png" />
+                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+                     id="user_complete_name"><%= current_user.first_name.concat(" " + current_user.surname) %></span>
+                 <img class="img-profile rounded-circle" src="/images/user-default.png" id="user_profile_photo" />
              </a>
              <!-- Dropdown - User Information -->
              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -33,7 +33,7 @@
                  <% end %>
                  <div class="dropdown-divider"></div>
 
-                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                 <a class="dropdown-item" id="user_logout" href="#" data-toggle="modal" data-target="#logoutModal">
                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                      Logout
                  </a>
@@ -62,7 +62,7 @@
                      Cancel
                  </button>
                  <%= link_to 'Logout', destroy_user_session_path, method: :delete,
-      class: "btn btn-primary",  id: "user_logout_modal" %>
+      class: "btn btn-primary",  id: "user_logout_confirm" %>
              </div>
          </div>
      </div>
