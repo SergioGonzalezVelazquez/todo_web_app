@@ -1,0 +1,77 @@
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+      <%= link_to '<div class="sidebar-brand-icon"><i class="fas fa-tasks">
+      </i></div><div class="sidebar-brand-text mx-3">TODO App</div>'.html_safe,
+        index_path, class: "sidebar-brand d-flex align-items-center justify-content-center",  id: "app_title_link" %>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          Tasks
+      </div>
+
+      <!-- Nav Item - Inbox -->
+      <li class="<%= active == 1 ? 'nav-item active' : 'nav-item' %>">
+          <%= link_to '<i class="fas fa-inbox"></i><span>Inbox</span>'.html_safe,  index_path, class: "nav-link",  id: "link_to_inbox" %>
+      </li>
+
+      <!-- Nav Item - Today -->
+      <li class="<%= active == 2 ? 'nav-item active' : 'nav-item' %>">
+          <%= link_to '<i class="fas fa-calendar-day"></i> <span>Today</span>'.html_safe,  today_path, class: "nav-link",  id: "link_to_today" %>
+      </li>
+
+      <!-- Nav Item - This week -->
+      <li class="<%= active == 3 ? 'nav-item active' : 'nav-item' %>">
+          <%= link_to '<i class="fas fa-calendar-day"></i> <span>This week</span>'.html_safe,  week_path, class: "nav-link",  id: "link_to_week" %>
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          Collections
+      </div>
+
+
+      <!-- Nav Item - Projects Collapse Menu -->
+      <li class="<%= active == 4 ? 'nav-item active' : 'nav-item' %>">
+          <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+              aria-controls="collapseTwo">
+              <i class="fas fa-folder-open"></i>
+              <span>Projects</span>
+          </a>
+          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                  <%= link_to 'Create new project', new_project_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "collapse-item", 
+              id: "btn_create_project"}%>
+                  <h6 class="collapse-header">My projects</h6>
+                  <% projects.each_with_index do |project, index| %>
+                  <%= link_to project.name, project_path(project), 
+              class: "collapse-item", id: "project_link_".concat((index.to_i + 1).to_s)%>
+                  <% end %>
+              </div>
+          </div>
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block" />
+
+  </ul>
+  <!-- End of Sidebar -->
+
+
+  <!-- New Project Modal -->
+  <div class="modal" id="modal-form-project" tabindex="-1" role="dialog" aria-labelledby="modalNewProjectTitle"
+      aria-hidden="true">
+  </div>
+
+  <!-- New Task Modal -->
+  <div class="modal" id="modal-form-task" tabindex="-1" role="dialog" aria-labelledby="modalNewTaskTitle"
+      aria-hidden="true">
+  </div>

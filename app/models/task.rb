@@ -9,10 +9,10 @@ class Task < ApplicationRecord
     # Ensure that all tasks have a priority
     validates :priority, presence: true
 
-    # A task is created by a user
-    belongs_to :user
-
     # Sets up an Active Record association: a task can belong to a project
     belongs_to :project, optional: true
+
+    # Linking tasks to users
+    belongs_to :author, class_name: "User"
 
 end

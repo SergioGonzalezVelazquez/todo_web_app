@@ -1,0 +1,107 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <%= render "admin/shared/sidebar", active: 3 %>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+      <%= render "shared/navbar", title: 'Administration Area' %>
+      <!-- End of Topbar -->
+
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <!-- DataTales User management-->
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Projects management</h6>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Author</th>
+                  <th>Date Created</th>
+                  <th>Pending Tasks</th>
+                  <th>Completed Tasks</th>
+                  <th>Action</th>
+
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Author</th>
+                  <th>Date Created</th>
+                  <th>Pending Tasks</th>
+                  <th>Completed Tasks</th>
+                  <th>Action</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <% @projects.each_with_index do |project, index| %>
+                <% pending = project.tasks.select do |hash|
+                hash[:completed] == false
+                end %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= project.name %></td>
+                  <td><%= project.description %></td>
+                  <td><%= project.author.email if project.author.present? %></td>
+                  <td><%= project.created_at.strftime("%d/%m/%Y") %></td>
+                  <td><%= pending.count %></td>
+                  <td><%= project.tasks.count - pending.count %></td>
+                  <td>
+
+                    <%= link_to '<i class="fas fas fa-cog text-gray-400"></i>'.html_safe, edit_admin_project_path(project), {:remote => true, 'data-toggle' =>  "modal",
+          'data-target' => '#modal-form-project',  id: "edit_project_".concat((index + 1).to_s)}%>
+
+                    <%= link_to '<i class="fas fa-trash-alt text-gray-400"></i>'.html_safe, admin_project_path(project), method:
+                :delete, id: "project_delete_".concat((index + 1).to_s),  data: { confirm: 'Are you sure?' } %>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Main Content -->
+
+
+    <!-- Footer -->
+    <%= render "shared/footer"%>
+    <!-- End of Footer -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Task Form Modal -->
+<div class="modal" id="modal-form-project" tabindex="-1" role="dialog" aria-labelledby="modalEditProjectTitle"
+  aria-hidden="true">
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#dataTable').DataTable();
+  });
+</script>

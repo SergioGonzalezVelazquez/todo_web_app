@@ -1,0 +1,105 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <%= render "admin/shared/sidebar", active: 4 %>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+      <%= render "shared/navbar", title: 'Administration Area' %>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Users management</h1>
+          <%= link_to '<i class="fas fa-plus fa-sm text-white-50"></i> Create new account'.html_safe, 
+          new_admin_user_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-user', id: "btn_create_user", class: "d-none d-sm-inline-block btn
+          btn-sm btn-primary shadow-sm"}%>
+        </div>
+
+        <!-- DataTables User management-->
+        <div class="card shadow mb-4">
+          <div class="card-body">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Date Created</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Date Created</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <% @users.each_with_index do |user, index| %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= user.first_name.capitalize + ' ' + user.surname.capitalize %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.created_at.strftime("%d/%m/%Y") %></td>
+                    <td style="<%= 'color: #e83e8c;' if user.admin %>"><%= user.admin ? 'admin' : 'user' %></td>
+                    <td>
+
+                      <%= link_to '<i class="fas fas fa-cog text-gray-400"></i>'.html_safe, edit_admin_user_path(user), {:remote => true, 'data-toggle' =>  "modal",
+                'data-target' => '#modal-form-user',  id: "edit_user_".concat((index + 1).to_s)}%>
+
+                      <%= link_to '<i class="fas fa-trash-alt text-gray-400"></i>'.html_safe, admin_user_path(user), method:
+                      :delete, id: "user_delete_".concat((index + 1).to_s),  data: { confirm: 'Are you sure?' } %>
+                    </td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <%= render "shared/footer"%>
+    <!-- End of Footer -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+
+<!-- New Task Modal -->
+<div class="modal" id="modal-form-user" tabindex="-1" role="dialog" aria-labelledby="modalNewUserTitle"
+  aria-hidden="true">
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#dataTable').DataTable();
+  });
+</script>

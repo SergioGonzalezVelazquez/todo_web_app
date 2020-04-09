@@ -1,40 +1,40 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create, :destroy, :update] do
-    collection do
-      patch 'update_password' => 'users#update_password'
-      get 'update_password' => 'users#edit'
-    end
+
+  # Administrator namespace
+  namespace :admin do
+    root "application#index"
+
+    resources :tasks
+    resources :projects
+    resources :users
   end
 
-  # Edit user profile
-  get   'users/edit',   to: 'users#edit',     as: 'edit_user'
+  # User Management module
+  devise_for :users, :controllers => { registrations: "registrations" }
 
-  
-  # Session management
-  get 'login', to: 'sessions#new'   
-  post 'login', to: 'sessions#create'
-  post 'logout', to: 'sessions#destroy' 
-
-  # Addtional tasks routes
-  match '/index',           to: 'tasks#index',            via: 'get'
-  match '/today',           to: 'tasks#today',            via: 'get'
-  match '/week',            to: 'tasks#week',             via: 'get'
-  match '/projects',        to: 'tasks#index',            via: 'get'
- 
+  # Tasks
   resources :tasks do
     member do
-      post 'mark_as_completed'
+      post "mark_as_completed"
     end
     member do
-      post 'remove_from_project'
+      post "remove_from_project"
     end
   end
 
-  resources :projects 
+  #Addtional tasks routes
+  match "/index", to: "tasks#index", via: "get"
+  match "/tasks/:id(.:format)", to: "tasks#index", via: "get"
+  match "/today", to: "tasks#today", via: "get"
+  match "/week", to: "tasks#week", via: "get"
+  match "/projects", to: "tasks#index", via: "get"
+
+  # Projects
+  resources :projects
 
   # Relationship between tasks and projects
-  match '/projects/:project_id/tasks(.:format)', as: 'project_tasks',   to: 'tasks#add_to_project',            via: 'post'
+  match "/projects/:project_id/tasks(.:format)", as: "add_task_to_project", to: "tasks#add_task_to_project", via: "get"
+  match "/projects/:project_id/tasks(.:format)", as: "project_tasks", to: "tasks#create_to_project", via: "post"
 
-  root 'tasks#index'
-  
+  root "tasks#index"
 end

@@ -1,25 +1,15 @@
 class ApplicationController < ActionController::Base
+  # Set up all controllers with user authentication
+  before_action :authenticate_user!
 
-    before_action :authorized
-    helper_method :current_user
-    helper_method :logged_in?
-    
-
-    # handles the current user’s information.
-    def current_user
-        User.find_by(id: session[:user_id])  
+  helper_method :projects
+  # Task collections must be present on all pages,
+  # because they are displayed on the sidebar
+  def projects
+    if user_signed_in?
+      #User.find_by(id: session[:user_id])
+      Project.where(:author_id => current_user)
     end
-
-    # check whether user is logged in or not
-    def logged_in?
-        !current_user.nil?  
-    end
-
-    # run before any other action is taken.
-    # unless a user is logged in, the user will always 
-    # be redirected to the login page
-    def authorized
-        redirect_to '/login' unless logged_in?
-    end 
+  end
 
 end

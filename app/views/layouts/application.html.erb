@@ -15,18 +15,10 @@
     rel="stylesheet">
 
 </head>
-<% if logged_in?  %>
 
-<body>
+
+<body class="<%= 'bg-gradient-primary' unless user_signed_in? %>">
   <%= yield %>
 </body>
-
-<% else %>
-
-<body class="bg-gradient-primary">
-  <%= yield %>
-</body>
-
-<% end %>
 
 </html>

@@ -16,16 +16,34 @@ Install missing gems:
 bundle install
 ```
 
+Run the migration command:
+```
+rails db:migrate
+```
+
+Populate the database:
+
+```
+rails db:seed
+```
+
 Start rails server. It will be listening on localhost:3000
 
 ```shell
 rails server
 ```
 
+## Basic access control
+The app have a User Management module which permits users to access the system by authenticating themselves and determining roles: __administrator__ and __user__.
+
+For creating the first admin user before the application can be used, we have seeded an admin user in database:
+
+```
+email: admin@todoapp.com
+password: Administrator.
+```
+
 ## Testing with rspec
-
-
-### Views
 
 #### Installing geckodriver
 

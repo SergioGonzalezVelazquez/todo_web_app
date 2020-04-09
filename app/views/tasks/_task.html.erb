@@ -1,0 +1,90 @@
+<div class="card shadow mb-4 <%= 'border-left-primary' if task.priority == 'low' %>  
+    <%= 'border-left-warning' if task.priority == 'medium' %>
+      <%= 'border-left-danger' if task.priority == 'high' %>">
+    <!-- Card Header - Accordion -->
+    <div id="task_header_<%=index + 1%>" class="card-header py-3 d-flex flex-row justify-content-between">
+        <div class="col-4">
+            <div class="row py-0">
+                <h6 id="lbl_task_name_<%=index + 1%>" class="m-0 font-weight-bold text-primary"><%= task.name %></h6>
+            </div>
+        </div>
+        <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i id="task_header_option_<%=index + 1%>" class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#collapseTask<%= index +1 %>" id="task_details_<%=index + 1%>"
+                    data-toggle="collapse">View details</a>
+                <div class="dropdown-divider"></div>
+                <%= link_to 'Mark as completed', mark_as_completed_task_path(task), method:
+          :post, class: "dropdown-item", id: "task_complete_".concat((index + 1).to_s) %>
+
+                <% if task.project.present? %>
+                <%= link_to 'Remove from the project', remove_from_project_task_path(task), method:
+            :post, class: "dropdown-item",  id: "task_remove_project_".concat((index + 1).to_s) %>
+                <% end %>
+
+
+                <%= link_to 'Edit task', edit_task_path(task), {:remote => true, 'data-toggle' =>  "modal",
+           'data-target' => '#modal-form-task', class: "dropdown-item",  id: "task_edit_".concat((index + 1).to_s)}%>
+
+                <%= link_to 'Delete task', task_path(task), method:
+          :delete, class: "dropdown-item",  id: "task_delete_".concat((index + 1).to_s),  data: { confirm: 'Are you sure?' } %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Content - Collapse -->
+    <div class="collapse" id="collapseTask<%= index +1 %>">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Description:</span>
+                </div>
+                <div class="col">
+                    <span id="lbl_task_description_<%=index + 1%>" class="small"><%= task.description %></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Priority:</span>
+                </div>
+                <div class="col">
+                    <span id="lbl_task_priority_<%=index + 1%>" class="small"><%= task.priority %></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Deadline:</span>
+                </div>
+                <div class="col">
+                    <span id="lbl_task_deadline_<%=index + 1%>" class="small"><%= task.deadline %></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Created:</span>
+                </div>
+                <div class="col">
+                    <span id="lbl_task_deadline_<%=index + 1%>" class="small"><%= time_ago_in_words(task.created_at) %> ago</span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Project:</span>
+                </div>
+                <% if task.project.present? %>
+                <div class="col">
+                    <span id="lbl_task_project_name_<%=index + 1%>" class="small"><%= task.project.name %></span>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
