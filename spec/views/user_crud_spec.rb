@@ -64,6 +64,20 @@ describe "UserAuth" do
     pwd_error = @driver.find_elements(:xpath, "/html/body/div/div/div/div/div[2]/div/form/div[4]/div[1]/div/p")
     expect(pwd_error.length).to eq(1)
   end
+  
+  it "createAccount_FailsMailFormat" do
+    @driver.get("http://localhost:3000/users/sign_in")
+    @driver.find_element(:link_text, "Create an Account").click
+
+    # Create new account
+    create_account(@driver, @name, @surname, @nick, "Hi", @password)
+    sleep(1)
+
+    # Mail validation error is present
+    mail_error = @driver.find_elements(:xpath, "/html/body/div/div/div/div/div[2]/div/form/div[3]/p")
+    expect(mail_error.length).to eq(1)
+  end
+
 
   it "login" do
     @driver.get("http://localhost:3000/users/sign_in")
