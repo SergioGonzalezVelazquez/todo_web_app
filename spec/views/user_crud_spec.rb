@@ -20,6 +20,27 @@ describe "UserAuth" do
     #@driver.quit
   end
 
+    it "check_admin_account" do
+    @driver.get("http://localhost:3000/users/sign_in")
+    login(@driver, "admin@todoapp.com", "Administrator.")
+
+    @driver.find_element(:id, 'user_profile_photo').click
+    @driver.find_element(:id, 'user_administration').click
+
+    @driver.find_element(:css, '#link_to_tasks_managment > span').click
+    expect(@driver.current_url).to eq("http://localhost:3000/admin/tasks")
+
+    @driver.find_element(:css, '#link_to_projects_managment > span').click
+    expect(@driver.current_url).to eq("http://localhost:3000/admin/projects")
+
+    @driver.find_element(:css, '#link_to_users_management > span').click
+    expect(@driver.current_url).to eq("http://localhost:3000/admin/users")
+
+    sleep(1)
+    logout(@driver)
+
+  end
+  
   it "createAccount_Success" do
     @driver.get("http://localhost:3000/users/sign_in")
     @driver.find_element(:link_text, "Create an Account").click
