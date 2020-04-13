@@ -56,22 +56,6 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-    @task = Task.find(params[:id])
-
-    respond_to do |format|
-      # Renders error modal
-      if @task.author != current_user
-        format.js {
-          render "edit", :locals => { :error => true, :msg => "You cannot edit another user's task!" }
-        }
-
-        # Renders form to edit task
-      else
-        format.js
-      end
-    end
-  end
 
   def update
     @task = Task.find(params[:id])
@@ -120,6 +104,7 @@ class TasksController < ApplicationController
   end
 
   def add_task_to_project
+    puts "add task to project renders"
     @project = Project.find(params[:project_id])
     respond_to do |format|
       format.js {
@@ -129,8 +114,8 @@ class TasksController < ApplicationController
   end
 
   def create_to_project
-    puts "add to project"
-    @project = Project.find(params[:project_id])
+    puts "create to project"
+    puts params[:project_id]
     @task = Task.new(task_params)
 
     # set the task’s project
@@ -139,12 +124,8 @@ class TasksController < ApplicationController
     # set the task’s author
     @task.author = current_user
 
+    @task.save
     redirect_back(fallback_location: root_path)
-
-
-    # set the task’s author
-    # @task.author = current_user
-    #redirect_back(fallback_location: root_path)
   end
 
   def remove_from_project
