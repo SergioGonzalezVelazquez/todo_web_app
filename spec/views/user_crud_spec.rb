@@ -7,8 +7,8 @@ describe "UserAuth" do
     @name = "test"
     @surname = "user"
     @complete = @name + " " + @surname
-    @nick = "test16User"
-    @mail = "test16@user.com"
+    @nick = "test4User"
+    @mail = "test4@user.com"
     @password = "Qwerty12345?-"
   end
 
@@ -20,27 +20,26 @@ describe "UserAuth" do
     #@driver.quit
   end
 
-    it "check_admin_account" do
+  it "check_admin_account" do
     @driver.get("http://localhost:3000/users/sign_in")
     login(@driver, "admin@todoapp.com", "Administrator.")
 
-    @driver.find_element(:id, 'user_profile_photo').click
-    @driver.find_element(:id, 'user_administration').click
+    @driver.find_element(:id, "user_profile_photo").click
+    @driver.find_element(:id, "user_administration").click
 
-    @driver.find_element(:css, '#link_to_tasks_managment > span').click
+    @driver.find_element(:css, "#link_to_tasks_managment > span").click
     expect(@driver.current_url).to eq("http://localhost:3000/admin/tasks")
 
-    @driver.find_element(:css, '#link_to_projects_managment > span').click
+    @driver.find_element(:css, "#link_to_projects_managment > span").click
     expect(@driver.current_url).to eq("http://localhost:3000/admin/projects")
 
-    @driver.find_element(:css, '#link_to_users_management > span').click
+    @driver.find_element(:css, "#link_to_users_management > span").click
     expect(@driver.current_url).to eq("http://localhost:3000/admin/users")
 
     sleep(1)
     logout(@driver)
-
   end
-  
+
   it "createAccount_Success" do
     @driver.get("http://localhost:3000/users/sign_in")
     @driver.find_element(:link_text, "Create an Account").click
@@ -57,16 +56,16 @@ describe "UserAuth" do
     @driver.find_element(:id, "user_account_edit").click
     sleep(1)
 
-    first_name = @driver.find_element(:xpath, "//input[contains(@name, 'user[first_name]')]").attribute("value")
-    expect(first_name).to eq(@complete)
+    first_name = @driver.find_element(:id, "user_first_name").attribute("value")
+    expect(first_name).to eq(@name)
 
-    last_name = @driver.find_element(:xpath, "//input[contains(@name, 'user[surname]')]").attribute("value")
+    last_name = @driver.find_element(:id, "user_surname").attribute("value")
     expect(last_name).to eq(@surname)
 
-    username = @driver.find_element(:xpath, "//input[contains(@name, 'user[username]')]").attribute("value")
+    username = @driver.find_element(:id, "user_username").attribute("value")
     expect(username).to eq(@nick)
 
-    usermail = @driver.find_element(:xpath, "//input[contains(@name, 'user[email]')]").attribute("value")
+    usermail = @driver.find_element(:id, "user_email").attribute("value")
     expect(usermail).to eq(@mail)
 
     # Logout
@@ -85,7 +84,7 @@ describe "UserAuth" do
     pwd_error = @driver.find_elements(:xpath, "/html/body/div/div/div/div/div[2]/div/form/div[4]/div[1]/div/p")
     expect(pwd_error.length).to eq(1)
   end
-  
+
   it "createAccount_FailsMailFormat" do
     @driver.get("http://localhost:3000/users/sign_in")
     @driver.find_element(:link_text, "Create an Account").click
@@ -98,7 +97,6 @@ describe "UserAuth" do
     mail_error = @driver.find_elements(:xpath, "/html/body/div/div/div/div/div[2]/div/form/div[3]/p")
     expect(mail_error.length).to eq(1)
   end
-
 
   it "login" do
     @driver.get("http://localhost:3000/users/sign_in")
@@ -120,19 +118,26 @@ describe "UserAuth" do
     @driver.find_element(:id, "user_account_edit").click
     sleep(1)
 
-    nameEdit = 'testEDIT'
-    surnameEdit = 'userEDIT'
-    nickEdit = 'testUserEDIT' 
-    completeEdit = nameEdit + " "+surnameEdit
+    nameEdit = "testEDIT"
+    surnameEdit = "userEDIT"
+    nickEdit = "testUserEDIT"
 
+    # Edit name
     @driver.find_element(:id, "user_first_name").click
+    @driver.find_element(:id, "user_first_name").clear
     @driver.find_element(:id, "user_first_name").send_keys(nameEdit)
-    @driver.find_element(:id, "user_surname").click
-    @driver.find_element(:id, "user_surname").send_keys(surnameEdit)
-    @driver.find_element(:id, "user_username").click
-    @driver.find_element(:id, "user_username").send_keys(nickEdit)
-    @driver.find_element(:name, "commit").click
 
+    # Edit surname
+    @driver.find_element(:id, "user_surname").click
+    @driver.find_element(:id, "user_surname").clear
+    @driver.find_element(:id, "user_surname").send_keys(surnameEdit)
+
+    @driver.find_element(:id, "user_username").click
+    @driver.find_element(:id, "user_username").clear
+    @driver.find_element(:id, "user_username").send_keys(nickEdit)
+
+    #Submit form
+    @driver.find_element(:name, "commit").click
 
     # Read edited information
     @driver.find_element(:id, "user_profile_photo").click
@@ -140,7 +145,7 @@ describe "UserAuth" do
     sleep(1)
 
     first_nameE = @driver.find_element(:xpath, "//input[contains(@name, 'user[first_name]')]").attribute("value")
-    expect(first_nameE).to eq(completeEdit)
+    expect(first_nameE).to eq(nameEdit)
 
     last_nameE = @driver.find_element(:xpath, "//input[contains(@name, 'user[surname]')]").attribute("value")
     expect(last_nameE).to eq(surnameEdit)
@@ -174,8 +179,6 @@ describe "UserAuth" do
     pwd_error = @driver.find_elements(:id, "btn_login")
     expect(pwd_error.length).to eq(1)
   end
-
-
 end
 
 def create_account(driver, name, surname, nick, mail, password)

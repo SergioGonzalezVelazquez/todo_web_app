@@ -1,122 +1,16 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            <div class="sidebar-brand-icon">
-                <!-- <div class="sidebar-brand-icon rotate-n-15">-->
-                <i class="fas fa-tasks"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">TODO App</div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Tasks
-        </div>
-
-        <!-- Nav Item - Inbox -->
-        <li class="nav-item">
-            <a class="nav-link" href="/index.html">
-                <i class="fas fa-inbox"></i>
-                <span>Inbox</span></a>
-        </li>
-
-        <!-- Nav Item - Today -->
-        <li class="nav-item">
-            <a class="nav-link" href="/today.html">
-                <i class="fas fa-calendar-day"></i>
-                <span>Today</span></a>
-        </li>
-
-        <!-- Nav Item - This week -->
-        <li class="nav-item">
-            <a class="nav-link" href="/week.html">
-                <i class="fas fa-calendar-alt"></i>
-                <span>This week</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Collections
-        </div>
-
-        <!-- Nav Item - Projects Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                aria-controls="collapseTwo">
-                <i class="fas fa-folder-open"></i>
-                <span>Projects</span>
-            </a>
-            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <%= link_to 'Create new project', new_project_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "collapse-item", 
-              id: "btn_create_project"}%>
-                    <h6 class="collapse-header">My projects</h6>
-                </div>
-            </div>
-        </li>
-
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block" />
-        <!--
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-    -->
-    </ul>
+    <%= render "shared/sidebar", active: 0 %>
     <!-- End of Sidebar -->
+
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
         <!-- Main Content -->
         <div id="content">
             <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
-
-                <!-- Page Heading -->
-                <nav class="navbar navbar">
-                    <span class="navbar-brand mb-0 h1">Edit profile</span>
-                </nav>
-
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
-
-                    <div class="topbar-divider d-none d-sm-block"></div>
-
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span
-                                class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.first_name.concat(" " + current_user.surname) %></span>
-                            <img class="img-profile rounded-circle" src="/images/user-default.png" />
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="userDropdown">
-                            <%= link_to '<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile'.html_safe, edit_user_path, class: "dropdown-item",  id: "user_account_edit" %>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+            <%= render "shared/navbar", title: 'Edit Profile' %>
             <!-- End of Topbar -->
 
 
@@ -135,19 +29,19 @@
 
                                         <% if current_user.errors.any? %>
                                         <div id="error_explanation">
-                                          <!--
+                                            <!--
                                           <h2>
                                             <%= pluralize(@task.errors.count, "error") %> prohibited this task from
                                             being saved:
                                           </h2>
                                           -->
-                                          <ul>
-                                            <% current_user.errors.full_messages.each do |msg| %>
-                                            <li class="alert alert-danger" role="alert">
-                                              <%= msg %>
-                                            </li>
-                                            <% end %>
-                                          </ul>
+                                            <ul>
+                                                <% current_user.errors.full_messages.each do |msg| %>
+                                                <li class="alert alert-danger" role="alert">
+                                                    <%= msg %>
+                                                </li>
+                                                <% end %>
+                                            </ul>
                                         </div>
                                         <% end %>
 
@@ -191,22 +85,22 @@
 
                                         <% if current_user.errors.any? %>
                                         <div id="error_explanation">
-                                          <!--
+                                            <!--
                                           <h2>
                                             <%= pluralize(@task.errors.count, "error") %> prohibited this task from
                                             being saved:
                                           </h2>
                                           -->
-                                          <ul>
-                                            <% current_user.errors.full_messages.each do |msg| %>
-                                            <li class="alert alert-danger" role="alert">
-                                              <%= msg %>
-                                            </li>
-                                            <% end %>
-                                          </ul>
+                                            <ul>
+                                                <% current_user.errors.full_messages.each do |msg| %>
+                                                <li class="alert alert-danger" role="alert">
+                                                    <%= msg %>
+                                                </li>
+                                                <% end %>
+                                            </ul>
                                         </div>
                                         <% end %>
-                                        
+
                                         <p class="py-0" style="font-size: 1em;"> Changing your password will sign you
                                             out of all your devices. You will need to enter your new password on all
                                             your devices</p>
@@ -282,7 +176,7 @@
         aria-hidden="true">
     </div>
 
-    <!-- New PRoject Modal -->
+    <!-- New Project Modal -->
     <div class="modal" id="modal-form-project" tabindex="-1" role="dialog" aria-labelledby="modalNewProjectTitle"
         aria-hidden="true">
     </div>
