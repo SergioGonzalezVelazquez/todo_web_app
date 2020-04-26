@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_182401) do
+ActiveRecord::Schema.define(version: 2020_04_26_165449) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2020_04_20_182401) do
     t.integer "status"
     t.index ["project_id"], name: "index_collaborators_on_project_id"
     t.index ["user_id"], name: "index_collaborators_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "project_id", null: false
+    t.string "text"
+    t.integer "notification_type"
+    t.boolean "pending"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "projects", force: :cascade do |t|

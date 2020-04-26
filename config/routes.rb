@@ -31,10 +31,9 @@ Rails.application.routes.draw do
   resources :projects
   match "/projects/:project_id/management", as: "project_management", to: "projects#management", via: "get"
   
-  resources :collaborators
+  resources :collaborators, only: [:new, :create, :destroy]
+  match "/collaborators/accept(.:format)", as: "accept_collaborator", to: "collaborators#accept", via: "post"
 
-  # get "collaborators/new"
-  # get "collaborators/create"
 
   # Relationship between tasks and projects
   match "/projects/:project_id/tasks(.:format)", as: "add_task_to_project", to: "tasks#add_task_to_project", via: "get"

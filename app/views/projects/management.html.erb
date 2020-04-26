@@ -34,9 +34,27 @@
                     <!-- List of pending tasks for this project-->
                     <div class="col-md-7">
                         <span class="navbar-brand mb-0 h1 pb-2"> Collaborators </span>
-                        <%= render "collaborators/collaborator", title: 'Project owner', color: 'danger' %>
+                        <div class="col-xl-9 col-md-6 mb-4 pl-0">
+                            <div class='<%= "card border-left-danger shadow h-100 py-2"%>'>
+                                <div class="card-body">
+                                    <div class="row ">
+                                        <div class="col mr-2">
+                                            <div
+                                                class='<%= "text-xs font-weight-bold text-danger text-uppercase mb-1"%>'>
+                                                Project Owner </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <%= @project.author.first_name.slice(0,1).capitalize + 
+                                                    @project.author.first_name.slice(1..-1) + ' '+ 
+                                                    @project.author.surname.slice(0,1).capitalize + 
+                                                    @project.author.surname.slice(1..-1) %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <% @collaborators.each_with_index do |collaborator, index| %>
-                        <%= render "collaborators/collaborator", title: 'Collaborator', color: 'primary' %>
+                        <%= render "collaborators/collaborator", title: 'Collaborator', color: 'primary', collaborator: collaborator %>
                         <% end %>,
                     </div>
                     <!-- List of user in this project-->

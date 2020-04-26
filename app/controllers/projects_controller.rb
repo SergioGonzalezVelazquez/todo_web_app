@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
-    @project_manager = Project.where(:author_id => current_user)
+    @projects_owner = Project.where(:author_id => current_user)
+    @projects_shared = Project.where(:author_id => current_user)
   end
 
   def show

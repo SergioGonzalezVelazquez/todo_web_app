@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center pb-5 pl-4">
+    <div class="mr-3">
+
+        <div class="icon-circle <%= 'bg-primary' if notification.notification_type == 'invitation' %>  
+                  <%= 'bg-success' if notification.notification_type  == 'task_completed' %>">
+            <i class="fas <%= 'fa-user-plus' if notification.notification_type == 'invitation' %> text-white"></i>
+        </div>
+    </div>
+    <div class="mr-3">
+        <div class="small text-gray-500"><%= notification.created_at %></div>
+        <span class="mb-3 <%= 'font-weight-bold' if notification.pending %>"><%= notification.text %></span> <br>
+        <%= link_to 'Accept', accept_collaborator_path(:project_id => notification.project_id), method: "post", class: "font-weight-bold text-primary" %>
+        <%= link_to 'Deny',  id: "btn_deny_invitation", class: "text-xs font-weight-bold text-danger" %>
+    </div>
+</div>

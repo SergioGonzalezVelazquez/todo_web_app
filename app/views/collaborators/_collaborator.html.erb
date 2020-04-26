@@ -5,9 +5,10 @@
                 <div class="col mr-2">
                     <div class='<%= "text-xs font-weight-bold text-#{color} text-uppercase mb-1"%>'> <%= title %> </div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        Sergio González</div>
-                </div>
-                <div class="col-auto">
+                        <%= collaborator.user.first_name.slice(0,1).capitalize + 
+                            collaborator.user.first_name.slice(1..-1) + ' ' + 
+                            collaborator.user.surname.slice(0,1).capitalize + 
+                            collaborator.user.surname.slice(1..-1) %></div>
                 </div>
             </div>
         </div>

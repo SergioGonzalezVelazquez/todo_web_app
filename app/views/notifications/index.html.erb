@@ -16,21 +16,29 @@
             <div class="container-fluid">
                 <!-- Content Row -->
                 <div class="row">
+                    <!-- List of all user notifications -->
+                    <% @all_notifications.each do |notification, index| %>
+                        <% if notification.notification_type == 'invitation' && notification.pending %>
+                            <%= render "notifications/pending_invitation", notification: notification %>
+                        <% else %>
+                            <%= render "notifications/notification", notification: notification %>
+                        <% end %>
+                    <% end %>
                 </div>
             </div>
 
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <%= render "shared/footer"%>
-            <!-- End of Footer -->
         </div>
-        <!-- End of Content Wrapper -->
-    </div>
-    <!-- End of Page Wrapper -->
+        <!-- End of Main Content -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+        <!-- Footer -->
+        <%= render "shared/footer"%>
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>

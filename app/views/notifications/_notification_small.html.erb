@@ -1,0 +1,13 @@
+<a class="dropdown-item d-flex align-items-center" href="/notifications">
+    <div class="mr-3">
+
+        <div class="icon-circle <%= 'bg-primary' if notification.notification_type == 'invitation' %>  
+                  <%= 'bg-success' if notification.notification_type  == 'task_completed' %>">
+            <i class="fas <%= 'fa-user-plus' if notification.notification_type == 'invitation' %> text-white"></i>
+        </div>
+    </div>
+    <div>
+        <div class="small text-gray-500"><%= notification.created_at %></div>
+        <span class="mb-2 <%= 'font-weight-bold' if notification.pending %>"><%= notification.text %></span>
+    </div>
+</a>
