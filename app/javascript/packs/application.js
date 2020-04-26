@@ -45,3 +45,9 @@ require('@fortawesome/fontawesome-free/css/all.css')
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+Notification.requestPermission().then(function (result) {
+    if (result.permission === 'denied') {
+
+    }
+});

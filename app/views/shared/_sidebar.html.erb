@@ -40,27 +40,16 @@
 
       <!-- Nav Item - Projects Collapse Menu -->
       <li class="<%= active == 4 ? 'nav-item active' : 'nav-item' %>">
-          <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-              aria-controls="collapseTwo">
-              <i class="fas fa-folder-open"></i>
-              <span>Projects</span>
-          </a>
-          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                  <%= link_to 'Create new project', new_project_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "collapse-item", 
-              id: "btn_create_project"}%>
-                  <h6 class="collapse-header">My projects</h6>
-                  <% projects.each_with_index do |project, index| %>
-                  <%= link_to project.name, project_path(project), 
-              class: "collapse-item", id: "project_link_".concat((index.to_i + 1).to_s)%>
-                  <% end %>
-              </div>
-          </div>
+          <%= link_to '<i class="fas fa-folder-open"></i> <span>Projects</span>'.html_safe,  projects_path, class: "nav-link",  id: "link_to_projects" %>
       </li>
-
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block" />
+
+      <!-- Nav Item - Notifications Menu -->
+      <li class="<%= active == 5 ? 'nav-item active' : 'nav-item' %>">
+          <%= link_to '<i class="fas fa-bell"></i> <span>Notifications</span>'.html_safe, notifications_path, class: "nav-link",  id: "link_to_notifications" %>
+      </li>
 
   </ul>
   <!-- End of Sidebar -->

@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+  def index
+    @project_manager = Project.where(:author_id => current_user)
+  end
+
   def show
     @project = Project.find(params[:id])
 
@@ -13,6 +17,12 @@ class ProjectsController < ApplicationController
       @pending_tasks << task if task.completed == false
       @completed_tasks << task if task.completed == true
     end
+
+    # pending invitations
+    @collaborators = Collaborator.where(:project_id => @project.id).where(:status => "accepted").count
+
+    # pending invitations
+    @pending_invitations = Collaborator.where(:project_id => @project.id).where(:status => "pending").count
   end
 
   def new
@@ -62,6 +72,16 @@ class ProjectsController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def management
+    @project = Project.find(params[:project_id])
+    
+    # pending invitations
+    @collaborators = Collaborator.where(:project_id => @project.id).where(:status => "accepted")
+
+    # pending invitations
+    @pending_invitations = Collaborator.where(:project_id => @project.id).where(:status => "pending")
   end
 
   def destroy

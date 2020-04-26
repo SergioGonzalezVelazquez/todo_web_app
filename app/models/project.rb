@@ -7,7 +7,10 @@ class Project < ApplicationRecord
     # If you delete a project, its associated tasks will also be deleted
     has_many :tasks, dependent: :destroy
 
-    # Linking projects to users
+    # Linking projects to user author
     belongs_to :author, class_name: "User"
+
+    # Linking project to collaborators user
+    has_many :collaborators, through: :projects
 
 end

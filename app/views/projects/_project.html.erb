@@ -1,0 +1,58 @@
+<div class="card shadow mb-4 <%= project.author == current_user ? 'border-left-primary' : 'border-left-warning' %>">
+    <!-- Card Header - Accordion -->
+    <div id="project_header_<%=index + 1%>" class="card-header py-3 d-flex flex-row justify-content-between">
+        <div class="col-4">
+            <div class="row py-0">
+                <h6 id="lbl_project_name_<%=index + 1%>" class="m-0 font-weight-bold text-primary"><%= project.name %></h6>
+            </div>
+        </div>
+        <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i id="project_header_option_<%=index + 1%>" class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#collapseProject<%= index +1 %>" id="project_details_<%=index + 1%>"
+                    data-toggle="collapse">View details</a>
+                <div class="dropdown-divider"></div>
+                <%= link_to 'Project page', project_path(project), 
+                class: "dropdown-item", id: "project_link_".concat((index.to_i + 1).to_s)%>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Content - Collapse -->
+    <div class="collapse" id="collapseProject<%= index +1 %>">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Description:</span>
+                </div>
+                <div class="col">
+                    <span id="lbl_project_description_<%=index + 1%>" class="small"><%= project.description %></span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Created:</span>
+                </div>
+                <div class="col">
+                    <span id="lbl_project_created_<%=index + 1%>" class="small"><%= time_ago_in_words(project.created_at) %> ago</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <span class="small font-weight-bold">Author:</span>
+                </div>
+                <div class="col">
+                    <span id="lbl_project_author_<%=index + 1%>" class="small"><%= project.author.first_name%>  (<%=project.author.email%>)  </span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

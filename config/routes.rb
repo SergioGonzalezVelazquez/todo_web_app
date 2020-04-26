@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # Administrator namespace
   namespace :admin do
     root "application#index"
@@ -27,14 +26,22 @@ Rails.application.routes.draw do
   match "/tasks/:id(.:format)", to: "tasks#index", via: "get"
   match "/today", to: "tasks#today", via: "get"
   match "/week", to: "tasks#week", via: "get"
-  match "/projects", to: "tasks#index", via: "get"
 
   # Projects
   resources :projects
+  match "/projects/:project_id/management", as: "project_management", to: "projects#management", via: "get"
+  
+  resources :collaborators
+
+  # get "collaborators/new"
+  # get "collaborators/create"
 
   # Relationship between tasks and projects
   match "/projects/:project_id/tasks(.:format)", as: "add_task_to_project", to: "tasks#add_task_to_project", via: "get"
   match "/projects/:project_id/tasks(.:format)", as: "project_tasks", to: "tasks#create_to_project", via: "post"
+
+  # Notifications
+  resources :notifications, only: [:index]
 
   root "tasks#index"
 end

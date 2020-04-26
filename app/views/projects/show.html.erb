@@ -14,6 +14,7 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1 pb-2"> <%= @project.description%></span>
                 <div class="row justify-content-start pl-3">
 
                     <!-- Page Heading: Buttons for add, edit and delete tasks -->
@@ -24,23 +25,10 @@
                     </div>
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3">
-                        <%= link_to '<i class="fas fa-pencil-alt fa-sm text-white-50"></i> Edit project'.html_safe, edit_project_path(@project), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "d-none d-sm-inline-block btn
-                        btn-sm btn-secondary shadow-sm", id: "btn_edit_project"}%>
-                    </div>
-
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <%= link_to '<i class="fas fa-trash fa-sm text-white-50"></i> Delete project'.html_safe, project_path(@project), method:
-                            :delete, class: "d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm", id: "btn_delete_project", data: { confirm: 'Are you sure?' }%>
+                        <%= link_to '<i class="fas fa-cog fa-sm text-white-50"></i> Management'.html_safe, project_management_path(@project), class: "d-none d-sm-inline-block btn
+                        btn-sm btn-secondary shadow-sm", id: "btn_management_project"%>
                     </div>
                 </div>
-
-                <!-- Page Heading: Project description -->
-                <div class="row justify-content-start pl-3">
-                    <p class="mb-4" id="lbl_project_description">
-                        <%= @project.description%>
-                    </p>
-                </div>
-
 
                 <!-- Content Row -->
                 <div class="row">
@@ -50,12 +38,22 @@
                     <!-- Completed Tasks for this project (Card) -->
                     <%= render "shared/card", title: 'Completed Tasks', value: @completed_tasks.count, icon: 'fas fa-check', color: 'success' %>
 
-                </div>
+                    <!-- Colaborators on this project -->
+                    <%= render "shared/card", title: 'Collaborators', value: @collaborators + 1, icon: 'fas fa-users', color: 'danger' %>
 
-                <!-- List of pending tasks for this project-->
-                <% @pending_tasks.each_with_index do |task, index| %>
-                <%= render "tasks/task", task: task, index: index %>
-                <% end %>
+                    <!-- Pending invitations for this project -->
+                    <%= render "shared/card", title: 'Pending invitations', value: @pending_invitations, icon: 'fas fa-envelope', color: 'info' %>
+                </div>
+                <br>
+                <div class="row">
+                    <!-- List of pending tasks for this project-->
+                    <div class="col">
+                        <span class="navbar-brand mb-0 h1 pb-2"> Pending tasks </span>
+                        <% @pending_tasks.each_with_index do |task, index| %>
+                        <%= render "tasks/task", task: task, index: index %>
+                        <% end %>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- End of Main Content -->
@@ -76,4 +74,9 @@
 <!-- Add task to project Modal -->
 <div class="modal" id="modal-task-project" tabindex="-1" role="dialog" aria-labelledby="modalTaskProjectTitle"
     aria-hidden="true">
+</div>
+
+<!-- Invite collaborator to project Modal -->
+<div class="modal" id="modal-collaborator-project" tabindex="-1" role="dialog"
+    aria-labelledby="modalCollaboratorProjectTitle" aria-hidden="true">
 </div>

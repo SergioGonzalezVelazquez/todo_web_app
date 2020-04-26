@@ -1,0 +1,20 @@
+<div class="col-xl-9 col-md-6 mb-4 pl-0">
+    <div class='<%= "card border-left-warning shadow h-100 py-2"%>'>
+        <div class="card-body">
+            <div class="row ">
+                <div class="col mr-2">
+                    <div class='<%= "text-xs font-weight-bold text-warning text-uppercase mb-1"%>'> Pending </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <%= invitation.user.first_name.slice(0,1).capitalize + invitation.user.first_name.slice(1..-1) + ' ' + invitation.user.surname.slice(0,1).capitalize + invitation.user.surname.slice(1..-1) %>
+                    </div>
+                    <div class="mb-0 text-gray-600">
+                        <%= invitation.user.email %></div>
+                </div>
+                <div class="col-auto">
+                    <%= link_to 'Cancel',  collaborator_path(invitation.id), data: { confirm: "Are you sure?" }, 
+                    method: :delete, class: "text-xs font-weight-bold text-danger text-uppercase mb-1",  id: "btn_cancel_invitation" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

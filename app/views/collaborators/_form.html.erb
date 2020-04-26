@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <%= form_for @project, :url => url_for(:controller => 'collaborators', :action => 'create', :project_id => @project.id), :html => {:method => :post} do |form| %>
+        <div class="modal-header card-header py-3">
+            <h6 class="font-weight-bold text-primary" id="exampleModalLongTitle">Invite a collaborator to
+                <%= @project.name %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        <div class="modal-body">
+
+            <% if !!flash[:errors] %>
+            <div id="error_explanation">
+                <ul>
+                    <li class="alert alert-danger" role="alert">
+                        <%= flash[:errors] %>
+                    </li>
+                </ul>
+            </div>
+            <% end %>
+
+            <div class="form-group">
+                <%= form.label 'User email address'%><br />
+                <%= text_field_tag :user_email, "", class: 'form-control' %>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= form.submit 'Send invitation', class: 'btn btn-primary', id: "btn_invitation_submit" %>
+        </div>
+
+        <% end %>
+    </div>
+</div>
