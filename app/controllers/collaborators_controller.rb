@@ -17,18 +17,21 @@ class CollaboratorsController < ApplicationController
     @user = User.find_by(:email => params[:user_email])
     @project = Project.find params[:project_id]
 
+    if @project.author != current_user
+      flash.now[:alert] = "You cannot invite users to this project"
+      redirect_back(fallback_location: root_path)
+    end
+
     if !@user.nil? && !@user.nil?
       # Check if user has been invited yet
       @unique = Collaborator.where(:project_id => params[:project_id]).where(:user_id => @user.id).where(:status => ["pending", "accepted"]).count
 
       if @unique == 0
-        puts "unitque"
         @collaborator.user_id = @user.id
         @collaborator.project_id = params[:project_id]
-        @collaborator.status = 'pending'
+        @collaborator.status = "pending"
         if @collaborator.save
-          puts "guardado!!!!"
-          
+
           # Create notification
           @notification = Notification.new
           @notification.user_id = @user.id
@@ -38,30 +41,46 @@ class CollaboratorsController < ApplicationController
           @notification.pending = true
           @notification.save
         end
-
       else
-        puts "user already exists"
         flash[:errors] = "User already invited"
       end
     else
-      puts "user not found"
       flash[:errors] = "User not found"
     end
     redirect_back(fallback_location: root_path)
   end
 
   def accept
-    puts "ACCEPT!!!!!!!!!!!!!!!!!"
-    @collaborator = Collaborator.where(:project_id => params[:project_id]).where(:user_id => current_user.id).where(:status => "pending").first
-    
-    if !@collaborator.nil?
-      puts "existe este colllaborator, lo he encontrado"
+    collaborator = Collaborator.where(:project_id => params[:project_id]).where(:user_id => current_user.id).where(:status => "pending").first
 
-      @collaborator.update_attribute(:status, "accepted")
+    if !collaborator.nil?
+      collaborator.update_attribute(:status, "accepted")
       # Mark notification as not pending
 
-    end 
+    end
     redirect_back(fallback_location: root_path)
+  end
+
+  def revoke
+    puts params
+    project = Project.find(params[:project_id])
+    user = User.find(params[:user_id])
+
+    if project.author != current_user && user != current_user
+      flash.now[:alert] = "You cannot revoke collaborators in this project."
+      redirect_back(fallback_location: root_path)
+    end
+
+    collaborator = Collaborator.where(:project_id => params[:project_id]).where(:user_id => params[:user_id]).where(:status => "accepted").first
+    if !collaborator.nil?
+      collaborator.update_attribute(:status, "revoked")
+    end
+
+    if collaborator.user_id == current_user.id
+      redirect_to(projects_path)
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def destroy
@@ -70,12 +89,12 @@ class CollaboratorsController < ApplicationController
     @user_id = @collaborator.user_id
     @project_id = @collaborator.project_id
 
-    if @collaborator.destroy && @collaborator.status == 'pending'
+    if @collaborator.destroy && @collaborator.status == "pending"
       # Destroy notification
-      @notification = Notification.find_by(project_id:  @project_id, user_id: @user_id)
+      @notification = Notification.find_by(project_id: @project_id, user_id: @user_id)
       Notification.destroy(@notification.id)
       puts "notificatión borrada"
-    end 
+    end
 
     redirect_back(fallback_location: root_path)
   end

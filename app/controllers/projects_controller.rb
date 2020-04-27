@@ -1,15 +1,21 @@
 class ProjectsController < ApplicationController
   def index
     @projects_owner = Project.where(:author_id => current_user)
-    @projects_shared = Project.where(:author_id => current_user)
+    #puts current_user.projects_shared.count
+    @projects_shared = Project.joins(:collaborators).where(:collaborators => { :user_id => current_user.id, :status => "accepted" })
   end
 
   def show
     @project = Project.find(params[:id])
 
+    # Check if user is project collaborator
+    isCollaborator = Collaborator.where(:project_id => @project.id).where(:status => "accepted").where(:user_id => current_user.id).count > 0
+
     if @project.author != current_user
-      flash.now[:alert] = "Forbidden You cannot see this project."
-      redirect_back(fallback_location: root_path)
+      if !isCollaborator
+        flash.now[:alert] = "Forbidden You cannot see this project."
+        redirect_back(fallback_location: root_path)
+      end
     end
 
     @pending_tasks = []
@@ -19,7 +25,6 @@ class ProjectsController < ApplicationController
       @completed_tasks << task if task.completed == true
     end
 
-    # pending invitations
     @collaborators = Collaborator.where(:project_id => @project.id).where(:status => "accepted").count
 
     # pending invitations
@@ -77,12 +82,29 @@ class ProjectsController < ApplicationController
 
   def management
     @project = Project.find(params[:project_id])
-    
+
+    # Check if user is project collaborator
+    isCollaborator = Collaborator.where(:project_id => @project.id).where(:status => "accepted").where(:user_id => current_user.id).count > 0
+
+    if @project.author != current_user && !isCollaborator
+        flash.now[:alert] = "Forbidden You cannot see this project."
+        redirect_back(fallback_location: root_path)
+    end 
+
     # pending invitations
     @collaborators = Collaborator.where(:project_id => @project.id).where(:status => "accepted")
 
     # pending invitations
     @pending_invitations = Collaborator.where(:project_id => @project.id).where(:status => "pending")
+
+
+    if isCollaborator
+      render "projects/management_collaborator"
+    else
+      # pending invitations
+      @pending_invitations = Collaborator.where(:project_id => @project.id).where(:status => "pending")
+      render "projects/management_author"
+    end
   end
 
   def destroy

@@ -11,6 +11,7 @@ class Project < ApplicationRecord
     belongs_to :author, class_name: "User"
 
     # Linking project to collaborators user
-    has_many :collaborators, through: :projects
+    has_many :collaborators
+    has_many :users, :through => :collaborators
 
 end

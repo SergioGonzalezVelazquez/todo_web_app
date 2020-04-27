@@ -42,7 +42,9 @@
                     <%= render "shared/card", title: 'Collaborators', value: @collaborators + 1, icon: 'fas fa-users', color: 'danger' %>
 
                     <!-- Pending invitations for this project -->
-                    <%= render "shared/card", title: 'Pending invitations', value: @pending_invitations, icon: 'fas fa-envelope', color: 'info' %>
+                    <% if @project.author == current_user%>
+                        <%= render "shared/card", title: 'Pending invitations', value: @pending_invitations, icon: 'fas fa-envelope', color: 'info' %>
+                    <% end %>
                 </div>
                 <br>
                 <div class="row">

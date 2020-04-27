@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   
   resources :collaborators, only: [:new, :create, :destroy]
   match "/collaborators/accept(.:format)", as: "accept_collaborator", to: "collaborators#accept", via: "post"
+  match "/collaborators/revoke(.:format)", as: "revoke_collaborator", to: "collaborators#revoke", via: "post"
 
 
   # Relationship between tasks and projects

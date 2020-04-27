@@ -14,21 +14,6 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1 pb-2"> Project Management </span>
-                <div class="row justify-content-start pl-3">
-
-                    <!-- Page Heading: Buttons for add, edit and delete tasks -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3">
-                        <%= link_to '<i class="fas fa-user-plus fa-sm text-white-50"></i> Invite user'.html_safe, url_for(:controller => :collaborators, :action => :new, :project_id => @project.id), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-collaborator-project', class: "d-none d-sm-inline-block btn
-                        btn-sm btn-primary shadow-sm", id: "btn_invite_project"}%>
-                    </div>
-
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4 pr-3">
-                        <%= link_to '<i class="fas fa-pencil-alt fa-sm text-white-50"></i> Edit project'.html_safe, edit_project_path(@project), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-form-project', class: "d-none d-sm-inline-block btn
-                        btn-sm btn-secondary shadow-sm", id: "btn_edit_project"}%>
-                    </div>
-                </div>
-
                 <!-- Content Row -->
                 <div class="row">
                     <!-- List of pending tasks for this project-->
@@ -54,14 +39,7 @@
                             </div>
                         </div>
                         <% @collaborators.each_with_index do |collaborator, index| %>
-                        <%= render "collaborators/collaborator", title: 'Collaborator', color: 'primary', collaborator: collaborator %>
-                        <% end %>,
-                    </div>
-                    <!-- List of user in this project-->
-                    <div class="col-md-5">
-                        <span class="navbar-brand mb-0 h1 pb-2"> Invitations </span>
-                        <% @pending_invitations.each_with_index do |invitation, index| %>
-                        <%= render "collaborators/invitation",  invitation: invitation %>
+                        <%= render "collaborators/collaborator", title: 'Collaborator', color: 'primary', collaborator: collaborator, show_revoke: false %>
                         <% end %>,
                     </div>
                 </div>
@@ -71,12 +49,10 @@
                     <div class="col">
                         <span class="navbar-brand mb-0 h1 pb-2"> Danger Zone </span>
                         <p class="mb-4" id="lbl_project_delete_info">
-                            Deleting this project will permanently remove all its information from our
-                            database.
-                            This cannot be undone.
+                            If you leave this project, the project owner will have to invite you again to be able to work on it
                         </p>
-                        <%= link_to 'Delete project',  project_path(@project), data: { confirm: "Are you sure?" }, 
-                         method: :delete, class: "mt-2 d-sm-inline-block btn btn-sm btn-danger shadow-sm",  id: "btn_delete_project" %>
+                        <%= link_to 'Abandon project',  revoke_collaborator_path(:project_id => @project.id, :user_id => current_user.id), method: "post",
+                         data: { confirm: "Are you sure?" }, class: "mt-2 d-sm-inline-block btn btn-sm btn-danger shadow-sm",  id: "btn_delete_project" %>
 
                     </div>
                 </div>
@@ -96,13 +72,3 @@
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
-
-<!-- Add task to project Modal -->
-<div class="modal" id="modal-task-project" tabindex="-1" role="dialog" aria-labelledby="modalTaskProjectTitle"
-    aria-hidden="true">
-</div>
-
-<!-- Invite collaborator to project Modal -->
-<div class="modal" id="modal-collaborator-project" tabindex="-1" role="dialog"
-    aria-labelledby="modalCollaboratorProjectTitle" aria-hidden="true">
-</div>

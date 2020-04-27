@@ -10,6 +10,10 @@
                             collaborator.user.surname.slice(0,1).capitalize + 
                             collaborator.user.surname.slice(1..-1) %></div>
                 </div>
+                <div class="col-auto">
+                    <%= link_to_if show_revoke, 'Revoke', revoke_collaborator_path(:project_id => collaborator.project_id, :user_id => collaborator.user_id), method: "post", data: { confirm: "Are you sure?" }, 
+                    class: "text-xs font-weight-bold text-danger text-uppercase mb-1",  id: "btn_abadon_project" %>
+                </div>
             </div>
         </div>
     </div>

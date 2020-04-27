@@ -56,7 +56,6 @@ class TasksController < ApplicationController
     end
   end
 
-
   def update
     @task = Task.find(params[:id])
 
@@ -82,24 +81,59 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
-    if @task.author != current_user
-      flash.now[:alert] = "You cannot delete another user’s task!."
-      redirect_back(fallback_location: root_path)
+
+    # If task does not belong to any project, only its author can destroy it
+    if @task.project_id.nil?
+      if @task.author != current_user
+        flash.now[:alert] = "You cannot delete another user’s task!."
+        redirect_back(fallback_location: root_path)
+      else
+        @task.destroy
+        redirect_back(fallback_location: root_path)
+      end
+
+      # If task belongs to any project, both  author and collaborators can destroy it
     else
-      @task.destroy
-      redirect_back(fallback_location: root_path)
+      project = Project.find(@task.project_id)
+      isCollaborator = Collaborator.where(:project_id => @task.project_id).where(:status => "accepted").where(:user_id => current_user.id).count > 0
+
+      if !isCollaborator && project.author != current_user
+        flash.now[:alert] = "You cannot delete another user’s task!."
+        redirect_back(fallback_location: root_path)
+      else
+        @task.destroy
+        redirect_back(fallback_location: root_path)
+      end
     end
   end
 
   def mark_as_completed
     @task = Task.find(params[:id])
-    if @task.author != current_user
-      flash.now[:alert] = "You cannot mark as complete another user’s task!."
-      redirect_back(fallback_location: root_path)
+
+    # If task does not belong to any project, only its author can mark it as complete
+    if @task.project_id.nil?
+      if @task.author != current_user
+        flash.now[:alert] = "You cannot mark as complete another user’s task!."
+        redirect_back(fallback_location: root_path)
+      else
+        @task.update_attributes(:completed => true)
+        @task.save
+        redirect_back(fallback_location: root_path)
+      end
+
+      # If task belongs to any project, both  author and collaborators can mark it as complete
     else
-      @task.update_attributes(:completed => true)
-      @task.save
-      redirect_back(fallback_location: root_path)
+      project = Project.find(@task.project_id)
+      isCollaborator = Collaborator.where(:project_id => @task.project_id).where(:status => "accepted").where(:user_id => current_user.id).count > 0
+
+      if !isCollaborator && project.author != current_user
+        flash.now[:alert] = "You cannot mark as complete tasks in this project!."
+        redirect_back(fallback_location: root_path)
+      else
+        @task.update_attributes(:completed => true)
+        @task.save
+        redirect_back(fallback_location: root_path)
+      end
     end
   end
 
@@ -114,8 +148,6 @@ class TasksController < ApplicationController
   end
 
   def create_to_project
-    puts "create to project"
-    puts params[:project_id]
     @task = Task.new(task_params)
 
     # set the task’s project

@@ -39,12 +39,10 @@ class User < ApplicationRecord
     errors.add :password, "Please use: 1 uppercase, 1 lowercase and 1 special character"
   end
 
-  has_many :activities
-
-  def recent_activities(limit)
-    activities.order("created_at DESC").limit(limit)
-  end
+  has_many :notifications
 
   # Linking user to projects shared
-  has_many :projects_shared, through: :projects
+  has_many :collaborators
+  has_many :projects_shared, :through => :collaborators, :source => :project
+
 end

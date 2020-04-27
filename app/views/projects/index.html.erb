@@ -26,12 +26,17 @@
                     <%= render "shared/card", title: 'Project Owner', value: @projects_owner.count, icon: 'fas fa-list', color: 'primary' %>
 
                     <!-- Completed Tasks Card -->
-                    <%= render "shared/card", title: 'Shared with me', value: 0, icon: 'fas fa-check', color: 'success' %>
+                    <%= render "shared/card", title: 'Shared with me', value: @projects_shared.count, icon: 'fas fa-check', color: 'success' %>
 
                 </div>
 
                 <!-- List of all projects where user is author -->
                 <% @projects_owner.each_with_index do |project, index| %>
+                <%= render "projects/project", project: project, index: index %>
+                <% end %>
+
+                <!-- List of all projects shared with user -->
+                <% @projects_shared.each_with_index do |project, index| %>
                 <%= render "projects/project", project: project, index: index %>
                 <% end %>
             </div>
