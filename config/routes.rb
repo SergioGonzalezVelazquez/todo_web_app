@@ -30,18 +30,26 @@ Rails.application.routes.draw do
   # Projects
   resources :projects
   match "/projects/:project_id/management", as: "project_management", to: "projects#management", via: "get"
-  
-  resources :collaborators, only: [:new, :create, :destroy]
-  match "/collaborators/accept(.:format)", as: "accept_collaborator", to: "collaborators#accept", via: "post"
-  match "/collaborators/revoke(.:format)", as: "revoke_collaborator", to: "collaborators#revoke", via: "post"
 
+  resources :collaborators, only: [:new, :create, :destroy]
+  match "/collaborators/revoke(.:format)", as: "revoke_collaborator", to: "collaborators#revoke", via: "post"
 
   # Relationship between tasks and projects
   match "/projects/:project_id/tasks(.:format)", as: "add_task_to_project", to: "tasks#add_task_to_project", via: "get"
   match "/projects/:project_id/tasks(.:format)", as: "project_tasks", to: "tasks#create_to_project", via: "post"
 
   # Notifications
-  resources :notifications, only: [:index]
+  resources :notifications, only: [:index] do
+    member do
+      post "read"
+    end
+    member do
+      post "deny"
+    end
+    member do
+      post "accept"
+    end
+  end
 
   root "tasks#index"
 end

@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   def index
     @projects_owner = Project.where(:author_id => current_user)
-    #puts current_user.projects_shared.count
     @projects_shared = Project.joins(:collaborators).where(:collaborators => { :user_id => current_user.id, :status => "accepted" })
   end
 

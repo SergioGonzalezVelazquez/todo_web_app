@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center pb-5 pl-4">
+<div class="col d-flex align-items-center pb-5 pl-4">
     <div class="mr-3">
 
         <div class="icon-circle <%= 'bg-primary' if notification.notification_type == 'invitation' %>  
@@ -8,8 +8,8 @@
     </div>
     <div class="mr-3">
         <div class="small text-gray-500"><%= notification.created_at %></div>
-        <span class="mb-3 <%= 'font-weight-bold' if notification.pending %>"><%= notification.text %></span> <br>
-        <%= link_to 'Accept', accept_collaborator_path(:project_id => notification.project_id), method: "post", class: "font-weight-bold text-primary" %>
-        <%= link_to 'Deny',  id: "btn_deny_invitation", class: "text-xs font-weight-bold text-danger" %>
+        <span class="mb-2 <%= 'font-weight-bold' if notification.pending %> %>"><%= notification.text %></span> <br>
+        <%= link_to 'Accept', accept_notification_path(notification), method: "post", id: "btn_accept_".concat((index + 1).to_s),  class: "font-weight-bold text-primary pr-4" %>
+        <%= link_to 'Deny',  deny_notification_path(notification), method: "post", id: "btn_deny_".concat((index + 1).to_s), class: "font-weight-bold text-danger" %>
     </div>
 </div>

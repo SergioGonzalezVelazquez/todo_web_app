@@ -17,11 +17,12 @@
                 <!-- Content Row -->
                 <div class="row">
                     <!-- List of all user notifications -->
-                    <% @all_notifications.each do |notification, index| %>
+                    <% @all_notifications.each_with_index do |notification, index| %>
                         <% if notification.notification_type == 'invitation' && notification.pending %>
-                            <%= render "notifications/pending_invitation", notification: notification %>
+                            <%= render "notifications/pending_invitation", notification: notification, index: index %>
                         <% else %>
-                            <%= render "notifications/notification", notification: notification %>
+                            <%= link_to render(:partial => 'notifications/notification', :locals => {:notification => notification, :index => index}), 
+                 read_notification_path(notification), method: :post,  class: "dropdown-item d-flex align-items-center pb-5", id: "read_notification_".concat((index + 1).to_s) %>
                         <% end %>
                     <% end %>
                 </div>

@@ -50,19 +50,7 @@ class CollaboratorsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  def accept
-    collaborator = Collaborator.where(:project_id => params[:project_id]).where(:user_id => current_user.id).where(:status => "pending").first
-
-    if !collaborator.nil?
-      collaborator.update_attribute(:status, "accepted")
-      # Mark notification as not pending
-
-    end
-    redirect_back(fallback_location: root_path)
-  end
-
   def revoke
-    puts params
     project = Project.find(params[:project_id])
     user = User.find(params[:user_id])
 
@@ -83,17 +71,17 @@ class CollaboratorsController < ApplicationController
     end
   end
 
+  # Cancel invitation
   def destroy
-    puts "destroy"
     @collaborator = Collaborator.find(params[:id])
     @user_id = @collaborator.user_id
     @project_id = @collaborator.project_id
 
+
     if @collaborator.destroy && @collaborator.status == "pending"
       # Destroy notification
-      @notification = Notification.find_by(project_id: @project_id, user_id: @user_id)
+      @notification = Notification.where(:project_id => @project_id).where(:user_id => @user_id).where(:notification_type => "invitation").where(:pending => true).first
       Notification.destroy(@notification.id)
-      puts "notificatión borrada"
     end
 
     redirect_back(fallback_location: root_path)

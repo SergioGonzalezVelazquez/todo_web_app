@@ -131,14 +131,21 @@ class TasksController < ApplicationController
         redirect_back(fallback_location: root_path)
       else
         @task.update_attributes(:completed => true)
-        @task.save
+        if @task.save
+           # Create notifications for other collaborators
+          user_ids = User.joins(:collaborators).where(:collaborators => { :project_id => project.id, :status => "accepted" }).where.not(:collaborators => { :user_id => current_user.id }).ids
+          if project.author != @task.author
+            user_ids.push(project.author.id)
+          end
+          notification_text = @task.author.email + " has completed '" + @task.name + "' in " + project.name
+          create_notifications(user_ids, "task_completed", notification_text, project.id)
+        end 
         redirect_back(fallback_location: root_path)
       end
     end
   end
 
   def add_task_to_project
-    puts "add task to project renders"
     @project = Project.find(params[:project_id])
     respond_to do |format|
       format.js {
@@ -149,14 +156,29 @@ class TasksController < ApplicationController
 
   def create_to_project
     @task = Task.new(task_params)
+    project = Project.find(params[:project_id])
 
-    # set the task’s project
-    @task.project_id = params[:project_id]
+    #Only project author or collaborators can add tasks
+    isCollaborator = Collaborator.where(:project_id => project.id).where(:status => "accepted").where(:user_id => current_user.id).count > 0
+    if !isCollaborator && project.author != current_user
+      flash.now[:alert] = "You cannot add tasks to this project!"
+    else
+      # set the task’s project
+      @task.project_id = params[:project_id]
 
-    # set the task’s author
-    @task.author = current_user
+      # set the task’s author
+      @task.author = current_user
 
-    @task.save
+      if @task.save
+        # Create notifications for other collaborators
+        user_ids = User.joins(:collaborators).where(:collaborators => { :project_id => project.id, :status => "accepted" }).where.not(:collaborators => { :user_id => current_user.id }).ids
+        if project.author != @task.author
+          user_ids.push(project.author.id)
+        end
+        notification_text = @task.author.email + " added task " + @task.name + " to " + project.name
+        create_notifications(user_ids, "new_task", notification_text, project.id)
+      end
+    end
     redirect_back(fallback_location: root_path)
   end
 
@@ -166,6 +188,22 @@ class TasksController < ApplicationController
     @task.update_attributes(:project_id => nil)
     if @task.save
       redirect_back(fallback_location: root_path)
+    end
+  end
+
+  private
+
+  def create_notifications(user_ids, type, text, project_id)
+    user_ids.each do |id|
+
+      # Create notification
+      @notification = Notification.new
+      @notification.user_id = id
+      @notification.project_id = project_id
+      @notification.notification_type = type
+      @notification.text = text
+      @notification.pending = true
+      @notification.save
     end
   end
 

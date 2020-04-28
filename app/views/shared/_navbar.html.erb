@@ -34,8 +34,17 @@
                      </div>
                  </a>
                  <% else %>
-                 <% last_notifications.each do |notification| %>
-                 <%= render "notifications/notification_small", notification: notification%>
+                 <% last_notifications.each_with_index do |notification, index| %>
+                 
+                    <% if notification.notification_type == 'invitation' && notification.pending %>
+                        <%= link_to render(:partial => 'notifications/notification_small', :locals => {:notification => notification, :index => index}), 
+                        notifications_path,  class: "dropdown-item d-flex align-items-center", id: "small_notification_".concat((index + 1).to_s) %>
+                    <% else %>
+                        <%= link_to render(:partial => 'notifications/notification_small', :locals => {:notification => notification, :index => index}), 
+                        read_notification_path(notification), method: :post,  class: "dropdown-item d-flex align-items-center", id: "small_notification_".concat((index + 1).to_s) %>
+                    <% end %>
+                 
+
                  <% end %>
                  <% end %>
 

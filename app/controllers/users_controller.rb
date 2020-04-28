@@ -26,11 +26,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
     if @user.update(update_profile_params)
-      puts "updated"
       render '/users/edit'
     else
       Rails.logger.info(current_user.errors.inspect) 
-      puts "not updated"
       render '/users/edit'
     end
   end
@@ -43,11 +41,9 @@ class UsersController < ApplicationController
     @projects = Project.where(:user_id => session[:user_id])
 
     if current_user.update(update_password_params)
-      puts "updated"
       session[:user_id] = nil
       redirect_to '/login'
     else
-      puts "not updated"
       redirect_to edit_user_path
     end
   end
