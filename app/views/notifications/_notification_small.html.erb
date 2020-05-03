@@ -1,9 +1,13 @@
 <div class="mr-3">
     <div class="icon-circle <%= 'bg-primary' if notification.notification_type == 'invitation' %>  
                   <%= 'bg-success' if notification.notification_type  == 'task_completed' %>
+                  <%= 'bg-success' if notification.notification_type  == 'new_user' %>
+                  <%= 'bg-danger' if notification.notification_type  == 'user_abandon' %>
                   <%= 'bg-warning' if notification.notification_type  == 'new_task' %>">
         <i class="fas <%= 'fa-user-plus' if notification.notification_type == 'invitation' %> 
                 <%= 'fa-check' if notification.notification_type == 'task_completed' %>
+                <%= 'fa-user-check' if notification.notification_type == 'new_user'%> 
+                <%= 'fa-user-times' if notification.notification_type == 'user_abandon'%> 
                 <%= 'fa-tasks' if notification.notification_type == 'new_task' %>
                 text-white"></i>
     </div>

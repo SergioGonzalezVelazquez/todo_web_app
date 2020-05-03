@@ -19,10 +19,9 @@ class CollaboratorsController < ApplicationController
 
     if @project.author != current_user
       flash.now[:alert] = "You cannot invite users to this project"
-      redirect_back(fallback_location: root_path)
-    end
-
-    if !@user.nil? && !@user.nil?
+    elsif @user == current_user
+      flash.now[:alert] = "You cannot invite yourself"
+    elsif !@user.nil?
       # Check if user has been invited yet
       @unique = Collaborator.where(:project_id => params[:project_id]).where(:user_id => @user.id).where(:status => ["pending", "accepted"]).count
 
@@ -51,6 +50,7 @@ class CollaboratorsController < ApplicationController
   end
 
   def revoke
+    puts "COLLABORATOR REVOKE!!!!!"
     project = Project.find(params[:project_id])
     user = User.find(params[:user_id])
 
@@ -61,7 +61,14 @@ class CollaboratorsController < ApplicationController
 
     collaborator = Collaborator.where(:project_id => params[:project_id]).where(:user_id => params[:user_id]).where(:status => "accepted").first
     if !collaborator.nil?
+      puts "COLLABORATOR UPDATE ATRIBUTE"
       collaborator.update_attribute(:status, "revoked")
+      # Then, we notify that an user has left the project
+      user_ids = User.joins(:collaborators).where(:collaborators => { :project_id => collaborator.project.id, :status => "accepted" }).where.not(:collaborators => { :user_id => collaborator.user_id }).ids
+      user_ids.push(collaborator.project.author.id)
+      puts user_ids
+      notification_text = collaborator.user.email + " has left " + collaborator.project.name
+      create_notifications(user_ids, "user_abandon", notification_text, collaborator.project.id) 
     end
 
     if collaborator.user_id == current_user.id
@@ -77,7 +84,6 @@ class CollaboratorsController < ApplicationController
     @user_id = @collaborator.user_id
     @project_id = @collaborator.project_id
 
-
     if @collaborator.destroy && @collaborator.status == "pending"
       # Destroy notification
       @notification = Notification.where(:project_id => @project_id).where(:user_id => @user_id).where(:notification_type => "invitation").where(:pending => true).first
@@ -85,5 +91,20 @@ class CollaboratorsController < ApplicationController
     end
 
     redirect_back(fallback_location: root_path)
+  end
+
+  private
+  def create_notifications(user_ids, type, text, project_id)
+    user_ids.each do |id|
+
+      # Create notification
+      @notification = Notification.new
+      @notification.user_id = id
+      @notification.project_id = project_id
+      @notification.notification_type = type
+      @notification.text = text
+      @notification.pending = true
+      @notification.save
+    end
   end
 end

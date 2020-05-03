@@ -132,14 +132,14 @@ class TasksController < ApplicationController
       else
         @task.update_attributes(:completed => true)
         if @task.save
-           # Create notifications for other collaborators
+          # Create notifications for other collaborators
           user_ids = User.joins(:collaborators).where(:collaborators => { :project_id => project.id, :status => "accepted" }).where.not(:collaborators => { :user_id => current_user.id }).ids
           if project.author != @task.author
             user_ids.push(project.author.id)
           end
           notification_text = @task.author.email + " has completed '" + @task.name + "' in " + project.name
           create_notifications(user_ids, "task_completed", notification_text, project.id)
-        end 
+        end
         redirect_back(fallback_location: root_path)
       end
     end

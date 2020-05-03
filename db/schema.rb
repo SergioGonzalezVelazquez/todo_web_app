@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_04_26_165449) do
 
-  create_table "activities", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "text"
-    t.integer "type"
-  end
-
   create_table "collaborators", force: :cascade do |t|
     t.integer "user_id"
     t.integer "project_id"
