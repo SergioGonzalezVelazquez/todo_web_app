@@ -15,6 +15,9 @@ describe "ProjectCRUD" do
     @driver.get("http://localhost:3000/users/sign_in")
     login(@driver, @mail, @password)
     sleep(1)
+
+    @driver.find_element(:id, "link_to_projects").click
+    sleep(1)
   end
 
   after(:each) do
@@ -47,7 +50,12 @@ describe "ProjectCRUD" do
   it "addTaskToProject" do
     name = "Test add task to project name"
     description = "Test add task to project description"
-    create_project(@driver, name, description)
+    project_index = create_project(@driver, name, description)
+
+    # Open project details to navigate to project page
+    @driver.find_element(:id, ("project_header_option_").concat(project_index)).click
+    @driver.find_element(:id, ("project_link_").concat(project_index)).click
+    sleep(1)
 
     task_name = "Project task"
     task_description = "Task for project"
@@ -59,7 +67,12 @@ describe "ProjectCRUD" do
   it "deleteTaskFromProject" do
     name = "Test add task to project name"
     description = "Test add task to project description"
-    create_project(@driver, name, description)
+    project_index = create_project(@driver, name, description)
+
+    # Open project details to navigate to project page
+    @driver.find_element(:id, ("project_header_option_").concat(project_index)).click
+    @driver.find_element(:id, ("project_link_").concat(project_index)).click
+    sleep(1)
 
     task_name = "Project task"
     task_description = "Task for project"
@@ -71,63 +84,81 @@ describe "ProjectCRUD" do
 end
 
 def create_project(driver, name, description)
-  driver.get("http://localhost:3000/")
-
-  existing_projects = driver.all(:xpath, "//a[contains(@id, 'project_link')]").length.to_i
+  existing_projects = driver.find_element(:id, "lbl_project_owner").text.to_i
   project_index = (existing_projects + 1).to_s
+  expected = (existing_projects.to_i + 1)
+  expected_str = expected.to_s
 
   # Click on create new project btn
   element = driver.find_element(:id, "btn_create_project").click
 
-  # Fill in new project form and submit it
+  # # Fill in new project form and submit it
   driver.find_element(:id, "project_name").click
   driver.find_element(:id, "project_name").send_keys(name)
   driver.find_element(:id, "project_description").click
   driver.find_element(:id, "project_description").send_keys(description)
   driver.find_element(:id, "btn_project_submit").click
 
+  # ASSERT: check if "Project owner" card has been updated
+  sleep(1)
+  expect(driver.find_element(:id, "lbl_project_owner").text).to eq (expected_str)
+
   # ASSERT: Check if new project appears in projects list
-  sleep(2)
-  project_links = driver.find_elements(:id, ("project_link_").concat(project_index))
-  expect(project_links.length).to be > 0
+  sleep(1)
+  card_item = driver.find_elements(:id, ("project_header_").concat(expected_str))
+  expect(card_item.length).to be > 0
 
-  # ASSERT: project link name
-  project_link = driver.find_element(:id, "project_link_".concat(project_index))
-  expect(project_link.text).to eq(name)
+  # Open project details to check if all fields are correct.
+  driver.find_element(:id, ("project_header_option_").concat(expected_str)).click
+  driver.find_element(:id, ("project_details_").concat(expected_str)).click
+  sleep(1)
 
-  # Click to project link
-  project_link.click
-  sleep(2)
+  # ASSERT: check project name
+  value_name = driver.find_element(:id, "lbl_project_name_".concat(expected_str)).text
+  expect(value_name).to eq(name)
 
-  # ASSERT: Check project name in project view
-  value_name = driver.find_element(:id, "page_title").text
-  expect(value_name).to eq("Task Collection: ".concat(name))
-
-  # ASSERT: Check project description in project view
-  value_description = driver.find_element(:id, "lbl_project_description").text
+  # ASSERT: check project description
+  value_description = driver.find_element(:id, "lbl_project_description_".concat(expected_str)).text
   expect(value_description).to eq(description)
 
   return project_index
 end
 
 def delete_project(driver, project_index)
+  # Open project details to navigate to project page
+  driver.find_element(:id, ("project_header_option_").concat(project_index)).click
+  driver.find_element(:id, ("project_link_").concat(project_index)).click
+  sleep(1)
+
+  # Click on manage project
+  driver.find_element(:id, "btn_management_project").click
+  sleep(1)
+
   # Click on delete project
   driver.find_element(:id, "btn_delete_project").click
-
   sleep(1)
   driver.switch_to().alert().accept()
   sleep(1)
 
   # ASSERT: there is one less project
-  existing_projects = driver.all(:xpath, "//a[contains(@id, 'project_link')]").length
+  existing_projects = driver.find_element(:id, "lbl_project_owner").text.to_i
   expect(existing_projects).to eq((project_index.to_i) - 1)
 
-  # ASSERT: project link is not present
-  project_links = driver.find_elements(:id, ("project_link_").concat(project_index))
-  expect(project_links.length).to eq(0)
+  # ASSERT: project card is not present
+  project_item = @driver.find_elements(:id, ("project_header_").concat(project_index))
+  expect(project_item.length).to eq(0)
 end
 
 def edit_project(driver, project_index, name, description)
+  # Open project details to navigate to project page
+  driver.find_element(:id, ("project_header_option_").concat(project_index)).click
+  driver.find_element(:id, ("project_link_").concat(project_index)).click
+  sleep(1)
+
+  # Click on manage project
+  driver.find_element(:id, "btn_management_project").click
+  sleep(1)
+
   # Click on edit project
   driver.find_element(:id, "btn_edit_project").click
 
@@ -139,15 +170,23 @@ def edit_project(driver, project_index, name, description)
   driver.find_element(:id, "project_description").clear
   driver.find_element(:id, "project_description").send_keys(description)
   driver.find_element(:id, "btn_project_submit").click
-
   sleep(2)
 
-  # ASSERT: Check project name
-  value_name = driver.find_element(:id, "page_title").text
-  expect(value_name).to eq("Task Collection: ".concat(name))
+  # Back to projects page
+  @driver.find_element(:id, "link_to_projects").click
+  sleep(1)
 
-  # ASSERT: Check project description in project view
-  value_description = driver.find_element(:id, "lbl_project_description").text
+  # Open project details to check if all fields are correct.
+  driver.find_element(:id, ("project_header_option_").concat(project_index)).click
+  driver.find_element(:id, ("project_details_").concat(project_index)).click
+  sleep(1)
+
+  # ASSERT: check project name
+  value_name = driver.find_element(:id, "lbl_project_name_".concat(project_index)).text
+  expect(value_name).to eq(name)
+
+  # ASSERT: check project description
+  value_description = driver.find_element(:id, "lbl_project_description_".concat(project_index)).text
   expect(value_description).to eq(description)
 end
 
