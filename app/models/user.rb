@@ -39,10 +39,11 @@ class User < ApplicationRecord
     errors.add :password, "Please use: 1 uppercase, 1 lowercase and 1 special character"
   end
 
-  has_many :notifications
+  has_many :tasks, foreign_key: "author_id", class_name: "Task", dependent: :destroy
+  has_many :projects, foreign_key: "author_id", class_name: "Project", dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   # Linking user to projects shared
   has_many :collaborators
   has_many :projects_shared, :through => :collaborators, :source => :project
-
 end
